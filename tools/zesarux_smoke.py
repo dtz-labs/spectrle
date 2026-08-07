@@ -15,6 +15,7 @@ from pathlib import Path
 PROMPT = b"command> "
 SYMBOL_RE = re.compile(r"^(\S+)\s*=\s*\$([0-9A-Fa-f]+)\b", re.MULTILINE)
 ZESARUX_KEY_ENTER = 129
+ZX_FRAMES = 23672
 
 
 def receive_prompt(sock: socket.socket, timeout: float = 3.0) -> str:
@@ -82,6 +83,22 @@ def assert_black_border_shadow(sock: socket.socket) -> None:
     bordcr = read_byte(sock, 0x5C48)
     if bordcr & 0x38:
         raise RuntimeError(f"ROM border shadow is not black: ${bordcr:02x}")
+
+
+def assert_interrupts_alive(sock: socket.socket, stage_name: str) -> None:
+    """A sound must not leave interrupts off.
+
+    FRAMES advances only in the ROM's 50 Hz handler, which is also what
+    refreshes LAST_K (23560) -- the byte getk() reads.  If it freezes, the
+    game will never see another key.
+    """
+    first = read_byte(sock, ZX_FRAMES)
+    time.sleep(0.25)
+    if read_byte(sock, ZX_FRAMES) == first:
+        raise RuntimeError(
+            f"{stage_name}: ROM frame counter froze, so the sound left "
+            "interrupts disabled and the keyboard is dead"
+        )
 
 
 def free_port() -> int:
@@ -337,6 +354,7 @@ def main() -> int:
         if read_byte(sock, last_sound) != 1:
             raise RuntimeError("incomplete word did not select the reject sound")
         assert_black_border_shadow(sock)
+        assert_interrupts_alive(sock, f"{args.machine} reject sound")
         assert_no_grid_tail(
             sock, selected_length, f"{args.machine} incomplete submit"
         )
@@ -384,6 +402,7 @@ def main() -> int:
             f"PASS {args.machine}: no tile drawn after column {selected_length}"
         )
         assert_black_border_shadow(sock)
+        assert_interrupts_alive(sock, f"{args.machine} win sound")
         print(
             f"PASS {args.machine}: exact word produced {selected_length} green "
             "tiles and a win"
