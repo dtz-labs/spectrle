@@ -36,17 +36,17 @@ void game_init(GameState *game)
 
     for (column = 0u; column <= MAX_WORD_LENGTH; ++column)
         game->word[column] = '\0';
-    for (row = 0u; row < WORDLE_MAX_ATTEMPTS; ++row) {
-        for (column = 0u; column <= WORDLE_MAX_LENGTH; ++column)
+    for (row = 0u; row < SPECTRLE_MAX_ATTEMPTS; ++row) {
+        for (column = 0u; column <= SPECTRLE_MAX_LENGTH; ++column)
             game->guesses[row][column] = '\0';
-        for (column = 0u; column < WORDLE_MAX_LENGTH; ++column)
+        for (column = 0u; column < SPECTRLE_MAX_LENGTH; ++column)
             game->tiles[row][column] = TILE_EMPTY;
     }
     for (column = 0u; column < 26u; ++column)
         game->keyboard[column] = TILE_EMPTY;
     game->input_length = 0u;
     game->attempt = 0u;
-    game->length = WORDLE_MIN_LENGTH;
+    game->length = SPECTRLE_MIN_LENGTH;
     game->won = 0u;
     game->rounds = 0u;
     game->wins = 0u;
@@ -58,16 +58,16 @@ void game_new_round(GameState *game, uint8_t length)
     uint8_t column;
     uint16_t count = dictionary_count();
 
-    if (length < WORDLE_MIN_LENGTH || length > WORDLE_RELEASE_MAX_LENGTH)
-        length = WORDLE_MIN_LENGTH;
+    if (length < SPECTRLE_MIN_LENGTH || length > SPECTRLE_RELEASE_MAX_LENGTH)
+        length = SPECTRLE_MIN_LENGTH;
     game->length = length;
     game->input_length = 0u;
     game->attempt = 0u;
     game->won = 0u;
-    for (row = 0u; row < WORDLE_MAX_ATTEMPTS; ++row) {
-        for (column = 0u; column <= WORDLE_MAX_LENGTH; ++column)
+    for (row = 0u; row < SPECTRLE_MAX_ATTEMPTS; ++row) {
+        for (column = 0u; column <= SPECTRLE_MAX_LENGTH; ++column)
             game->guesses[row][column] = '\0';
-        for (column = 0u; column < WORDLE_MAX_LENGTH; ++column)
+        for (column = 0u; column < SPECTRLE_MAX_LENGTH; ++column)
             game->tiles[row][column] = TILE_EMPTY;
     }
     for (column = 0u; column < 26u; ++column)

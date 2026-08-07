@@ -1,5 +1,5 @@
-#ifndef WORDLE_GAME_SOUND_H
-#define WORDLE_GAME_SOUND_H
+#ifndef SPECTRLE_GAME_SOUND_H
+#define SPECTRLE_GAME_SOUND_H
 
 void sound_init(void);
 void sound_reject(void);

@@ -9,7 +9,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class GameLogicTests(unittest.TestCase):
-    def test_c_game_state_and_wordle_scoring(self) -> None:
+    def test_c_game_state_and_spectrle_scoring(self) -> None:
         for release_define in (None, "ZX48"):
             with self.subTest(release=release_define or "128K"), tempfile.TemporaryDirectory() as temp:
                 executable = Path(temp) / "game-harness"

@@ -23,10 +23,10 @@ def convert(messages_path: Path, json_path: Path, po_path: Path) -> None:
         raise ValueError(f"{json_path} and {messages_path} have different message keys")
 
     lines = [
-        "# Translation catalog for ZX Spectrum Wordle.",
+        "# Translation catalog for ZX Spectrum Spectrle.",
         "msgid \"\"",
         "msgstr \"\"",
-        '"Project-Id-Version: zx-spectrum-wordle 1.0\\n"',
+        '"Project-Id-Version: zx-spectrum-spectrle 1.0\\n"',
         '"Report-Msgid-Bugs-To: \\n"',
         '"POT-Creation-Date: 2026-08-07 00:00+0200\\n"',
         '"PO-Revision-Date: 2026-08-07 00:00+0200\\n"',

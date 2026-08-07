@@ -1,4 +1,4 @@
-# sk Wordle words imported from OMW/WordNet.
+# sk Spectrle words imported from OMW/WordNet.
 # NO ACCENTS: diacritics and Latin ligatures become lowercase ASCII.
 # Ranked with wordfreq 3.1.1 for sk.
 # ALL-CAPS acronyms were rejected before ASCII folding.

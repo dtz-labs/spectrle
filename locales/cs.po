@@ -1,7 +1,7 @@
-# Translation catalog for ZX Spectrum Wordle.
+# Translation catalog for ZX Spectrum Spectrle.
 msgid ""
 msgstr ""
-"Project-Id-Version: zx-spectrum-wordle 1.0\n"
+"Project-Id-Version: zx-spectrum-spectrle 1.0\n"
 "Report-Msgid-Bugs-To: mpasternak\n"
 "POT-Creation-Date: 2026-08-07 23:31+0200\n"
 "PO-Revision-Date: 2026-08-07 00:00+0200\n"
@@ -14,13 +14,13 @@ msgstr ""
 
 #: locales/messages.def:8
 msgctxt "title_48"
-msgid "WORDLE EN 48K"
-msgstr "WORDLE CS 48K"
+msgid "SPECTRLE EN 48K"
+msgstr "SPECTRLE CS 48K"
 
 #: locales/messages.def:9
 msgctxt "title_128"
-msgid "WORDLE EN 128K"
-msgstr "WORDLE CS 128K"
+msgid "SPECTRLE EN 128K"
+msgstr "SPECTRLE CS 128K"
 
 #: locales/messages.def:10
 msgctxt "ascii_notice"

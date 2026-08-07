@@ -37,7 +37,7 @@ static void enter_word(GameState *game, const char *word)
 
 static void test_duplicate_scoring(void)
 {
-    uint8_t tiles[WORDLE_MAX_LENGTH];
+    uint8_t tiles[SPECTRLE_MAX_LENGTH];
 
     game_score_word("array", "rarer", 5u, tiles);
     assert(tiles[0] == TILE_PRESENT);

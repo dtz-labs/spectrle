@@ -30,7 +30,7 @@ volatile uint8_t zx_last_redraw_rows;
 volatile uint8_t zx_full_render_count;
 volatile uint8_t zx_last_sound;
 volatile uint8_t zx_last_submit_result;
-volatile char zx_solution[WORDLE_MAX_LENGTH + 1u];
+volatile char zx_solution[SPECTRLE_MAX_LENGTH + 1u];
 
 static uint8_t wait_key(void)
 {
@@ -272,7 +272,7 @@ static uint8_t choose_mode(void)
         screen_text_center(6u, line, UI_WARN);
 
         screen_text(7u, 9u, TXT_MODE_5_LINE, UI_BRIGHT);
-#if defined(ZX128) && WORDLE_128_MAX_LENGTH >= 6
+#if defined(ZX128) && SPECTRLE_128_MAX_LENGTH >= 6
         screen_text(7u, 11u, TXT_MODE_6_LINE, UI_BRIGHT);
 #endif
 
@@ -284,19 +284,19 @@ static uint8_t choose_mode(void)
         screen_text(8u, 18u, TXT_ABSENT, UI_NORMAL);
 
         screen_text_center(20u,
-#if defined(ZX128) && WORDLE_128_MAX_LENGTH >= 6
+#if defined(ZX128) && SPECTRLE_128_MAX_LENGTH >= 6
                            TXT_CHOOSE_5_6,
 #else
                            TXT_CHOOSE_5,
 #endif
                            UI_ACCENT);
         key = wait_key();
-#if defined(ZX128) && WORDLE_128_MAX_LENGTH >= 6
+#if defined(ZX128) && SPECTRLE_128_MAX_LENGTH >= 6
         if (key == '1' || key == '2')
-            return (uint8_t)(key - '1' + WORDLE_MIN_LENGTH);
+            return (uint8_t)(key - '1' + SPECTRLE_MIN_LENGTH);
 #else
         if (key == '1')
-            return WORDLE_MIN_LENGTH;
+            return SPECTRLE_MIN_LENGTH;
 #endif
     }
 }
@@ -346,7 +346,7 @@ static uint8_t finish_round(GameState *game, uint8_t won)
 int main(void)
 {
     GameState game;
-    uint8_t mode = WORDLE_MIN_LENGTH;
+    uint8_t mode = SPECTRLE_MIN_LENGTH;
     uint8_t action = 1u;
 
     sound_init();

@@ -1,6 +1,6 @@
-# Wordle for ZX Spectrum
+# Spectrle for ZX Spectrum
 
-An unofficial, ASCII-only Wordle-style game for the ZX Spectrum, released as
+An unofficial, ASCII-only word-guessing game for the ZX Spectrum, released as
 independent 48K and 128K tapes in eight languages. The 48K tape is strictly a
 5x5 game. The 128K tape offers two board sizes when the language data fits:
 
@@ -8,8 +8,8 @@ independent 48K and 128K tapes in eight languages. The 48K tape is strictly a
 - `6x6`: six-letter word, six guesses.
 
 Play the current release in
-[JSSpeccy](https://dtz-labs.github.io/wordle/) or download an individual TAP
-from [GitHub Releases](https://github.com/dtz-labs/wordle/releases).
+[JSSpeccy](https://dtz-labs.github.io/spectrle/) or download an individual TAP
+from [GitHub Releases](https://github.com/dtz-labs/spectrle/releases).
 
 | code | edition | 48K: 5 letters | 128K: 5-6 letters |
 | --- | --- | ---: | ---: |
@@ -39,7 +39,7 @@ On 48K, press `1` for the only 5x5 board. On 128K, choose `1` or `2` for the
 have the selected length and exist in the edition's dictionary; rejected
 guesses do not consume an attempt.
 
-The score follows Wordle's duplicate-letter rules: exact matches are assigned
+The score follows the classic duplicate-letter rules: exact matches are assigned
 first, then remaining copies are marked as present only while unmatched copies
 remain in the answer.
 
@@ -77,8 +77,8 @@ make RUN_LANGUAGE=es smoke
 ```
 
 Local builds write tapes under the ignored `build/<code>/` directory. For example, English produces
-`build/en/wordle-en-48.tap` and `build/en/wordle-en-128.tap`; Polish produces
-`build/pl/wordle-pl-48.tap` and `build/pl/wordle-pl-128.tap`.
+`build/en/spectrle-en-48.tap` and `build/en/spectrle-en-128.tap`; Polish produces
+`build/pl/spectrle-pl-48.tap` and `build/pl/spectrle-pl-128.tap`.
 
 ## GitHub releases and web player
 
@@ -90,7 +90,7 @@ creates a GitHub Release and attaches every `.tap` file directly, together with
 After a successful release, `.github/workflows/pages.yml` downloads those TAP
 assets and the pinned JSSpeccy 3 distribution, then deploys the player from
 `site/` to GitHub Pages. The player’s language and machine selectors map to
-release files named `wordle-<language>-<48|128>.tap`.
+release files named `spectrle-<language>-<48|128>.tap`.
 
 The host tests cover duplicate-letter scoring, per-release mode restrictions,
 dictionary validation, gettext catalogs, word-list normalization, and build
@@ -105,9 +105,8 @@ border, and a 256x192 screenshot.
 UI localization uses GNU gettext as a build-time format, without linking a
 gettext runtime into the Spectrum program. Canonical English messages and
 stable contexts are in [locales/messages.def](locales/messages.def). The
-translator template retains the inherited filename
-[locales/hangman.pot](locales/hangman.pot), but its package metadata and
-messages describe Wordle. Each edition has a `locales/<code>.po` catalog.
+translator template is [locales/spectrle.pot](locales/spectrle.pot). Each
+edition has a `locales/<code>.po` catalog.
 
 ```sh
 make pot                 # extract a fresh .pot

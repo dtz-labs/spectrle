@@ -38,7 +38,7 @@ class DictionaryTests(unittest.TestCase):
             "program",
             "slowo",
             "spektrum",
-            "wordle",
+            "spectrle",
             "zabawa",
             "zagadka",
             "zamek",

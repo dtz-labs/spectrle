@@ -47,4 +47,4 @@ jobs:
         run: make test layout
 
       - name: Require exactly 16 tapes
-        run: test "$(find build -type f -name 'wordle-*.tap' | wc -l)" -eq 16
+        run: test "$(find build -type f -name 'spectrle-*.tap' | wc -l)" -eq 16

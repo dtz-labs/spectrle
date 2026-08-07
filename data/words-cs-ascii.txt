@@ -1,4 +1,4 @@
-# cs Wordle words from wordfreq 3.1.1.
+# cs Spectrle words from wordfreq 3.1.1.
 # NO ACCENTS: folded to lowercase ASCII for ZX Spectrum.
 # wordfreq data: CC BY-SA 4.0; code: Apache-2.0.
 # Sources and attribution: see data/README.md.

@@ -1,5 +1,5 @@
-#ifndef WORDLE_SCREEN_H
-#define WORDLE_SCREEN_H
+#ifndef SPECTRLE_SCREEN_H
+#define SPECTRLE_SCREEN_H
 
 #include <stdint.h>
 

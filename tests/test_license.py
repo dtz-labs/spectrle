@@ -26,7 +26,7 @@ class LicenseScreenTests(unittest.TestCase):
     def test_screen_contains_original_and_zx_credits_and_full_terms(self) -> None:
         source = (ROOT / "src" / "license.c").read_text(encoding="utf-8")
         visible = " ".join(ast.literal_eval(value) for value in LINE_RE.findall(source))
-        self.assertIn("WORDLE - BSD LICENSE", visible)
+        self.assertIn("SPECTRLE - BSD LICENSE", visible)
         for phrase in (
             "Copyright (c) 1983, 1993",
             "Written by Ken Arnold.",

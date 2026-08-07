@@ -39,7 +39,7 @@ jobs:
       - name: Prepare release assets
         run: |
           set -euo pipefail
-          mapfile -t tap_files < <(find build -type f -name 'wordle-*.tap' | sort)
+          mapfile -t tap_files < <(find build -type f -name 'spectrle-*.tap' | sort)
           test "${#tap_files[@]}" -eq 16
           sha256sum "${tap_files[@]}" | sed 's#build/[^/]*/##' > SHA256SUMS
           test "$(wc -l < SHA256SUMS)" -eq 16
@@ -49,7 +49,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
-          mapfile -t tap_files < <(find build -type f -name 'wordle-*.tap' | sort)
+          mapfile -t tap_files < <(find build -type f -name 'spectrle-*.tap' | sort)
           if gh release view "${GITHUB_REF_NAME}" --repo "${GITHUB_REPOSITORY}" >/dev/null 2>&1; then
             gh release upload "${GITHUB_REF_NAME}" \
               "${tap_files[@]}" SHA256SUMS \
@@ -58,7 +58,7 @@ jobs:
             gh release create "${GITHUB_REF_NAME}" \
               "${tap_files[@]}" SHA256SUMS \
               --repo "${GITHUB_REPOSITORY}" \
-              --title "Wordle for ZX Spectrum ${GITHUB_REF_NAME}" \
+              --title "Spectrle for ZX Spectrum ${GITHUB_REF_NAME}" \
               --notes "Eight language editions for ZX Spectrum 48K and 128K. Every TAP is attached directly to this release. The 48K editions are 5x5; the 128K editions also include 6x6." \
               --verify-tag
           fi

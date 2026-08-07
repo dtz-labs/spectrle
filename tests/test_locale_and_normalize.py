@@ -17,7 +17,7 @@ from normalize_words import unaccent_ascii  # noqa: E402
 
 
 class LocaleAndNormalizationTests(unittest.TestCase):
-    def test_every_locale_generates_ascii_wordle_header(self) -> None:
+    def test_every_locale_generates_ascii_spectrle_header(self) -> None:
         messages = ROOT / "locales" / "messages.def"
         for locale_path in sorted((ROOT / "locales").glob("*.po")):
             with self.subTest(locale=locale_path.stem), tempfile.TemporaryDirectory() as temp:

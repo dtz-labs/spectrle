@@ -8,7 +8,7 @@
   var requestedMachine = params.get("machine");
   var language = LANGUAGES.indexOf(requestedLanguage) >= 0 ? requestedLanguage : "pl";
   var machine = MACHINES.indexOf(requestedMachine) >= 0 ? requestedMachine : "128";
-  var tapePath = "taps/wordle-" + language + "-" + machine + ".tap";
+  var tapePath = "taps/spectrle-" + language + "-" + machine + ".tap";
 
   var form = document.getElementById("edition-form");
   var languageSelect = document.getElementById("language");

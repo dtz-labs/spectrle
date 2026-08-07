@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Create a frequency-ranked ASCII Wordle list for a language."""
+"""Create a frequency-ranked ASCII Spectrle list for a language."""
 
 from __future__ import annotations
 
@@ -48,7 +48,7 @@ def main() -> None:
         args.limit,
     )
     header = (
-        f"# {args.language} Wordle words from wordfreq 3.1.1.\n"
+        f"# {args.language} Spectrle words from wordfreq 3.1.1.\n"
         "# NO ACCENTS: folded to lowercase ASCII for ZX Spectrum.\n"
         "# wordfreq data: CC BY-SA 4.0; code: Apache-2.0.\n"
         "# Sources and attribution: see data/README.md.\n"

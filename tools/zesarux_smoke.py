@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Boot a Wordle TAP and exercise its menu, grid, sound, and redraws."""
+"""Boot a Spectrle TAP and exercise its menu, grid, sound, and redraws."""
 
 from __future__ import annotations
 

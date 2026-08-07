@@ -42,10 +42,10 @@ jobs:
           set -euo pipefail
           mkdir -p _site/taps
           gh release download --repo "${GITHUB_REPOSITORY}" \
-            --pattern 'wordle-*.tap' --dir _site/taps
+            --pattern 'spectrle-*.tap' --dir _site/taps
           gh release view --repo "${GITHUB_REPOSITORY}" \
             --json tagName,publishedAt,url > _site/release.json
-          test "$(find _site/taps -type f -name 'wordle-*.tap' | wc -l)" -eq 16
+          test "$(find _site/taps -type f -name 'spectrle-*.tap' | wc -l)" -eq 16
 
       - name: Download JSSpeccy 3
         env:

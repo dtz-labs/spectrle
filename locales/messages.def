@@ -1,12 +1,12 @@
 /*
  * Canonical UI messages for gettext extraction.
  *
- * Regenerate the inherited locales/hangman.pot with `make pot`.  The first
+ * Regenerate the inherited locales/spectrle.pot with `make pot`.  The first
  * argument is
  * msgctxt and also becomes the TXT_* macro name in generated/locale.h.
  */
-LOCALE_TEXT("title_48", "WORDLE EN 48K")
-LOCALE_TEXT("title_128", "WORDLE EN 128K")
+LOCALE_TEXT("title_48", "SPECTRLE EN 48K")
+LOCALE_TEXT("title_128", "SPECTRLE EN 128K")
 LOCALE_TEXT("ascii_notice", "NO ACCENTS - A-Z ONLY")
 LOCALE_TEXT("dictionary_prefix", "WORDS: ")
 LOCALE_TEXT("dictionary_suffix", " WORDS")

@@ -1,4 +1,4 @@
-# Polish Wordle 5/6-letter headwords from SJP.PL.
+# Polish Spectrle 5/6-letter headwords from SJP.PL.
 # Diacritics are intentionally folded to ASCII for the ZX Spectrum game.
 # Sources and licences: see data/README.md.
 abaja

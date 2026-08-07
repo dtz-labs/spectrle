@@ -9,7 +9,7 @@ ifeq ($(strip $(LANGUAGE)),)
 RUN_LANGUAGE ?= pl
 WORDNET_MIN_COUNT ?= 1
 GETTEXT_MESSAGES := locales/messages.def
-GETTEXT_POT := locales/hangman.pot
+GETTEXT_POT := locales/spectrle.pot
 GETTEXT_PO_FILES := $(wildcard locales/*.po)
 AVAILABLE_LANGUAGES := $(filter-out catalog,$(basename $(notdir $(wildcard languages/*.mk))))
 MATRIX_LANGUAGES := $(sort $(BUILD_LANGUAGES) $(AVAILABLE_LANGUAGES))
@@ -51,7 +51,7 @@ pot: $(GETTEXT_MESSAGES)
 	@command -v xgettext >/dev/null 2>&1 || { echo "GNU xgettext not found" >&2; exit 127; }
 	xgettext --language=C --from-code=UTF-8 \
 		--keyword=LOCALE_TEXT:1c,2 --add-comments=TRANSLATORS --sort-by-file \
-		--package-name='ZX Spectrum Wordle' --package-version=1.0 \
+		--package-name='ZX Spectrum Spectrle' --package-version=1.0 \
 		--msgid-bugs-address=mpasternak --output=$(GETTEXT_POT) $(GETTEXT_MESSAGES)
 
 update-po: pot
@@ -156,7 +156,7 @@ COMMON_HEADERS := src/game.h src/screen.h src/game_sound.h src/dictionary.h
 OPT ?= -SO2 --max-allocs-per-node10000
 WARNFLAGS ?= --less-pedantic
 COMMON_FLAGS := +zx -compiler=sdcc --reserve-regs-iy $(OPT) $(WARNFLAGS) -vn \
-	-Isrc -I$(GEN) -DWORDLE_128_MAX_LENGTH=$(WORDLE_128_MAX_LENGTH)
+	-Isrc -I$(GEN) -DSPECTRLE_128_MAX_LENGTH=$(SPECTRLE_128_MAX_LENGTH)
 
 DICT_TOOL := tools/build_dictionary.py
 LOCALE_TOOL := tools/build_locale.py
@@ -197,7 +197,7 @@ $(DICT_STAMP): $(DICTIONARY_WORDS) $(DICT_TOOL) $(LANGUAGE_CONFIG)
 	python3 $(DICT_TOOL) --words $(DICTIONARY_WORDS) --build-dir $(BUILD) \
 		--header $(GEN)/dictionary_meta.h --language $(LANGUAGE) \
 		--words-48 $(DICTIONARY_WORDS_48) --words-128 $(DICTIONARY_WORDS_128) \
-		--max-length-128 $(WORDLE_128_MAX_LENGTH) \
+		--max-length-128 $(SPECTRLE_128_MAX_LENGTH) \
 		--max-48-bytes $(DICTIONARY_MAX_48_BYTES) \
 		--asm48 $(DICT_ASM48) --asm128 $(DICT_ASM128)
 	@touch $@
@@ -247,7 +247,7 @@ language-test: $(DICT_STAMP) $(LOCALE_STAMP)
 		--manifest $(BUILD)/dictionary-manifest.json --words $(DICTIONARY_WORDS) \
 		--expected-48 $(DICTIONARY_WORDS_48) \
 		--expected-128 $(DICTIONARY_WORDS_128) \
-		--max-length-128 $(WORDLE_128_MAX_LENGTH) \
+		--max-length-128 $(SPECTRLE_128_MAX_LENGTH) \
 		--max-48-bytes $(DICTIONARY_MAX_48_BYTES)
 
 language-layout: $(TAP48) $(TAP128)
@@ -276,7 +276,7 @@ language-smoke-48: $(TAP48) check-zesarux
 
 language-smoke-128: $(TAP128) check-zesarux
 	python3 tools/zesarux_smoke.py --machine 128k --tap $(TAP128) \
-		--max-length $(WORDLE_128_MAX_LENGTH) \
+		--max-length $(SPECTRLE_128_MAX_LENGTH) \
 		--map $(MAP128) --locale-manifest $(BUILD)/locale-manifest.json \
 		--screenshot $(BUILD)/$(PROGRAM_NAME)-128-smoke.pbm
 

@@ -14,9 +14,9 @@ make pot
 make update-po
 ```
 
-Create `locales/<code>.po` from the inherited `locales/hangman.pot` template
+Create `locales/<code>.po` from the inherited `locales/spectrle.pot` template
 and translate every context. The filename is retained for compatibility; its
-package metadata and messages belong to Wordle. Translations must use printable
+package metadata and messages belong to Spectrle. Translations must use printable
 ASCII and fit a 32-character Spectrum row. `ascii_notice` must explicitly say
 that accents are absent and input is limited to `A-Z`.
 
@@ -54,13 +54,13 @@ Create `languages/<code>.mk`, for example:
 
 ```make
 LANGUAGE_NAME := English
-PROGRAM_NAME := wordle-en
+PROGRAM_NAME := spectrle-en
 LOCALE_PO := locales/en.po
 DICTIONARY_WORDS := data/words-en-ascii.txt
 DICTIONARY_WORDS_48 := 2249
 DICTIONARY_WORDS_128 := 5176
 DICTIONARY_MAX_48_BYTES := 20000
-WORDLE_128_MAX_LENGTH := 6
+SPECTRLE_128_MAX_LENGTH := 6
 ```
 
 Add the code to `BUILD_LANGUAGES` in `catalog.mk` when it is release-ready.
@@ -69,7 +69,7 @@ be tested with `make BUILD_LANGUAGES="pl en"`.
 
 Set the two counts to the number of eligible entries (length 5 for 48K and
 length 5-6 for 128K), so the release does not silently discard common words.
-Set `WORDLE_128_MAX_LENGTH := 6` only when the complete six-letter selection
+Set `SPECTRLE_128_MAX_LENGTH := 6` only when the complete six-letter selection
 fits the five dictionary banks; otherwise set it to `5` and make the 128K word
 count match the five-letter selection.
 

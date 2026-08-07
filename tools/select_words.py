@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Select five-letter Polish Wordle headwords from the official SJP.PL list."""
+"""Select five-letter Polish Spectrle headwords from the official SJP.PL list."""
 
 from __future__ import annotations
 
@@ -123,7 +123,7 @@ def main() -> None:
     )
     length_label = "/".join(str(length) for length in lengths)
     header = (
-        f"# Polish Wordle {length_label}-letter headwords from SJP.PL.\n"
+        f"# Polish Spectrle {length_label}-letter headwords from SJP.PL.\n"
         "# Diacritics are intentionally folded to ASCII for the ZX Spectrum game.\n"
         "# Sources and licences: see data/README.md.\n"
     )

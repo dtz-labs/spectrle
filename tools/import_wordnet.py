@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Convert OMW/WordNet tab files or plain word lists to Wordle ASCII words."""
+"""Convert OMW/WordNet tab files or plain word lists to Spectrle ASCII words."""
 
 from __future__ import annotations
 
@@ -71,7 +71,7 @@ def import_words(
         )
         for candidate in candidates:
             # WordNets contain acronyms such as "CIO" alongside ordinary
-            # lemmas. Folding those to lowercase creates bogus Wordle words.
+            # lemmas. Folding those to lowercase creates bogus Spectrle words.
             # Some sources also use capitalization reliably for proper names;
             # those can be rejected with the stricter flag.
             if candidate.isupper() or (
@@ -127,7 +127,7 @@ def main() -> None:
     if args.limit is not None:
         words = words[: args.limit]
     header = (
-        f"# {args.language} Wordle words imported from OMW/WordNet.\n"
+        f"# {args.language} Spectrle words imported from OMW/WordNet.\n"
         "# NO ACCENTS: diacritics and Latin ligatures become lowercase ASCII.\n"
         + (
             f"# Ranked with wordfreq 3.1.1 for {args.frequency_language}.\n"

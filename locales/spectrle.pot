@@ -1,12 +1,12 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the ZX Spectrum Wordle package.
+# This file is distributed under the same license as the ZX Spectrum Spectrle package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: ZX Spectrum Wordle 1.0\n"
+"Project-Id-Version: ZX Spectrum Spectrle 1.0\n"
 "Report-Msgid-Bugs-To: mpasternak\n"
 "POT-Creation-Date: 2026-08-07 23:31+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -19,12 +19,12 @@ msgstr ""
 
 #: locales/messages.def:8
 msgctxt "title_48"
-msgid "WORDLE EN 48K"
+msgid "SPECTRLE EN 48K"
 msgstr ""
 
 #: locales/messages.def:9
 msgctxt "title_128"
-msgid "WORDLE EN 128K"
+msgid "SPECTRLE EN 128K"
 msgstr ""
 
 #: locales/messages.def:10

@@ -1,4 +1,4 @@
-# pt Wordle words imported from OMW/WordNet.
+# pt Spectrle words imported from OMW/WordNet.
 # NO ACCENTS: diacritics and Latin ligatures become lowercase ASCII.
 # Ranked with wordfreq 3.1.1 for pt.
 # ALL-CAPS acronyms were rejected before ASCII folding.

@@ -9,7 +9,7 @@
 #define LICENSE_LINE(text) text "\n"
 
 static const char license_page_1[] =
-    LICENSE_LINE("WORDLE - BSD LICENSE")
+    LICENSE_LINE("SPECTRLE - BSD LICENSE")
     LICENSE_LINE("")
     LICENSE_LINE("ORIGINAL BSD HANGMAN")
     LICENSE_LINE("Copyright (c) 1983, 1993")
