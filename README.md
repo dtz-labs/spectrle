@@ -142,14 +142,3 @@ stay in fixed RAM. The builder selects all five-letter entries for 48K and all
 enabled five- and six-letter entries for 128K. Every build proves that the 48K
 image and all five 16K banks fit. See [data/README.md](data/README.md) for
 provenance and separate word-data licences.
-
-## Source licence and provenance
-
-This project was converted from the BSD Hangman ZX Spectrum codebase. The
-original BSD Hangman was written by Ken Arnold and carries the 1983/1993
-Regents of the University of California BSD licence. The ZX Spectrum source is
-copyright 2026 Michal Pasternak under the same BSD 3-Clause terms; see
-[LICENSE](LICENSE). These terms are not displayed inside the game. Word data
-has separate terms documented under `data/`;
-distributed TAP files containing that data should be accompanied by the
-applicable notices.
