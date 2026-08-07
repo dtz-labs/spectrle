@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Play Wordle for ZX Spectrum 48K and 128K in eight languages, directly in JSSpeccy.">
+  <title>Wordle for ZX Spectrum</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&amp;family=Plus+Jakarta+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="nav-slab">
+    <a class="slab-mark" href="#top" aria-label="Wordle for ZX Spectrum home">
+      <span class="mark-tile" aria-hidden="true">W</span>
+      <span>WORDLE/ZXS</span>
+    </a>
+    <nav class="slab-nav" aria-label="Project navigation">
+      <a href="#play">Play</a>
+      <a href="https://github.com/dtz-labs/wordle">Source</a>
+      <a href="https://github.com/dtz-labs/wordle/releases">Releases</a>
+    </nav>
+    <a class="nav-action" href="#play">Load tape</a>
+  </header>
+
+  <main id="top">
+    <section class="hero split-shell" aria-labelledby="page-title">
+      <div class="hero-copy">
+        <p class="machine-line">ZX SPECTRUM · 48K / 128K</p>
+        <h1 id="page-title">Pick a tape.<br>Find the word.</h1>
+        <p class="hero-lede">Eight language editions, real Spectrum binaries, and one browser-ready emulator. The 48K game stays strictly 5×5; 128K adds 6×6.</p>
+        <a class="text-link" href="#play">Choose an edition <span aria-hidden="true">↓</span></a>
+      </div>
+
+      <div class="board-wrap" aria-label="A sample five by five Wordle board">
+        <div class="sample-board" role="img" aria-label="A five by five board spelling TAPES and WORDS in coloured tiles">
+          <span class="tile tile--correct">T</span><span class="tile tile--present">A</span><span class="tile tile--absent">P</span><span class="tile tile--correct">E</span><span class="tile tile--absent">S</span>
+          <span class="tile tile--absent">W</span><span class="tile tile--correct">O</span><span class="tile tile--present">R</span><span class="tile tile--correct">D</span><span class="tile tile--present">S</span>
+          <span class="tile"></span><span class="tile"></span><span class="tile"></span><span class="tile"></span><span class="tile"></span>
+          <span class="tile"></span><span class="tile"></span><span class="tile"></span><span class="tile"></span><span class="tile"></span>
+          <span class="tile"></span><span class="tile"></span><span class="tile"></span><span class="tile"></span><span class="tile"></span>
+        </div>
+        <p class="board-caption"><span>5 letters</span><span>5 guesses</span><span>1 tape</span></p>
+      </div>
+    </section>
+
+    <section class="player-band" id="play" aria-labelledby="play-title">
+      <div class="player-shell split-shell">
+        <div class="controls-panel">
+          <div class="section-head">
+            <h2 id="play-title">Choose the edition</h2>
+            <p>Language changes the dictionary and interface. Machine changes the available board sizes.</p>
+          </div>
+
+          <form id="edition-form" method="get" action="#play" novalidate>
+            <div class="field">
+              <label for="language">Game language</label>
+              <select id="language" name="lang">
+                <option value="pl">Polski</option>
+                <option value="en">English</option>
+                <option value="es">Espanol</option>
+                <option value="ca">Catala</option>
+                <option value="lt">Lietuviu</option>
+                <option value="sk">Slovencina</option>
+                <option value="cs">Cestina</option>
+                <option value="pt">Portugues</option>
+              </select>
+              <p class="field-help">ASCII editions: enter words with A–Z.</p>
+            </div>
+
+            <fieldset>
+              <legend>Spectrum model</legend>
+              <div class="machine-options">
+                <label class="machine-choice">
+                  <input type="radio" name="machine" value="48">
+                  <span><strong>48K</strong><small>5×5 only</small></span>
+                </label>
+                <label class="machine-choice">
+                  <input type="radio" name="machine" value="128">
+                  <span><strong>128K</strong><small>5×5 and 6×6</small></span>
+                </label>
+              </div>
+            </fieldset>
+
+            <button class="load-button" type="submit">
+              <span class="button-label">Load tape</span>
+              <span class="button-progress" aria-hidden="true"></span>
+            </button>
+          </form>
+
+          <dl class="edition-readout">
+            <div><dt>TAPE</dt><dd id="tape-name">—</dd></div>
+            <div><dt>RELEASE</dt><dd id="release-name">checking…</dd></div>
+            <div><dt>EMULATOR</dt><dd id="emulator-status" role="status" aria-live="polite">waiting…</dd></div>
+          </dl>
+
+          <div class="action-links">
+            <a id="download-tape" href="taps/wordle-pl-128.tap" download>Download TAP</a>
+            <a id="release-link" href="https://github.com/dtz-labs/wordle/releases">View release</a>
+          </div>
+        </div>
+
+        <div class="emulator-column">
+          <p class="emulator-label">JSSPECCY 3 · LOCAL SESSION</p>
+          <div class="emulator-stage">
+            <div id="jsspeccy" aria-label="ZX Spectrum emulator"></div>
+          </div>
+          <p class="sound-note">Press Play in the emulator once to enable beeper audio. The selected TAP autoloads.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="facts split-shell" aria-labelledby="facts-title">
+      <div class="facts-title">
+        <h2 id="facts-title">Two machines, one rule set</h2>
+        <p>Every accepted guess comes from that edition’s dictionary. Duplicate letters are scored in two passes, exactly where Wordle needs them.</p>
+      </div>
+      <dl class="facts-list">
+        <div><dt>48K</dt><dd>5-letter words and 5 guesses. No larger-board menu.</dd></div>
+        <div><dt>128K</dt><dd>Choose 5×5 or 6×6. The larger compressed dictionary lives in RAM banks.</dd></div>
+        <div><dt>8</dt><dd>Polish, English, Spanish, Catalan, Lithuanian, Slovak, Czech, and Portuguese.</dd></div>
+      </dl>
+    </section>
+  </main>
+
+  <footer class="foot-marquee" aria-label="Project footer">
+    <div class="foot-marquee__track" aria-hidden="true">
+      <span>WORDLE · ZX SPECTRUM · 48K · 128K · 5×5 · 6×6 ·</span>
+      <span>WORDLE · ZX SPECTRUM · 48K · 128K · 5×5 · 6×6 ·</span>
+    </div>
+    <p class="visually-hidden">Wordle for ZX Spectrum. Source and TAP releases are available on GitHub.</p>
+  </footer>
+
+  <noscript>This page needs JavaScript to start JSSpeccy. Every TAP is also available from GitHub Releases.</noscript>
+  <script src="jsspeccy/jsspeccy.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "date": "2026-08-07",
+  "framework": "vanilla HTML, CSS, and JavaScript",
+  "font_stack": null,
+  "palette": null,
+  "motion": "motion-cut",
+  "spacing": null,
+  "preserve": [],
+  "introduce": [
+    "design tokens",
+    "Split Studio macrostructure",
+    "responsive interaction states",
+    "reduced-motion support"
+  ]
+}

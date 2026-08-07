@@ -1,0 +1,250 @@
+{
+  "schema_version": 1,
+  "scope": "Verified downloadable Latin-script lexical inputs; WordNet preferred",
+  "notes": [
+    "European languages are the release priority.",
+    "Indonesian and Malay are retained as additional Latin-script OMW inputs.",
+    "Greek, Cyrillic, Arabic, Hebrew, CJK and Thai inputs are intentionally excluded.",
+    "Every source keeps its original licence and citation requirements."
+  ],
+  "languages": [
+    {
+      "code": "sq",
+      "name": "Albanian",
+      "wordnet": "Albanet",
+      "package": "omw-sq:1.4",
+      "region": "Europe"
+    },
+    {
+      "code": "ca",
+      "name": "Catalan",
+      "wordnet": "Multilingual Central Repository",
+      "package": "omw-ca:1.4",
+      "region": "Europe",
+      "build": "enabled-wordnet"
+    },
+    {
+      "code": "cs",
+      "name": "Czech",
+      "wordnet": "wordfreq fallback; Czech WordNet redistribution is restricted",
+      "package": "wordfreq:3.1.1",
+      "region": "Europe",
+      "build": "enabled-frequency-fallback"
+    },
+    {
+      "code": "da",
+      "name": "Danish",
+      "wordnet": "DanNet",
+      "package": "omw-da:1.4",
+      "region": "Europe"
+    },
+    {
+      "code": "de",
+      "name": "German",
+      "wordnet": "Open German WordNet (OdeNet)",
+      "package": "odenet:1.4",
+      "region": "Europe"
+    },
+    {
+      "code": "en",
+      "name": "English",
+      "wordnet": "Open English WordNet",
+      "package": "oewn:2025",
+      "region": "Europe",
+      "build": "enabled-wordnet"
+    },
+    {
+      "code": "eu",
+      "name": "Basque",
+      "wordnet": "Multilingual Central Repository",
+      "package": "omw-eu:1.4",
+      "region": "Europe"
+    },
+    {
+      "code": "fi",
+      "name": "Finnish",
+      "wordnet": "FinnWordNet",
+      "package": "omw-fi:1.4",
+      "region": "Europe"
+    },
+    {
+      "code": "fr",
+      "name": "French",
+      "wordnet": "WOLF",
+      "package": "omw-fr:1.4",
+      "region": "Europe"
+    },
+    {
+      "code": "gl",
+      "name": "Galician",
+      "wordnet": "Multilingual Central Repository",
+      "package": "omw-gl:1.4",
+      "region": "Europe"
+    },
+    {
+      "code": "hr",
+      "name": "Croatian",
+      "wordnet": "Croatian Wordnet",
+      "package": "omw-hr:1.4",
+      "region": "Europe"
+    },
+    {
+      "code": "is",
+      "name": "Icelandic",
+      "wordnet": "IceWordNet",
+      "package": "omw-is:1.4",
+      "region": "Europe"
+    },
+    {
+      "code": "it",
+      "name": "Italian",
+      "wordnet": "MultiWordNet",
+      "package": "omw-it:1.4",
+      "region": "Europe"
+    },
+    {
+      "code": "lt",
+      "name": "Lithuanian",
+      "wordnet": "Lithuanian WordNet",
+      "package": "omw-lt:1.4",
+      "region": "Europe",
+      "build": "enabled-wordnet"
+    },
+    {
+      "code": "nl",
+      "name": "Dutch",
+      "wordnet": "Open Dutch WordNet",
+      "package": "omw-nl:1.4",
+      "region": "Europe"
+    },
+    {
+      "code": "nb",
+      "name": "Norwegian Bokmal",
+      "wordnet": "Norwegian Wordnet",
+      "package": "omw-nb:1.4",
+      "region": "Europe"
+    },
+    {
+      "code": "nn",
+      "name": "Norwegian Nynorsk",
+      "wordnet": "Norwegian Wordnet",
+      "package": "omw-nn:1.4",
+      "region": "Europe"
+    },
+    {
+      "code": "pl",
+      "name": "Polish",
+      "wordnet": "plWordNet",
+      "package": "omw-pl:1.4",
+      "region": "Europe",
+      "build": "enabled-curated-sjp"
+    },
+    {
+      "code": "pt",
+      "name": "Portuguese",
+      "wordnet": "OpenWN-PT",
+      "package": "omw-pt:1.4",
+      "region": "Europe",
+      "build": "enabled-wordnet"
+    },
+    {
+      "code": "ro",
+      "name": "Romanian",
+      "wordnet": "Romanian Wordnet",
+      "package": "omw-ro:1.4",
+      "region": "Europe"
+    },
+    {
+      "code": "sk",
+      "name": "Slovak",
+      "wordnet": "Slovak WordNet",
+      "package": "omw-sk:1.4",
+      "region": "Europe",
+      "build": "enabled-wordnet"
+    },
+    {
+      "code": "sl",
+      "name": "Slovenian",
+      "wordnet": "sloWNet",
+      "package": "omw-sl:1.4",
+      "region": "Europe"
+    },
+    {
+      "code": "es",
+      "name": "Spanish",
+      "wordnet": "Multilingual Central Repository",
+      "package": "omw-es:1.4",
+      "region": "Europe",
+      "build": "enabled-wordnet"
+    },
+    {
+      "code": "sv",
+      "name": "Swedish",
+      "wordnet": "WordNet-SALDO",
+      "package": "omw-sv:1.4",
+      "region": "Europe"
+    },
+    {
+      "code": "id",
+      "name": "Indonesian",
+      "wordnet": "Wordnet Bahasa",
+      "package": "omw-id:1.4",
+      "region": "Other"
+    },
+    {
+      "code": "zsm",
+      "name": "Malay",
+      "wordnet": "Wordnet Bahasa",
+      "package": "omw-zsm:1.4",
+      "region": "Other"
+    }
+  ],
+  "review_languages": [
+    {
+      "code": "et",
+      "name": "Estonian",
+      "wordnet": "Estonian Wordnet"
+    },
+    {
+      "code": "ga",
+      "name": "Irish",
+      "wordnet": "Lionra Seimeantach na Gaeilge"
+    },
+    {
+      "code": "hu",
+      "name": "Hungarian",
+      "wordnet": "Hungarian WordNet"
+    },
+    {
+      "code": "la",
+      "name": "Latin",
+      "wordnet": "MultiWordNet Latin"
+    },
+    {
+      "code": "lv",
+      "name": "Latvian",
+      "wordnet": "Latvian WordNet"
+    },
+    {
+      "code": "mt",
+      "name": "Maltese",
+      "wordnet": "Maltese WordNet"
+    },
+    {
+      "code": "tr",
+      "name": "Turkish",
+      "wordnet": "BalkaNet Turkish"
+    },
+    {
+      "code": "cy",
+      "name": "Welsh",
+      "wordnet": "WordNet Cymraeg"
+    }
+  ],
+  "sources": [
+    "https://github.com/omwn/omw-data/blob/main/index.toml",
+    "https://github.com/goodmami/wn#available-wordnets",
+    "https://en-word.net/downloads",
+    "https://globalwordnet.github.io/resources/wordnets-in-the-world"
+  ]
+}

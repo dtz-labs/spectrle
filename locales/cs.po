@@ -1,0 +1,137 @@
+# Translation catalog for ZX Spectrum Wordle.
+msgid ""
+msgstr ""
+"Project-Id-Version: zx-spectrum-wordle 1.0\n"
+"Report-Msgid-Bugs-To: mpasternak\n"
+"POT-Creation-Date: 2026-08-07 23:31+0200\n"
+"PO-Revision-Date: 2026-08-07 00:00+0200\n"
+"Last-Translator: Michal Pasternak\n"
+"Language-Team: cs\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: locales/messages.def:8
+msgctxt "title_48"
+msgid "WORDLE EN 48K"
+msgstr "WORDLE CS 48K"
+
+#: locales/messages.def:9
+msgctxt "title_128"
+msgid "WORDLE EN 128K"
+msgstr "WORDLE CS 128K"
+
+#: locales/messages.def:10
+msgctxt "ascii_notice"
+msgid "NO ACCENTS - A-Z ONLY"
+msgstr "BEZ DIAKRITIKY - JEN A-Z"
+
+#: locales/messages.def:11
+msgctxt "dictionary_prefix"
+msgid "WORDS: "
+msgstr "SLOVNIK: "
+
+#: locales/messages.def:12
+msgctxt "dictionary_suffix"
+msgid " WORDS"
+msgstr " SLOV"
+
+#: locales/messages.def:13
+msgctxt "mode_5_line"
+msgid "1  5 LETTERS / 5 TRIES"
+msgstr "1  5 PISMEN / 5 POKUSU"
+
+#: locales/messages.def:14
+msgctxt "mode_6_line"
+msgid "2  6 LETTERS / 6 TRIES"
+msgstr "2  6 PISMEN / 6 POKUSU"
+
+#: locales/messages.def:15
+msgctxt "choose_5"
+msgid "PRESS 1 FOR 5X5"
+msgstr "STISKNI 1 - MRIZKA 5X5"
+
+#: locales/messages.def:16
+msgctxt "choose_5_6"
+msgid "CHOOSE GRID 1-2"
+msgstr "VYBER MRIZKU 1-2"
+
+#: locales/messages.def:17
+msgctxt "keyboard"
+msgid "A-Z ENTER=CHECK CS+0=DELETE"
+msgstr "A-Z ENTER=ZKUS CS+0=SMAZ"
+
+#: locales/messages.def:18
+msgctxt "try_label"
+msgid "TRY "
+msgstr "POKUS "
+
+#: locales/messages.def:19
+msgctxt "wins_label"
+msgid "WINS "
+msgstr "VYHRY "
+
+#: locales/messages.def:20
+msgctxt "type_word"
+msgid "TYPE A WORD"
+msgstr "ZADEJ SLOVO"
+
+#: locales/messages.def:21
+msgctxt "not_enough"
+msgid "NOT ENOUGH LETTERS"
+msgstr "NEDOSTATEK PISMEN"
+
+#: locales/messages.def:22
+msgctxt "not_in_dictionary"
+msgid "NOT IN DICTIONARY"
+msgstr "NENI VE SLOVNIKU"
+
+#: locales/messages.def:23
+msgctxt "next_guess"
+msgid "TRY ANOTHER WORD"
+msgstr "ZKUS JINE SLOVO"
+
+#: locales/messages.def:24
+msgctxt "correct"
+msgid "RIGHT PLACE"
+msgstr "SPRAVNE MISTO"
+
+#: locales/messages.def:25
+msgctxt "present"
+msgid "WRONG PLACE"
+msgstr "JINE MISTO"
+
+#: locales/messages.def:26
+msgctxt "absent"
+msgid "NOT IN WORD"
+msgstr "NENI VE SLOVE"
+
+#: locales/messages.def:27
+msgctxt "won"
+msgid "WELL DONE! SOLVED."
+msgstr "VYBORNE! UHODNUTO."
+
+#: locales/messages.def:28
+msgctxt "word_prefix"
+msgid "WORD: "
+msgstr "SLOVO: "
+
+#: locales/messages.def:29
+msgctxt "next_prompt"
+msgid "ENTER-NEXT M-MENU Q-QUIT"
+msgstr "ENTER-DALSI M-MENU Q-KONEC"
+
+#: locales/messages.def:30
+msgctxt "thanks"
+msgid "THANKS FOR PLAYING"
+msgstr "DEKUJI ZA HRU"
+
+#: locales/messages.def:31
+msgctxt "any_key"
+msgid "PRESS ANY KEY"
+msgstr "STISKNI LIBOVOLNOU KLAVESU"
+
+#~ msgctxt "mode_7_line"
+#~ msgid "3  7 LETTERS / 7 TRIES"
+#~ msgstr "3  7 PISMEN / 7 POKUSU"

@@ -1,0 +1,31 @@
+/*
+ * Canonical UI messages for gettext extraction.
+ *
+ * Regenerate the inherited locales/hangman.pot with `make pot`.  The first
+ * argument is
+ * msgctxt and also becomes the TXT_* macro name in generated/locale.h.
+ */
+LOCALE_TEXT("title_48", "WORDLE EN 48K")
+LOCALE_TEXT("title_128", "WORDLE EN 128K")
+LOCALE_TEXT("ascii_notice", "NO ACCENTS - A-Z ONLY")
+LOCALE_TEXT("dictionary_prefix", "WORDS: ")
+LOCALE_TEXT("dictionary_suffix", " WORDS")
+LOCALE_TEXT("mode_5_line", "1  5 LETTERS / 5 TRIES")
+LOCALE_TEXT("mode_6_line", "2  6 LETTERS / 6 TRIES")
+LOCALE_TEXT("choose_5", "PRESS 1 FOR 5X5")
+LOCALE_TEXT("choose_5_6", "CHOOSE GRID 1-2")
+LOCALE_TEXT("keyboard", "A-Z ENTER=CHECK CS+0=DELETE")
+LOCALE_TEXT("try_label", "TRY ")
+LOCALE_TEXT("wins_label", "WINS ")
+LOCALE_TEXT("type_word", "TYPE A WORD")
+LOCALE_TEXT("not_enough", "NOT ENOUGH LETTERS")
+LOCALE_TEXT("not_in_dictionary", "NOT IN DICTIONARY")
+LOCALE_TEXT("next_guess", "TRY ANOTHER WORD")
+LOCALE_TEXT("correct", "RIGHT PLACE")
+LOCALE_TEXT("present", "WRONG PLACE")
+LOCALE_TEXT("absent", "NOT IN WORD")
+LOCALE_TEXT("won", "WELL DONE! SOLVED.")
+LOCALE_TEXT("word_prefix", "WORD: ")
+LOCALE_TEXT("next_prompt", "ENTER-NEXT M-MENU Q-QUIT")
+LOCALE_TEXT("thanks", "THANKS FOR PLAYING")
+LOCALE_TEXT("any_key", "PRESS ANY KEY")

@@ -1,0 +1,64 @@
+name: release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  BUILD_LANGUAGES: pl en es ca lt sk cs pt
+
+jobs:
+  release:
+    name: build and publish all TAPs
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Install gettext
+        run: sudo apt-get update && sudo apt-get install -y gettext
+
+      - name: Generate dictionaries and locales
+        run: make prepare
+
+      - name: Compile every language in official z88dk
+        run: >-
+          docker run --rm -v "$PWD":/src -w /src z88dk/z88dk:latest
+          make tapes
+
+      - name: Validate tests, dictionaries, and layouts
+        run: make test layout check-translations
+
+      - name: Prepare release assets
+        run: |
+          set -euo pipefail
+          mapfile -t tap_files < <(find build -type f -name 'wordle-*.tap' | sort)
+          test "${#tap_files[@]}" -eq 16
+          sha256sum "${tap_files[@]}" | sed 's#build/[^/]*/##' > SHA256SUMS
+          test "$(wc -l < SHA256SUMS)" -eq 16
+
+      - name: Publish TAP files in GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mapfile -t tap_files < <(find build -type f -name 'wordle-*.tap' | sort)
+          if gh release view "${GITHUB_REF_NAME}" --repo "${GITHUB_REPOSITORY}" >/dev/null 2>&1; then
+            gh release upload "${GITHUB_REF_NAME}" \
+              "${tap_files[@]}" SHA256SUMS \
+              --repo "${GITHUB_REPOSITORY}" --clobber
+          else
+            gh release create "${GITHUB_REF_NAME}" \
+              "${tap_files[@]}" SHA256SUMS \
+              --repo "${GITHUB_REPOSITORY}" \
+              --title "Wordle for ZX Spectrum ${GITHUB_REF_NAME}" \
+              --notes "Eight language editions for ZX Spectrum 48K and 128K. Every TAP is attached directly to this release. The 48K editions are 5x5; the 128K editions also include 6x6." \
+              --verify-tag
+          fi

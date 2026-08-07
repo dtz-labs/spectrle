@@ -1,0 +1,71 @@
+/* Hallmark · pre-emit critique: P5 H5 E4 S5 R4 V5
+ * genre: playful · tone: technical retro · anchor: Wordle green
+ * macrostructure: Split Studio · theme: Hum · enrichment: Tier A CSS board · nav: N7 · footer: Ft8
+ * axes: light / rounded-sans / multi-accent · context: inferred · v1.1.0
+ */
+:root {
+  --color-paper: oklch(97% 0.012 95);
+  --color-paper-2: oklch(94% 0.016 95);
+  --color-paper-3: oklch(91% 0.020 95);
+  --color-surface: oklch(99% 0.008 95);
+  --color-ink: oklch(20% 0.012 250);
+  --color-ink-2: oklch(34% 0.014 250);
+  --color-muted: oklch(43% 0.014 250);
+  --color-rule: oklch(72% 0.018 95);
+  --color-rule-strong: oklch(32% 0.014 250);
+
+  --color-accent: oklch(72% 0.155 145);
+  --color-accent-deep: oklch(42% 0.125 145);
+  --color-accent-ink: oklch(18% 0.018 145);
+  --color-present: oklch(83% 0.165 95);
+  --color-present-deep: oklch(61% 0.135 85);
+  --color-absent: oklch(69% 0.100 235);
+  --color-absent-deep: oklch(48% 0.105 235);
+  --color-coral: oklch(68% 0.20 25);
+  --color-error: oklch(51% 0.19 25);
+  --color-focus: oklch(27% 0.13 265);
+  --color-focus-on-dark: oklch(90% 0.15 95);
+
+  --font-display: "Plus Jakarta Sans", "Avenir Next", ui-rounded, sans-serif;
+  --font-body: "Plus Jakarta Sans", "Avenir Next", ui-rounded, sans-serif;
+  --font-label: "JetBrains Mono", "SFMono-Regular", ui-monospace, monospace;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-md: 1.25rem;
+  --text-lg: 1.5625rem;
+  --text-xl: 1.953rem;
+  --text-2xl: 2.441rem;
+  --text-display: clamp(2.65rem, 7vw, 5.25rem);
+
+  --space-3xs: 0.125rem;
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2.5rem;
+  --space-2xl: 4rem;
+  --space-3xl: 6rem;
+  --space-4xl: 9rem;
+
+  --rule-hair: 1px;
+  --rule-heavy: 2px;
+  --radius-input: 0.75rem;
+  --radius-card: 1.25rem;
+  --radius-pill: 999px;
+  --page-gutter: clamp(1rem, 4vw, 3.5rem);
+  --page-max: 86rem;
+
+  --dur-micro: 120ms;
+  --dur-short: 220ms;
+  --dur-long: 420ms;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  --z-base: 1;
+  --z-raised: 10;
+  --z-sticky: 200;
+}

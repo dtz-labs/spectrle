@@ -1,0 +1,95 @@
+name: pages
+
+on:
+  workflow_run:
+    workflows:
+      - release
+    types:
+      - completed
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+env:
+  JSSPECCY_RELEASE: v3.2.0-timex.2
+
+jobs:
+  deploy:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      github.event.workflow_run.conclusion == 'success'
+    name: deploy release player
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
+
+      - name: Download the latest released TAPs
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p _site/taps
+          gh release download --repo "${GITHUB_REPOSITORY}" \
+            --pattern 'wordle-*.tap' --dir _site/taps
+          gh release view --repo "${GITHUB_REPOSITORY}" \
+            --json tagName,publishedAt,url > _site/release.json
+          test "$(find _site/taps -type f -name 'wordle-*.tap' | wc -l)" -eq 16
+
+      - name: Download JSSpeccy 3
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p _emulator
+          gh release download "${JSSPECCY_RELEASE}" \
+            --repo dtz-labs/jsspeccy3 \
+            --pattern jsspeccy-dist.zip \
+            --output _emulator/jsspeccy-dist.zip
+          unzip -q _emulator/jsspeccy-dist.zip -d _emulator/dist
+
+      - name: Assemble the site
+        run: |
+          set -euo pipefail
+          cp -R site/. _site/
+          cp tokens.css _site/tokens.css
+          cp -R _emulator/dist/jsspeccy _site/jsspeccy
+          mkdir -p _site/emulator-license
+          cp _emulator/dist/COPYING _site/emulator-license/GPL-3.0.txt
+
+      - name: Check deployed files
+        run: |
+          set -euo pipefail
+          test -f _site/index.html
+          test -f _site/styles.css
+          test -f _site/app.js
+          test -f _site/tokens.css
+          test -f _site/release.json
+          test -f _site/jsspeccy/jsspeccy.js
+          test -f _site/jsspeccy/jsspeccy-core.wasm
+          test -f _site/jsspeccy/roms/48.rom
+          test -f _site/jsspeccy/roms/128-0.rom
+          test -f _site/jsspeccy/roms/128-1.rom
+          test -f _site/jsspeccy/tapeloaders/tape_48.szx
+          test -f _site/jsspeccy/tapeloaders/tape_128.szx
+          test -f _site/emulator-license/GPL-3.0.txt
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
