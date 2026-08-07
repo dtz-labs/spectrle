@@ -24,7 +24,27 @@ EXCLUDED_FRAGMENTS = (
 )
 
 
-def load_headwords(path: Path, length: int) -> set[str]:
+def load_playable(path: Path, lengths: tuple[int, ...]) -> set[str]:
+    """Read the forms SJP.PL allows in word games.
+
+    The orthographic dictionary behind `odm.txt` also carries entries flagged
+    "niedopuszczalne w grach" -- abbreviations, brand names, and words like
+    `codak` that no player would guess. SJP.PL publishes the playable subset
+    separately, so intersecting with it drops exactly that class.
+    """
+    playable: set[str] = set()
+    with zipfile.ZipFile(path) as archive, archive.open("slowa.txt") as stream:
+        for raw in stream:
+            word = raw.decode("utf-8").strip()
+            if not word:
+                continue
+            folded = normalise(word)
+            if len(folded) in lengths:
+                playable.add(folded)
+    return playable
+
+
+def load_headwords(path: Path, length: int, playable: set[str]) -> set[str]:
     headwords: set[str] = set()
     with zipfile.ZipFile(path) as archive, archive.open("odm.txt") as stream:
         for raw in stream:
@@ -42,6 +62,7 @@ def load_headwords(path: Path, length: int) -> set[str]:
                     len(folded) == length
                     and folded.isascii()
                     and folded.isalpha()
+                    and folded in playable
                     and any(vowel in folded for vowel in "aeiouy")
                     and not any(
                         fragment in folded for fragment in EXCLUDED_FRAGMENTS
@@ -71,6 +92,7 @@ def load_priority(path: Path | None, allowed: set[str]) -> list[str]:
 
 def select(
     sjp_zip: Path,
+    games_zip: Path,
     *,
     length: int = 5,
     limit: int = 0,
@@ -78,6 +100,7 @@ def select(
 ) -> list[str]:
     return select_lengths(
         sjp_zip,
+        games_zip,
         lengths=(length,),
         limit=limit,
         priority_path=priority_path,
@@ -86,14 +109,16 @@ def select(
 
 def select_lengths(
     sjp_zip: Path,
+    games_zip: Path,
     *,
     lengths: tuple[int, ...],
     limit: int = 0,
     priority_path: Path | None = None,
 ) -> list[str]:
+    playable = load_playable(games_zip, lengths)
     headwords: set[str] = set()
     for length in lengths:
-        headwords.update(load_headwords(sjp_zip, length))
+        headwords.update(load_headwords(sjp_zip, length, playable))
     priority = load_priority(priority_path, headwords)
     priority_set = set(priority)
     ordered = priority + sorted(headwords - priority_set)
@@ -108,6 +133,12 @@ def select_lengths(
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--sjp-zip", type=Path, required=True)
+    parser.add_argument(
+        "--games-zip",
+        type=Path,
+        required=True,
+        help="SJP.PL word-game list (sjp-*.zip); entries outside it are dropped",
+    )
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--length", type=int, action="append", dest="lengths")
     parser.add_argument("--limit", type=int, default=0)
@@ -117,6 +148,7 @@ def main() -> None:
     lengths = tuple(args.lengths or (5,))
     words = select_lengths(
         args.sjp_zip,
+        args.games_zip,
         lengths=lengths,
         limit=args.limit,
         priority_path=args.priority_words,
@@ -124,6 +156,7 @@ def main() -> None:
     length_label = "/".join(str(length) for length in lengths)
     header = (
         f"# Polish Spectrle {length_label}-letter headwords from SJP.PL.\n"
+        "# Only headwords SJP.PL admits in word games are kept.\n"
         "# Diacritics are intentionally folded to ASCII for the ZX Spectrum game.\n"
         "# Sources and licences: see data/README.md.\n"
     )

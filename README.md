@@ -13,7 +13,7 @@ from [GitHub Releases](https://github.com/dtz-labs/spectrle/releases).
 
 | code | edition | 48K: 5 letters | 128K: 5-6 letters |
 | --- | --- | ---: | ---: |
-| `pl` | Polish | 6,718 | 18,023 |
+| `pl` | Polish | 6,374 | 17,092 |
 | `en` | English | 2,249 | 5,176 |
 | `es` | Spanish | 1,612 | 3,939 |
 | `ca` | Catalan | 2,076 | 4,844 |
@@ -22,10 +22,11 @@ from [GitHub Releases](https://github.com/dtz-labs/spectrle/releases).
 | `cs` | Czech | 3,139 | 6,893 |
 | `pt` | Portuguese | 2,102 | 4,751 |
 
-The Polish edition is generated from the complete five- and six-letter
-headword selection in SJP.PL: 6,718 five-letter and 11,305 six-letter entries.
-The common entries `banal`, `larwa`, and `sitwa` are covered by regression
-tests and are present in the 48K dictionary.
+The Polish edition is generated from every five- and six-letter SJP.PL headword
+that SJP.PL also admits in word games: 6,374 five-letter and 10,718 six-letter
+entries. Headwords flagged `niedopuszczalne w grach` — abbreviations, brand
+names and the like — are excluded. The common entries `banal`, `larwa`, and
+`sitwa` are covered by regression tests and are present in the 48K dictionary.
 
 Every edition explicitly says that it has no accents and accepts only `A-Z`.
 Diacritics and Latin ligatures are folded while dictionaries are imported, so

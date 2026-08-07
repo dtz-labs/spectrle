@@ -60,6 +60,7 @@ class LocaleAndNormalizationTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temp:
             temp_path = Path(temp)
             sjp_zip = temp_path / "sjp.zip"
+            games_zip = temp_path / "games.zip"
             priority = temp_path / "priority.txt"
             with zipfile.ZipFile(sjp_zip, "w") as archive:
                 archive.writestr(
@@ -70,19 +71,45 @@ class LocaleAndNormalizationTests(unittest.TestCase):
                     "siedem, siedmiu\n"
                     "Warszawa, Warszawy\n",
                 )
+            with zipfile.ZipFile(games_zip, "w") as archive:
+                archive.writestr(
+                    "slowa.txt",
+                    "banal\nbanalna\nlarwa\nlarwy\nsitwa\nsitwy\nsiedem\n",
+                )
             priority.write_text("sitwa\nnieobecne\n", encoding="utf-8")
 
             self.assertEqual(
-                select_words.select(sjp_zip),
+                select_words.select(sjp_zip, games_zip),
                 ["banal", "larwa", "sitwa"],
             )
             self.assertEqual(
-                select_words.select(sjp_zip, priority_path=priority),
+                select_words.select(sjp_zip, games_zip, priority_path=priority),
                 ["sitwa", "banal", "larwa"],
             )
             self.assertEqual(
-                select_words.select_lengths(sjp_zip, lengths=(5, 6)),
+                select_words.select_lengths(sjp_zip, games_zip, lengths=(5, 6)),
                 ["banal", "larwa", "siedem", "sitwa"],
+            )
+
+    def test_polish_selector_drops_headwords_barred_from_games(self) -> None:
+        """SJP.PL lists `codak` as a headword but bars it from word games."""
+        with tempfile.TemporaryDirectory() as temp:
+            temp_path = Path(temp)
+            sjp_zip = temp_path / "sjp.zip"
+            games_zip = temp_path / "games.zip"
+            with zipfile.ZipFile(sjp_zip, "w") as archive:
+                archive.writestr(
+                    "odm.txt",
+                    "codak, codaka\n"
+                    "afaik, afaik\n"
+                    "larwa, larwy\n",
+                )
+            with zipfile.ZipFile(games_zip, "w") as archive:
+                archive.writestr("slowa.txt", "larwa\nlarwy\n")
+
+            self.assertEqual(
+                select_words.select(sjp_zip, games_zip),
+                ["larwa"],
             )
 
     def test_wordnet_tab_import_deduplicates_after_unaccent(self) -> None:

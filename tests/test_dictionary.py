@@ -82,19 +82,19 @@ class DictionaryTests(unittest.TestCase):
                 asm48=temp_path / "generated" / "dictionary_blob.asm",
                 asm128=temp_path / "generated" / "dictionary_banks.asm",
             )
-            self.assertEqual(manifest["zx48"]["words"], 6_718)
-            self.assertEqual(manifest["zx128"]["words"], 18_023)
+            self.assertEqual(manifest["zx48"]["words"], 6_374)
+            self.assertEqual(manifest["zx128"]["words"], 17_092)
             self.assertLess(manifest["zx48"]["bytes"], 22_000)
             self.assertEqual(len(manifest["zx128"]["banks"]), 5)
             self.assertEqual(manifest["zx48"]["allowed_lengths"], [5])
             self.assertEqual(manifest["zx128"]["allowed_lengths"], [5, 6])
-            self.assertEqual(manifest["zx48"]["lengths"]["5"], 6_718)
-            self.assertEqual(manifest["zx128"]["lengths"]["5"], 6_718)
-            self.assertEqual(manifest["zx128"]["lengths"]["6"], 11_305)
+            self.assertEqual(manifest["zx48"]["lengths"]["5"], 6_374)
+            self.assertEqual(manifest["zx128"]["lengths"]["5"], 6_374)
+            self.assertEqual(manifest["zx128"]["lengths"]["6"], 10_718)
             self.assertEqual(manifest["zx128"]["lengths"]["7"], 0)
             self.assertEqual(
                 sum(bank["words"] for bank in manifest["zx128"]["banks"]),
-                18_023,
+                17_092,
             )
             self.assertTrue(
                 all(bank["bytes"] <= 16_384 for bank in manifest["zx128"]["banks"])
@@ -107,12 +107,15 @@ class DictionaryTests(unittest.TestCase):
             ]
             for ordinary_word in ("banal", "larwa", "sitwa"):
                 self.assertIn(ordinary_word, words48)
+            # SJP.PL lists these as headwords but bars them from word games.
+            for barred_word in ("codak", "afaik", "ampex"):
+                self.assertNotIn(barred_word, words48)
             self.assertEqual({len(word) for word in words48}, {5})
 
             loaded = json.loads((temp_path / "dictionary-manifest.json").read_text())
             self.assertEqual(loaded["format"], "FC5/16")
             self.assertEqual(loaded["language"], "pl")
-            self.assertEqual(loaded["source_count"], 18_023)
+            self.assertEqual(loaded["source_count"], 17_092)
             self.assertTrue(loaded["zx48"]["fits"])
             self.assertTrue(loaded["zx128"]["fits"])
             self.assertIn(
@@ -128,7 +131,7 @@ class DictionaryTests(unittest.TestCase):
                 max_length_128=5,
                 max_48_bytes=22_000,
             )
-            self.assertEqual(five_only["zx128"]["words"], 6_718)
+            self.assertEqual(five_only["zx128"]["words"], 6_374)
             self.assertEqual(five_only["zx128"]["allowed_lengths"], [5])
 
     def test_rejects_impossible_language_configuration(self) -> None:
@@ -139,7 +142,7 @@ class DictionaryTests(unittest.TestCase):
                     ROOT / "data" / "words-pl-ascii.txt",
                     temp_path,
                     temp_path / "dictionary_meta.h",
-                    words_48_count=6_719,
+                    words_48_count=6_375,
                     max_48_bytes=22_000,
                 )
 

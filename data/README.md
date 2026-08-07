@@ -7,7 +7,7 @@ into five independently compressed banks.
 
 | code | committed | 48K | 128K | lexical source |
 | --- | ---: | ---: | ---: | --- |
-| `pl` | 18,023 | 6,718 | 18,023 | SJP.PL `odmiany` |
+| `pl` | 17,092 | 6,374 | 17,092 | SJP.PL `odmiany` + `growy` |
 | `en` | 20,000 | 2,249 | 5,176 | Open English WordNet 2025 |
 | `es` | 20,000 | 1,612 | 3,939 | MCR 3.0 via OMW 1.4 |
 | `ca` | 20,000 | 2,076 | 4,844 | MCR 3.0 via OMW 1.4 |
@@ -18,17 +18,22 @@ into five independently compressed banks.
 
 ## Polish
 
-`words-pl-ascii.txt` was generated on 2026-08-07 from:
+`words-pl-ascii.txt` was generated on 2026-08-08 from:
 
 - SJP.PL `odmiany`, release `sjp-odm-20260803.zip`, as the authority for
   accepted Polish headwords. This project selects its Apache License 2.0
   option: <https://sjp.pl/sl/odmiany/>.
+- SJP.PL `słownik do gier`, release `sjp-20260803.zip`, as the authority for
+  which of those headwords may be played. That list is offered under GPL 2 or
+  Creative Commons Attribution 4.0 International only, so this project selects
+  CC BY 4.0 for it: <https://sjp.pl/sl/growy/>.
 
 The selection contains every normalized five- and six-letter lowercase
 headword that passes the documented character filter; no external frequency
-list decides whether a Polish word exists. The generator requires at least one
-vowel and removes a small explicit set of vulgar stems. The SJP.PL data is used
-under its Apache License 2.0 option.
+list decides whether a Polish word exists. Headwords that SJP.PL marks
+`niedopuszczalne w grach` are dropped, which removes abbreviations, brand
+names, and similar entries no player would guess. The generator requires at
+least one vowel and removes a small explicit set of vulgar stems.
 
 ## WordNet editions
 

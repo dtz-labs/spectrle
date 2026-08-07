@@ -1,4 +1,5 @@
 # Polish Spectrle 5/6-letter headwords from SJP.PL.
+# Only headwords SJP.PL admits in word games are kept.
 # Diacritics are intentionally folded to ASCII for the ZX Spectrum game.
 # Sources and licences: see data/README.md.
 abaja
@@ -7,17 +8,14 @@ abakan
 abakus
 abazja
 abazur
-abbus
 abcug
 abdul
 abelia
 abelit
-abioza
 abisal
 ablizm
 abobra
 abort
-abozzo
 abrazo
 abrys
 absces
@@ -80,8 +78,6 @@ aecki
 aeral
 aerob
 afagia
-afaik
-afair
 afatyk
 afazja
 afekt
@@ -127,7 +123,6 @@ agona
 agonia
 agora
 agrafa
-agrege
 agrest
 aguja
 aguti
@@ -148,7 +143,6 @@ ajoen
 ajowan
 ajran
 ajusci
-ajvar
 ajwar
 akacja
 akanie
@@ -165,7 +159,6 @@ akcje
 akcyza
 akebia
 akedia
-aketon
 akita
 aklina
 akolut
@@ -200,8 +193,6 @@ albedo
 albert
 albit
 alboby
-alboli
-albos
 alboz
 album
 alczyk
@@ -241,9 +232,7 @@ alkil
 alkile
 alkin
 alkiny
-alkon
 alkowa
-alkus
 allel
 allen
 allil
@@ -251,7 +240,6 @@ allure
 almand
 almeja
 almik
-alnico
 alniko
 aloes
 alofan
@@ -268,7 +256,6 @@ alpaks
 alperm
 alpidy
 altana
-altmed
 altowy
 aludel
 aludur
@@ -278,8 +265,6 @@ alund
 alunit
 aluny
 aluzja
-alvaro
-alvit
 alwar
 alycza
 amant
@@ -287,7 +272,6 @@ amarel
 amatol
 amator
 ambaje
-amber
 ambit
 ambona
 ambra
@@ -298,7 +282,6 @@ ameryk
 amezyt
 amfid
 amfora
-amhara
 amiant
 amida
 amidek
@@ -320,7 +303,6 @@ amorka
 amory
 ampeks
 amper
-ampex
 ampla
 ampula
 amrita
@@ -375,10 +357,8 @@ aniol
 anion
 anizol
 ankap
-anker
 ankier
 ankra
-ankus
 annal
 annata
 annato
@@ -408,7 +388,6 @@ aonski
 aorta
 aoryst
 aowiec
-apacz
 apage
 apanaz
 aparat
@@ -425,7 +404,6 @@ apetyt
 apiac
 apiol
 apium
-apkowy
 aplauz
 aplet
 aplika
@@ -458,10 +436,8 @@ arara
 arbek
 arbuz
 arcato
-archar
 arche
 archi
-arcybp
 arden
 ardeny
 arditi
@@ -502,7 +478,6 @@ armata
 armia
 armila
 arnika
-arnosc
 arnota
 aromat
 aronia
@@ -511,7 +486,6 @@ arras
 arrau
 arsan
 arsen
-arsja
 arsyna
 arsyny
 arszyn
@@ -520,7 +494,6 @@ artyzm
 artzin
 aryjka
 aryle
-arylus
 arymaz
 asambl
 asami
@@ -535,13 +508,10 @@ asceza
 ascka
 ascon
 asdic
-aseks
 asert
 asesor
 asfalt
 askar
-asker
-askon
 asowy
 aspan
 aspekt
@@ -618,17 +588,11 @@ autor
 autowy
 autyk
 autyzm
-avanti
-avatar
-avena
-avoiry
 awans
 awanse
-awanti
 awaria
 awatar
 awena
-aweroa
 awers
 awista
 awiwaz
@@ -665,11 +629,9 @@ babcia
 babel
 babiec
 babina
-babit
 babizm
 babka
 babki
-babok
 babol
 babon
 babrac
@@ -683,7 +645,6 @@ bachor
 baciar
 bacik
 backup
-bacnac
 bacowa
 baczek
 baczny
@@ -693,7 +654,6 @@ badacz
 badan
 badana
 badany
-badge
 badian
 badis
 badyl
@@ -709,7 +669,6 @@ bagno
 bahama
 bainit
 baisse
-baixi
 baiza
 bajac
 bajan
@@ -729,11 +688,9 @@ bajoro
 bajowy
 bajpas
 bajtel
-bajura
 bajzel
 bakac
 bakan
-bakar
 bakch
 bakcyl
 baken
@@ -765,7 +722,6 @@ balut
 balwan
 balyk
 bamber
-bambik
 bambo
 bambus
 banal
@@ -813,13 +769,11 @@ bardo
 bardon
 bardzo
 barek
-bareta
 barez
 baria
 barion
 barium
 barka
-barkan
 barkas
 barki
 barlog
@@ -827,7 +781,6 @@ barman
 barok
 baron
 barowy
-barre
 barrel
 barski
 barta
@@ -844,7 +797,6 @@ baryt
 basek
 basen
 baset
-basio
 basior
 baska
 baskak
@@ -868,7 +820,6 @@ batut
 batuta
 batyst
 bauer
-bauns
 bawar
 bawet
 bawic
@@ -886,20 +837,15 @@ bazuna
 bazyna
 bazyt
 beagle
-beania
 beanie
 beanus
-beauty
 bebech
 beben
 beblek
 beblik
 bebnic
-bebok
 bebop
-bebzol
 bebzon
-beciak
 becik
 becki
 becnac
@@ -914,12 +860,7 @@ befka
 begam
 begard
 begina
-beisa
-bejbe
-bejbi
-bejbus
 bejca
-bejel
 bejowy
 bejra
 bejski
@@ -932,7 +873,6 @@ bekon
 bekowy
 beksa
 belfer
-belfie
 belga
 belka
 belkot
@@ -945,16 +885,12 @@ belty
 bemar
 bemit
 bemol
-benami
 bencz
 bendir
 bengal
-benis
 bental
-bento
 bentos
 benzen
-benzo
 benzol
 benzyl
 beocki
@@ -1002,7 +938,6 @@ bialek
 bialka
 bialko
 bialy
-bialys
 bianco
 bibka
 biblia
@@ -1021,9 +956,7 @@ bidaka
 bidet
 bidlo
 bidny
-bidok
 bidon
-bidota
 bidul
 bidula
 biecki
@@ -1080,9 +1013,7 @@ bimber
 binda
 bindaz
 bindra
-bindz
 bingo
-bioart
 biocyd
 biodro
 biofag
@@ -1106,9 +1037,7 @@ biper
 biplan
 birema
 biret
-biribi
 birkut
-birman
 biseks
 bisior
 biskup
@@ -1133,9 +1062,7 @@ biurko
 biuro
 biurwa
 biust
-biuwar
 biwak
-biwuar
 bizant
 bizjet
 bizmit
@@ -1230,7 +1157,6 @@ bocce
 bochen
 bocian
 bociek
-bocik
 bocja
 bocors
 boczek
@@ -1275,10 +1201,8 @@ bokami
 bokeh
 bokiem
 bokken
-bokmal
 bokser
 boksyt
-bokwa
 bolacy
 bolak
 bolas
@@ -1300,7 +1224,6 @@ bombka
 bomby
 bomowy
 bonang
-bondar
 bondur
 bonet
 bongo
@@ -1351,11 +1274,8 @@ botek
 botki
 botnet
 botoks
-botowy
-boucle
 boules
 boulle
-bounce
 bowiem
 boyizm
 bozec
@@ -1364,7 +1284,6 @@ bozia
 boznik
 bozon
 bozyc
-bpstwo
 brach
 brachu
 bracie
@@ -1396,29 +1315,22 @@ bratwa
 brawko
 brawo
 brazal
-brazer
 brazyt
 break
 brecha
 breja
 brejk
 brelok
-bremza
 bresza
 breton
-breve
-brevis
 brewe
 brewka
-brexit
 briard
 bridge
 bridz
 brief
 briks
 brioso
-brise
-brixit
 brizol
 brnac
 broch
@@ -1489,13 +1401,11 @@ brzmik
 brzost
 brzoza
 brzuch
-brzus
 brzyc
 bubek
 bubel
 buchac
 buchta
-buciak
 buciar
 bucik
 bucina
@@ -1534,7 +1444,6 @@ bujrep
 bukal
 bukan
 bukat
-buker
 bukiet
 bukiew
 buking
@@ -1566,16 +1475,12 @@ bulwa
 bulwar
 bulwka
 bumaga
-bumer
 buncik
 bunda
 bundz
 bungee
 bungie
-bunia
-bunio
 bunker
-buqsha
 burak
 buraki
 buran
@@ -1629,11 +1534,9 @@ butik
 butla
 butleg
 butler
-butno
 butny
 butoh
 buton
-butowy
 button
 butut
 butyl
@@ -1641,7 +1544,6 @@ butyn
 buzer
 buzia
 buziak
-buziol
 buzka
 buzuki
 byczek
@@ -1659,7 +1561,6 @@ byleby
 byleco
 bylica
 bylina
-bylze
 bypass
 bysio
 bysior
@@ -1678,7 +1579,6 @@ bzowka
 bzowy
 bzykac
 bzykot
-cabaca
 cabas
 cabasa
 cabrio
@@ -1703,7 +1603,6 @@ cakiel
 cakle
 cakra
 calata
-calcei
 calec
 calka
 calosc
@@ -1752,15 +1651,11 @@ catgut
 catni
 cauda
 causa
-cavaco
-caval
-cavata
 cazki
 ceber
 cebula
 cecha
 ceckac
-cedek
 cedent
 cedrat
 cedula
@@ -1793,7 +1688,6 @@ celowy
 celta
 cement
 cenar
-cencik
 cenic
 cennik
 cenny
@@ -1846,7 +1740,6 @@ cezowy
 cezura
 chabas
 chabaz
-chabek
 chaber
 chaco
 chadar
@@ -2001,7 +1894,6 @@ chusta
 chusyt
 chutba
 chutbe
-chutny
 chutor
 chwala
 chwast
@@ -2025,7 +1917,6 @@ chylus
 chymus
 chypre
 chyra
-chytac
 chytra
 chytry
 chyza
@@ -2078,7 +1969,6 @@ ciemno
 ciemny
 cienic
 cienie
-cienik
 cienki
 ciepac
 cieplo
@@ -2091,7 +1981,6 @@ ciesla
 ciesn
 ciety
 ciezar
-ciezec
 ciezej
 ciezki
 ciezyc
@@ -2100,7 +1989,6 @@ cioch
 ciocia
 ciolek
 ciompi
-ciorac
 ciosa
 ciosac
 ciosak
@@ -2131,7 +2019,6 @@ ciucma
 ciukac
 ciulac
 ciuma
-ciumac
 ciupa
 ciupac
 ciupas
@@ -2151,11 +2038,9 @@ ckliwy
 cknic
 cladus
 clerk
-cliche
 clinch
 cliwia
 clown
-clowy
 cmawy
 cmokac
 cmoker
@@ -2168,8 +2053,6 @@ cobler
 coccus
 cochac
 cochin
-cocido
-codak
 coden
 coesyt
 cofac
@@ -2182,9 +2065,7 @@ coitus
 cokac
 cokol
 cokor
-collab
 collie
-colog
 colon
 colowy
 comber
@@ -2192,14 +2073,12 @@ combi
 combo
 comes
 comics
-common
 comodo
 comte
 condo
 confer
 config
 conga
-const
 contra
 cookie
 coraz
@@ -2210,31 +2089,18 @@ corko
 corner
 corral
 corso
-corten
 cortex
-corula
 corus
 coryza
-cosec
 cosik
-cosmy
-cotele
 coton
 count
 county
-coupe
-cover
-covid
 cowboy
-cozes
-cozez
-cozido
-cozze
 cpacz
 cpnac
 cpunka
 crack
-crash
 crawl
 credit
 credo
@@ -2247,7 +2113,6 @@ crocsy
 cross
 crown
 cruise
-crush
 crusta
 cucha
 cuchna
@@ -2266,7 +2131,6 @@ cukier
 cukrol
 cukry
 cumbia
-cumka
 cumowy
 cupal
 cupnac
@@ -2275,7 +2139,6 @@ curia
 curie
 curler
 curry
-curvy
 cwaja
 cwalem
 cwany
@@ -2368,7 +2231,6 @@ cywil
 cywun
 czaban
 czaber
-czabr
 czacha
 czacza
 czador
@@ -2468,7 +2330,6 @@ czopik
 czorci
 czort
 cztery
-czuang
 czubak
 czubek
 czubic
@@ -2509,7 +2370,6 @@ czysty
 czytac
 czytal
 czyzby
-czyzes
 czyzyk
 dabek
 daboja
@@ -2531,7 +2391,6 @@ dajka
 dajmio
 dajmon
 dajna
-dakini
 dakka
 dakron
 daktyl
@@ -2564,7 +2423,6 @@ danser
 daoizm
 darcie
 darda
-darek
 darmo
 darter
 daruj
@@ -2573,7 +2431,6 @@ darzyc
 dasac
 dasein
 dashi
-dasik
 dastan
 daszek
 daszyc
@@ -2588,7 +2445,6 @@ dawka
 dawny
 dazyc
 dbaly
-dbase
 dealer
 debaj
 debata
@@ -2646,9 +2502,6 @@ delft
 delia
 delikt
 delta
-delulu
-demko
-demode
 demon
 demos
 demot
@@ -2662,17 +2515,13 @@ denko
 dennik
 denny
 depech
-depees
 depesz
 depnac
 deport
 depot
-depra
 deptac
 deptak
 derby
-derda
-derdac
 deren
 deresz
 derik
@@ -2680,7 +2529,6 @@ derka
 derkac
 derma
 derrik
-derus
 deruta
 desant
 desen
@@ -2712,7 +2560,6 @@ dezel
 dezeta
 dharma
 dhoti
-dhvani
 diabaz
 diabel
 diable
@@ -2723,7 +2570,6 @@ diafon
 diakon
 dialag
 dialer
-dialit
 dialog
 diamat
 diamid
@@ -2731,7 +2577,6 @@ diapir
 diasek
 dickit
 dictum
-didot
 didzej
 dieny
 diera
@@ -2776,17 +2621,13 @@ dirty
 disco
 disis
 disko
-ditlen
 ditto
 diugon
 diula
 diuna
 diuron
-divisi
-divus
 diwali
 dizajn
-dizel
 dizeza
 djembe
 djent
@@ -2796,7 +2637,6 @@ dlawny
 dlubac
 dlubak
 dlubek
-dlugas
 dlugi
 dlutak
 dlutko
@@ -2840,7 +2680,6 @@ dogger
 dogiac
 doglad
 doglos
-dogma
 dogmat
 dognac
 dognic
@@ -2879,10 +2718,8 @@ dolew
 dolezc
 dolina
 dolly
-dolma
 dolman
 dolmen
-dolnik
 dolny
 dolot
 dolowy
@@ -2899,7 +2736,6 @@ domis
 domont
 domowy
 domra
-domus
 domyc
 domyk
 domysl
@@ -2917,14 +2753,12 @@ doorac
 doors
 dopal
 dopasc
-doper
 dopiac
 dopic
 dopiec
 doping
 dopis
 doplyw
-dopoic
 dopoki
 dopoty
 doppio
@@ -2958,7 +2792,6 @@ dosyt
 doszly
 doszyc
 dotad
-dotaku
 dotcom
 dotlec
 dotlic
@@ -2969,11 +2802,9 @@ double
 doula
 dowaga
 dowcip
-dowiac
 dowlec
 dowod
 dowoz
-doxing
 doyen
 dozac
 doznac
@@ -3015,7 +2846,6 @@ dread
 drebel
 drech
 drecz
-dredek
 dredy
 drenaz
 drenik
@@ -3032,7 +2862,6 @@ drift
 drill
 drink
 drive
-driver
 drobic
 drobka
 drobne
@@ -3045,11 +2874,9 @@ drojet
 dromon
 dromos
 drona
-dronik
 dront
 dronty
 dropi
-dropic
 dropik
 drops
 dropsy
@@ -3074,7 +2901,6 @@ drumla
 druty
 druza
 druzba
-druzga
 druzka
 druzny
 drwal
@@ -3111,7 +2937,6 @@ duchem
 duchn
 duchna
 duchy
-duczka
 dudarz
 dudek
 dudka
@@ -3131,7 +2956,6 @@ dukla
 duknac
 duktor
 dulcyt
-dulia
 dulic
 dulka
 dumac
@@ -3139,7 +2963,6 @@ dumka
 dummy
 dumny
 dumper
-dumski
 dunder
 dunit
 dunka
@@ -3153,13 +2976,11 @@ dupek
 dupina
 dupka
 dupla
-duplex
 dupnac
 dupnik
 dupny
 dupol
 dupsko
-durak
 dural
 duran
 duren
@@ -3204,7 +3025,6 @@ dwusuw
 dwuton
 dybac
 dybel
-dybki
 dyblik
 dybuk
 dycha
@@ -3256,7 +3076,6 @@ dyrek
 dyrka
 dyska
 dysko
-dyskwa
 dysten
 dysza
 dyszak
@@ -3301,7 +3120,6 @@ dzieki
 dzielo
 dzien
 dzier
-dziewa
 dzieza
 dzigit
 dzihad
@@ -3314,7 +3132,6 @@ dzins
 dzinsy
 dziob
 dzioby
-dziopa
 dziryt
 dziura
 dziwa
@@ -3324,7 +3141,6 @@ dziwic
 dziwlo
 dziwny
 dziwo
-dziwok
 dziwy
 dzizja
 dzoint
@@ -3348,8 +3164,6 @@ ebola
 ebonik
 ebonit
 ebook
-eburyn
-ecard
 echal
 echin
 echmea
@@ -3360,7 +3174,6 @@ editio
 edycja
 edykt
 edykul
-edypus
 edytor
 eemski
 efebia
@@ -3377,7 +3190,6 @@ efuzja
 efuzor
 efyra
 egeria
-eggnog
 egida
 egiryn
 egoizm
@@ -3392,7 +3204,6 @@ egzyna
 egzyt
 eidos
 eisis
-ejtisy
 ekhem
 ekipa
 ekiwok
@@ -3412,7 +3223,6 @@ eksces
 eksmaz
 ekson
 ekspat
-ekspic
 ekstra
 ektaza
 ekwans
@@ -3461,7 +3271,6 @@ emirat
 emisja
 emiter
 emitor
-emkaes
 emocja
 emocje
 emoji
@@ -3475,11 +3284,9 @@ empora
 emski
 emskie
 emszer
-emule
 enacja
 encja
 endek
-endel
 endon
 enduro
 endyt
@@ -3487,7 +3294,6 @@ enema
 engine
 engram
 enigma
-enofil
 enoki
 enole
 enolog
@@ -3495,8 +3301,6 @@ enosis
 entaza
 enter
 entier
-entree
-envoi
 enzym
 eocen
 eolit
@@ -3527,7 +3331,6 @@ epoka
 epolet
 eponim
 epuzer
-equale
 eranos
 eratem
 eratyk
@@ -3561,7 +3364,6 @@ esker
 eskont
 eskudo
 esman
-esowac
 esowka
 esowy
 espada
@@ -3577,7 +3379,6 @@ estyma
 etacik
 etalaz
 etalon
-etamaz
 etanal
 etanol
 etefon
@@ -3589,37 +3390,22 @@ etnos
 etola
 etolog
 etrog
-etulia
 etwesz
 etyka
 etylen
 etymon
-euker
 euklaz
 eukryt
 euler
 eunuch
-eurak
-euras
 eureka
 europ
 europa
 eustyl
 eutrof
-event
 ewazja
 ewodia
-exodos
-exodus
-expat
-expic
-expose
-expres
-extasy
-extazy
-extra
 eyrir
-fablet
 fabula
 facet
 facies
@@ -3631,7 +3417,6 @@ fading
 faena
 faeton
 fafel
-fafer
 fafry
 fafula
 fagas
@@ -3676,33 +3461,26 @@ falset
 falsz
 famula
 fanart
-fancik
-fandla
 fandom
 fandub
 fanfik
 fanga
 fango
 fanka
-fankul
 fanon
 fantom
 fanza
 fanzin
 farad
 faraon
-fararz
 farba
 farbka
 farcic
 farma
 farmer
 farny
-farosz
-farro
 farsa
 farsi
-farski
 farsz
 fartem
 farys
@@ -3710,7 +3488,6 @@ fasada
 fasces
 faseta
 fasiag
-fasja
 faska
 fasmid
 fasola
@@ -3724,7 +3501,6 @@ fatyga
 fatyzm
 fauna
 fauni
-favela
 fawela
 fawor
 fawory
@@ -3742,7 +3518,6 @@ fedora
 feeder
 feeria
 fejhoa
-fejsik
 felem
 feler
 felga
@@ -3865,7 +3640,6 @@ firma
 firman
 firnis
 fiscus
-fishka
 fisis
 fiskus
 fisza
@@ -3876,8 +3650,6 @@ fityna
 fiukac
 fiume
 fiutek
-fixing
-fixum
 fizis
 fizol
 fizoly
@@ -3890,7 +3662,6 @@ flader
 fladra
 fladry
 flaga
-flair
 flaki
 flakon
 flama
@@ -3911,7 +3682,6 @@ flawon
 flecik
 flegma
 fleja
-flejm
 flerow
 flesz
 flesza
@@ -3940,12 +3710,9 @@ flower
 fluat
 fluid
 fluidy
-fluks
 fluor
-fluxus
 flyers
 fobia
-fochac
 fochy
 focia
 focic
@@ -3977,11 +3744,8 @@ fonit
 fonola
 fonon
 fontaz
-foodie
-foodis
 footy
 forcik
-forex
 forga
 forint
 forluk
@@ -4008,14 +3772,12 @@ fosfor
 fosgen
 fossa
 foszek
-foszyc
 fotel
 fotka
 foton
 fotos
 fotyzm
 foule
-foulee
 fousek
 fowizm
 foyer
@@ -4029,9 +3791,7 @@ frank
 franko
 frans
 frant
-frappe
 frater
-fraud
 fraza
 frazem
 frazes
@@ -4046,7 +3806,6 @@ fresco
 fresk
 fresko
 fretka
-frexit
 freza
 frezer
 frezja
@@ -4084,7 +3843,6 @@ fucha
 fuckup
 fuczec
 fuczki
-fudit
 fugara
 fugas
 fugato
@@ -4106,16 +3864,13 @@ fulmar
 fulwen
 funcik
 funda
-fundum
 fundus
 funkia
 funky
 furan
 furaz
 furda
-furgac
 furgon
-furgot
 furia
 furiat
 furier
@@ -4126,14 +3881,10 @@ furman
 furol
 furor
 furora
-furry
-furrys
 furta
 furtka
-fusing
 fusion
 fustaz
-fusti
 fuszer
 futbol
 futon
@@ -4151,7 +3902,6 @@ fylit
 fyllit
 fyrac
 fyrgol
-fyrkac
 fyrnac
 fyrtel
 gabber
@@ -4160,13 +3910,11 @@ gabka
 gabki
 gable
 gabro
-gabun
 gacek
 gacic
 gacie
 gacki
 gadac
-gadacz
 gadane
 gadek
 gadget
@@ -4183,7 +3931,6 @@ gagman
 gagol
 gagowy
 gahnit
-gaige
 gaijin
 gajal
 gajda
@@ -4226,12 +3973,9 @@ gamma
 gamon
 gamont
 gamowy
-gamrat
-gamula
 ganasz
 gandza
 ganek
-gangus
 ganiac
 ganic
 ganja
@@ -4263,7 +4007,6 @@ garsc
 garson
 garuga
 garum
-garus
 gasic
 gasie
 gasien
@@ -4337,11 +4080,9 @@ gejski
 gejson
 gejsza
 gejtaw
-gejuch
 gejzer
 gekon
 gekony
-gelee
 gemajn
 gemma
 gemowy
@@ -4367,7 +4108,6 @@ geolog
 geonim
 geotyp
 gepard
-gerent
 gereza
 german
 geront
@@ -4402,8 +4142,6 @@ gibon
 giboni
 gibony
 gibski
-gicht
-giclee
 giczal
 giczka
 giczol
@@ -4419,17 +4157,14 @@ gieroj
 gietki
 giety
 giezlo
-gifes
 gigant
 giglac
 gigolo
-gigowy
 gigue
 gilak
 gilda
 gildia
 gilgac
-gilia
 gilosz
 gilowy
 gilty
@@ -4470,8 +4205,6 @@ glans
 glany
 glapa
 glask
-glatwa
-glazek
 glazik
 gleba
 glebia
@@ -4485,7 +4218,6 @@ glewia
 glewik
 glikol
 glikon
-glima
 glina
 glinik
 glinka
@@ -4498,7 +4230,6 @@ globus
 glodek
 glodna
 glodny
-glogg
 glokac
 glonek
 gloria
@@ -4595,10 +4326,8 @@ goliat
 golic
 golka
 golnac
-goloc
 golota
 golusi
-gomini
 gomoku
 gomola
 gomon
@@ -4687,7 +4416,6 @@ granda
 grani
 granik
 granit
-granka
 grant
 grapa
 grappa
@@ -4697,9 +4425,6 @@ gratis
 gratka
 gratki
 graty
-grave
-gravel
-gravis
 grawer
 grazel
 grazyc
@@ -4715,13 +4440,10 @@ grepel
 grepla
 greplo
 greps
-grewia
-grexit
 greza
 grezy
 grill
 grime
-grind
 gringo
 griot
 grizli
@@ -4738,8 +4460,6 @@ groggy
 grojer
 gromic
 gromki
-grond
-grondy
 gronik
 gronko
 grono
@@ -4774,9 +4494,7 @@ grupet
 grupka
 grusza
 gruzel
-gruzik
 gruzy
-gryfel
 gryfi
 gryfon
 gryka
@@ -4807,7 +4525,6 @@ grzyb
 grzybi
 grzywa
 guajak
-guanit
 guano
 guari
 guawa
@@ -4830,7 +4547,6 @@ gulden
 gulgot
 gulka
 gumbad
-gumbaz
 gumbo
 gumiak
 gumis
@@ -4883,7 +4599,6 @@ gzowy
 gzyms
 habas
 habit
-haboob
 hacel
 hacham
 hacker
@@ -4896,15 +4611,12 @@ hadeik
 hadena
 hades
 hadis
-hadith
 hadki
-hadra
 hadron
 hadzar
 hadzdz
 hadzi
 hafcik
-haffir
 hafis
 hafiz
 haftka
@@ -4913,18 +4625,15 @@ haggis
 haida
 haikai
 haiku
-hajasi
 hajda
 hajdac
 hajduk
-hajer
 hajtac
 hajze
 hakama
 haker
 haking
 hakowy
-halaj
 halal
 halala
 halas
@@ -4938,8 +4647,6 @@ halerz
 halfa
 halit
 halka
-halla
-hallik
 hallo
 hallux
 halma
@@ -4964,7 +4671,6 @@ hanbic
 handel
 hanga
 hangar
-hanger
 hangul
 hangyl
 hanif
@@ -4990,16 +4696,13 @@ haredi
 harem
 harfa
 harira
-harkot
 harnas
 harnik
 harowa
 harpia
 harpun
 hartal
-hartny
 hasac
-hasiok
 haski
 haslo
 haspel
@@ -5008,12 +4711,9 @@ hater
 hausa
 hausse
 haust
-hauuu
 hawaj
 hawaje
-hawala
 hawana
-hawerz
 hazard
 hazena
 hazuka
@@ -5030,7 +4730,6 @@ hedzab
 hedzra
 heeler
 hefard
-hegar
 hegira
 heimat
 hejcic
@@ -5051,7 +4750,6 @@ heling
 helion
 helisa
 helium
-helix
 hello
 helmce
 helmik
@@ -5060,7 +4758,6 @@ helmut
 heloci
 helota
 helowy
-helpx
 helski
 helwin
 hemant
@@ -5076,7 +4773,6 @@ heptan
 hepten
 heptyn
 herba
-herbik
 herma
 hernia
 herod
@@ -5153,13 +4849,11 @@ homal
 homar
 homek
 homer
-homing
 homos
 homraj
 honor
 honory
 honwed
-hoodie
 hopak
 hopek
 hopel
@@ -5182,7 +4876,6 @@ hostia
 hotel
 hotfix
 hotoke
-hotowa
 houdan
 house
 howea
@@ -5194,7 +4887,6 @@ huari
 hubara
 hubiak
 hubka
-hubowy
 hucpa
 hucul
 huczec
@@ -5227,7 +4919,6 @@ hummus
 humor
 humory
 humus
-humvee
 hunhuz
 hunski
 hunter
@@ -5261,13 +4952,10 @@ hydra
 hydrat
 hydria
 hydrox
-hygge
 hymen
 hyrny
 hyzop
-iaido
 ibidem
-ibiski
 ibisy
 iblis
 ichni
@@ -5292,7 +4980,6 @@ idole
 idolek
 idolka
 idylla
-idzzez
 ifryt
 iftar
 igelit
@@ -5328,7 +5015,6 @@ iktus
 ilang
 ilasty
 ileus
-ilezes
 illit
 iloraz
 ilosc
@@ -5352,7 +5038,6 @@ imidy
 imina
 imiona
 imisja
-imnsho
 impakt
 impala
 impas
@@ -5382,12 +5067,10 @@ indyk
 indyki
 indykt
 indyt
-inedia
 inert
 infant
 infiks
 infima
-influ
 infula
 ingot
 ingres
@@ -5400,13 +5083,11 @@ inkub
 inlet
 inmet
 innosc
-inoks
 inozyt
 insekt
 insert
 inset
 inski
-insta
 insula
 inszy
 intro
@@ -5414,11 +5095,9 @@ intron
 intruz
 intyna
 inula
-invar
 inwar
 inwit
 iperyt
-iphone
 ipomea
 iporka
 iporyt
@@ -5449,7 +5128,6 @@ itede
 itepe
 iterb
 itrowy
-itunes
 iwasi
 iwina
 izali
@@ -5506,13 +5184,10 @@ jakla
 jakoby
 jakos
 jakosc
-jakowy
 jakoz
 jaksza
 jakuza
 jakze
-jakzes
-jakzez
 jalapa
 jalopa
 jalowy
@@ -5565,7 +5240,6 @@ jazda
 jazdz
 jazgot
 jazowy
-jazwa
 jazyda
 jazzy
 jeans
@@ -5609,16 +5283,12 @@ jerzyk
 jesien
 jesion
 jesli
-jeslis
 jespan
 jestem
-jestli
-jestze
 jetka
 jetki
 jetlag
 jezak
-jezaty
 jezdny
 jezeli
 jezor
@@ -5641,7 +5311,6 @@ jodany
 jodek
 jodki
 jodla
-jodol
 jodowy
 jodyna
 jogger
@@ -5657,20 +5326,16 @@ joker
 jolka
 jolop
 jolopa
-jomon
 jonasz
 jonik
 jonika
 jonit
-jonium
 jonon
 jonowy
 jonski
 jopek
 jordan
-jorty
 joruba
-joruri
 jotek
 jotowy
 jotpeg
@@ -5717,20 +5382,14 @@ juror
 jurta
 jusci
 juszka
-juszyc
 jutowy
 jutro
-jutta
 juzak
-juzby
 juzci
-juzcic
 juzciz
-juzes
 juzing
 juzowy
 juzyna
-juzze
 kabala
 kaban
 kabasa
@@ -5740,7 +5399,6 @@ kabel
 kaberu
 kabina
 kablak
-kabona
 kabrio
 kabuki
 kabul
@@ -5776,8 +5434,6 @@ kadryl
 kaduk
 kadysz
 kadzic
-kafala
-kafana
 kafar
 kafeja
 kafel
@@ -5791,12 +5447,10 @@ kaguan
 kagura
 kahal
 kahina
-kahlua
 kahuna
 kainit
 kairos
 kaiser
-kaizen
 kajac
 kajak
 kajan
@@ -5807,13 +5461,11 @@ kajper
 kajtek
 kajuta
 kajzer
-kakac
 kakadu
 kakao
 kakapo
 kakol
 kaktus
-kakuro
 kalaba
 kalac
 kalait
@@ -5826,7 +5478,6 @@ kaleki
 kalema
 kaleta
 kalfas
-kalga
 kalia
 kalian
 kalif
@@ -5867,9 +5518,7 @@ kamica
 kamien
 kamlot
 kamora
-kampa
 kamper
-kampic
 kampus
 kamrat
 kamski
@@ -5898,7 +5547,6 @@ kanka
 kankan
 kankle
 kanna
-kannel
 kanoe
 kanon
 kanony
@@ -5906,7 +5554,6 @@ kanopa
 kantak
 kantal
 kantar
-kantka
 kanton
 kantor
 kantyk
@@ -6057,7 +5704,6 @@ kaszel
 kaszka
 kaszt
 kaszta
-kataks
 katal
 katana
 katar
@@ -6087,7 +5733,6 @@ kawas
 kawcia
 kawczy
 kawia
-kawing
 kawior
 kawka
 kawon
@@ -6103,7 +5748,6 @@ kazuar
 kazus
 kciuk
 kebab
-kebsik
 kecal
 kecki
 keczap
@@ -6143,7 +5787,6 @@ kerner
 kernit
 kerria
 kesek
-kesik
 kesim
 keson
 keten
@@ -6157,7 +5800,6 @@ ketoza
 ketozy
 kettle
 ketupa
-kevlar
 kewir
 khaki
 khosa
@@ -6178,21 +5820,17 @@ kicia
 kiciu
 kicius
 kickac
-kicksy
 kicnac
 kiczka
 kiczki
 kiczua
 kidac
-kidult
 kidusz
 kieca
 kiecka
-kiedra
 kiedy
 kiedys
 kiedyz
-kiejby
 kielb
 kielba
 kielek
@@ -6201,7 +5839,6 @@ kielon
 kielz
 kielze
 kierat
-kierda
 kierki
 kierz
 kiesa
@@ -6227,9 +5864,6 @@ kimbap
 kimchi
 kimnac
 kimono
-kimzez
-kinac
-kinal
 kinaza
 kineta
 kineza
@@ -6253,7 +5887,6 @@ kirka
 kirke
 kirkut
 kirowy
-kirpan
 kirsch
 kirsz
 kirus
@@ -6265,7 +5898,6 @@ kisiel
 kismet
 kisnac
 kissa
-kistka
 kiszka
 kiszki
 kitara
@@ -6279,8 +5911,6 @@ kitrac
 kitri
 kitta
 kitus
-kiudo
-kiufte
 kiwac
 kiwacz
 kiwak
@@ -6294,7 +5924,6 @@ kiziac
 kiziak
 kizior
 kizucz
-kjufte
 klacz
 klacze
 kladka
@@ -6364,7 +5993,6 @@ klerk
 kleryk
 kleska
 kleszy
-kleta
 kletka
 klient
 klika
@@ -6381,7 +6009,6 @@ klipa
 kliper
 klips
 klipsy
-kliros
 klisza
 klita
 klitka
@@ -6404,7 +6031,6 @@ klonia
 klonic
 klonik
 klonus
-klopec
 klopik
 klopot
 klops
@@ -6435,7 +6061,6 @@ klupa
 klusak
 klusek
 klusem
-klusia
 klusik
 kluska
 kluski
@@ -6498,7 +6123,6 @@ kociak
 kocic
 kocica
 kocie
-kocik
 kocina
 kociol
 kocki
@@ -6510,18 +6134,14 @@ kocza
 koczek
 koczur
 koczyk
-kodak
 kodek
 kodeks
 koder
 kodiak
 kodon
 kodowy
-kodzic
-kodzik
 koendu
 kofia
-kofik
 kofta
 kogga
 kogia
@@ -6608,7 +6228,6 @@ komat
 kombi
 kombo
 kombu
-komcio
 koment
 komers
 komes
@@ -6640,15 +6259,11 @@ konak
 konar
 konary
 koncha
-kondel
 kondo
 kondom
 kondon
 kondor
 konew
-konfa
-konfig
-konfit
 konga
 konger
 kongo
@@ -6686,7 +6301,6 @@ kopica
 kopiec
 kopka
 kopnac
-kopnik
 kopno
 kopny
 kopra
@@ -6730,7 +6344,6 @@ korso
 korton
 korund
 korwet
-korys
 koryto
 korzec
 korzen
@@ -6742,7 +6355,6 @@ kosci
 koser
 kosiak
 kosic
-kosior
 koslak
 kosmea
 kosmek
@@ -6772,15 +6384,12 @@ kotku
 kotlet
 kotnik
 kotny
-koton
-kotuch
 kotula
 koturn
 kotus
 kotwa
 kotwic
 kousa
-kowac
 kowacz
 kowal
 kowar
@@ -6841,14 +6450,11 @@ kraska
 kraski
 krasny
 krasy
-krasz
 krata
 krater
 kratka
 kraton
 kraul
-krava
-kravka
 krawat
 krazek
 krazyc
@@ -6866,12 +6472,10 @@ kregi
 kregle
 kremik
 kreml
-krempa
 krenel
 kreol
 krepa
 krepak
-krepel
 krepla
 krepon
 krepy
@@ -6900,7 +6504,6 @@ krezka
 krezki
 krezol
 krezus
-krindz
 kripo
 kriuk
 kroaza
@@ -6941,11 +6544,9 @@ kruchy
 kruczy
 krukac
 krump
-krunek
 krupa
 krupic
 krupka
-krupny
 krupon
 krupy
 krusta
@@ -6956,10 +6557,8 @@ krwiak
 krycie
 krygi
 krymek
-krymen
 krymka
 krymki
-krynia
 krypa
 krypec
 krypta
@@ -7009,7 +6608,6 @@ kszyk
 ktory
 ktorys
 ktoryz
-ktozze
 kuandu
 kuban
 kubas
@@ -7038,7 +6636,6 @@ kuczka
 kuczma
 kuczny
 kudlac
-kudlic
 kudly
 kudzu
 kuesta
@@ -7059,7 +6656,6 @@ kujnac
 kujny
 kujon
 kujot
-kujpom
 kukac
 kukal
 kukang
@@ -7100,7 +6696,6 @@ kuluar
 kumac
 kumak
 kuman
-kumato
 kumaty
 kumcia
 kumen
@@ -7109,13 +6704,11 @@ kumite
 kumka
 kumkac
 kumpel
-kumpie
 kumpir
 kumys
 kundel
 kundys
 kunial
-kunica
 kunowy
 kunszt
 kunzut
@@ -7124,7 +6717,6 @@ kuoka
 kupal
 kupala
 kupaz
-kupcia
 kupela
 kuper
 kupic
@@ -7158,7 +6750,6 @@ kurhan
 kuria
 kurier
 kurka
-kurla
 kurna
 kurnik
 kurny
@@ -7228,12 +6819,10 @@ kwasek
 kwasic
 kwasja
 kwasny
-kwast
 kwasy
 kwazar
 kweba
 kwefic
-kwefik
 kwekac
 kweres
 kwesta
@@ -7254,17 +6843,14 @@ kwota
 kyanit
 kyfoza
 kyliks
-kyogen
 kyrios
 kyudo
 laari
 labedz
-labek
 label
 laber
 labet
 lablab
-labneh
 laboga
 labret
 labrys
@@ -7313,7 +6899,6 @@ lajcik
 lajdak
 lajdus
 lajka
-lajker
 lajna
 lajno
 lajza
@@ -7350,7 +6935,6 @@ lamer
 lameta
 lamia
 lamina
-lamka
 lamna
 lampa
 lampas
@@ -7399,7 +6983,6 @@ lapsza
 laptop
 large
 largo
-larmo
 larnit
 larum
 larwa
@@ -7412,7 +6995,6 @@ laska
 laskar
 laski
 laskun
-lason
 lasowy
 lassi
 lasso
@@ -7433,7 +7015,6 @@ latka
 latki
 latko
 latos
-latosi
 latowy
 latria
 latry
@@ -7450,13 +7031,11 @@ laurus
 laury
 lauryt
 lautal
-lavabo
 lawabo
 lawasz
 laweta
 lawica
 lawina
-lawiza
 lawka
 lawnik
 lawowy
@@ -7476,7 +7055,6 @@ lazzo
 leader
 lebek
 lebski
-lecha
 leciec
 lecina
 leciny
@@ -7499,9 +7077,7 @@ legia
 legion
 legnac
 legnia
-legowo
 legowy
-legrys
 legun
 legwan
 leiwo
@@ -7525,7 +7101,6 @@ leknac
 lekowy
 leksan
 leksem
-leksja
 leksyk
 lektor
 lekusi
@@ -7563,7 +7138,6 @@ lepeta
 lepic
 lepiec
 lepiej
-lepiez
 lepik
 lepki
 lepnik
@@ -7593,7 +7167,6 @@ letnik
 leucon
 leucyt
 leukon
-level
 lewada
 lewak
 lewant
@@ -7615,7 +7188,6 @@ lezja
 lezka
 leznia
 leznik
-lezuch
 lgarz
 lgnac
 lgocki
@@ -7632,7 +7204,6 @@ libra
 licet
 liceum
 licha
-lichen
 lichia
 licho
 lichwa
@@ -7654,7 +7225,6 @@ ligand
 ligawa
 ligaza
 light
-lignan
 lignit
 ligol
 ligowy
@@ -7686,7 +7256,6 @@ lindan
 lineal
 lineaz
 linek
-liner
 linga
 lingam
 linia
@@ -7716,7 +7285,6 @@ lipoma
 lipowy
 lippia
 lipski
-liquid
 lirka
 lirnik
 lirowy
@@ -7822,7 +7390,6 @@ lokata
 lokaut
 lokiec
 lokum
-lolek
 loligo
 lolita
 lombr
@@ -7872,9 +7439,7 @@ lotos
 lotowy
 lotto
 lotus
-loulou
 lounge
-lowboy
 lowca
 lowczy
 lowic
@@ -7897,7 +7462,6 @@ lubic
 lubien
 lubin
 lubka
-lubok
 lubosc
 lubowy
 lubski
@@ -7937,7 +7501,6 @@ lukowy
 luksus
 lukum
 lulac
-lulaw
 lulek
 lulka
 lumen
@@ -7983,7 +7546,6 @@ lutowy
 lutry
 lutung
 luwers
-luxfer
 luzak
 luzem
 luzik
@@ -7995,7 +7557,6 @@ lwinka
 lwisko
 lycha
 lycra
-lyczec
 lyczek
 lyczko
 lyddit
@@ -8031,7 +7592,6 @@ lzawy
 lzotok
 lzowy
 macac
-macak
 macant
 macao
 maceba
@@ -8116,7 +7676,6 @@ makocz
 makowy
 makro
 makron
-makrot
 maksi
 maktab
 makuba
@@ -8124,7 +7683,6 @@ makuch
 malaga
 malarz
 malcy
-maldr
 malec
 malibu
 malimo
@@ -8151,18 +7709,15 @@ mamic
 maminy
 mamka
 mamlac
-mamlas
 mamlec
 mammea
 mamona
 mamowy
-mamoza
 mamraj
 mamrot
 mamuci
 mamula
 mamun
-mamuna
 mamus
 mamut
 mamze
@@ -8178,7 +7733,6 @@ manez
 manga
 mangan
 mango
-manhua
 manhwa
 mania
 maniak
@@ -8192,17 +7746,12 @@ manka
 manko
 manks
 mankut
-manlet
 manna
 mannan
-mannia
 mannit
-manola
-manque
 mansja
 manski
 manta
-mantel
 manto
 mantra
 mantyk
@@ -8217,15 +7766,11 @@ mapka
 mapnik
 mapowy
 mapper
-maqam
-maquis
 maraka
 maral
 maran
 marans
-maras
 marazm
-marcha
 marek
 marena
 margac
@@ -8283,11 +7828,8 @@ mastyf
 masyw
 maszal
 maszer
-maszli
 maszop
 maszt
-maszze
-matac
 matacz
 matcha
 matema
@@ -8298,7 +7840,6 @@ maties
 matka
 matma
 matnia
-matoga
 matol
 matowy
 matres
@@ -8329,7 +7870,6 @@ maznac
 mazun
 mazur
 mazut
-mbank
 mbira
 mchowy
 mchus
@@ -8354,14 +7894,11 @@ media
 mediae
 medina
 medium
-medoc
 medok
 medrek
 meduza
 medyk
 medyna
-meetup
-mefka
 megaom
 megila
 megom
@@ -8369,7 +7906,6 @@ mehari
 mejoza
 mekka
 meksyk
-melac
 melanz
 melas
 melasa
@@ -8388,7 +7924,6 @@ melony
 melos
 melton
 memeja
-memik
 memla
 memlac
 memowy
@@ -8416,12 +7951,8 @@ mentor
 mentyk
 menuet
 menuki
-merch
-mercz
 merdac
 merga
-merino
-merkia
 merla
 merlan
 merlot
@@ -8441,7 +7972,6 @@ mestwo
 meszek
 meszka
 meszki
-meszne
 meszt
 meszta
 meszty
@@ -8450,7 +7980,6 @@ metan
 metek
 meteo
 meteor
-metier
 metka
 metkal
 metlik
@@ -8463,7 +7992,6 @@ metraz
 metro
 metron
 metrum
-metwa
 metwik
 metyl
 metys
@@ -8474,7 +8002,6 @@ mezny
 mezon
 mezowy
 mezulo
-mezura
 mezus
 mezuza
 mezzo
@@ -8547,7 +8074,6 @@ mikrob
 mikron
 mikrus
 mikry
-mikryt
 miksaz
 mikser
 mikst
@@ -8571,7 +8097,6 @@ milori
 milosc
 milowy
 milszy
-milus
 milusi
 mimbar
 mimik
@@ -8629,7 +8154,6 @@ misia
 misiak
 misiek
 misio
-misiuk
 misja
 misje
 miska
@@ -8648,10 +8172,8 @@ mitra
 mitrat
 mityng
 mityzm
-miurg
 mizar
 mizdra
-mizer
 miziac
 miziak
 mizmar
@@ -8693,10 +8215,8 @@ mnozna
 mnozny
 mnozyc
 mobber
-mobik
 mobil
 mobile
-moblog
 mobula
 mocarz
 mocca
@@ -8713,7 +8233,6 @@ modal
 model
 modem
 modena
-moder
 modern
 modla
 modlic
@@ -8737,7 +8256,6 @@ mohar
 mohel
 moher
 mojito
-mojka
 mojra
 mokait
 mokiet
@@ -8792,7 +8310,6 @@ moraly
 morda
 mordka
 mordo
-mordor
 morela
 morena
 mores
@@ -8825,7 +8342,6 @@ morzyk
 mosci
 moscia
 moscic
-moscik
 mosiek
 moskal
 moskit
@@ -8864,7 +8380,6 @@ mowny
 mozga
 mozna
 moznaz
-moznie
 mozny
 mozol
 mrocki
@@ -8883,7 +8398,6 @@ mrozy
 mrugac
 mruzny
 mruzyc
-mrygac
 mrzec
 mrzeza
 mrzyk
@@ -8938,7 +8452,6 @@ mulowy
 mulsum
 multum
 mumia
-mumin
 munda
 mundur
 mundus
@@ -8961,7 +8474,6 @@ murowy
 mursz
 mursze
 murza
-murzac
 murzyn
 musaka
 musiec
@@ -9024,14 +8536,12 @@ mysia
 mysie
 myslec
 myslny
-mysmy
 mysta
 mysza
 myszak
 myszka
 myszko
 myszor
-myszus
 mytka
 mytnik
 mzawka
@@ -9050,7 +8560,6 @@ naboj
 nabor
 nabrac
 nabyc
-nacek
 nacho
 nachos
 nachur
@@ -9083,13 +8592,11 @@ nadpis
 nadruk
 nadto
 nadton
-nadtos
 nadtyp
 nadzor
 nafta
 naften
 naftol
-naftyl
 nagana
 nagar
 nagari
@@ -9100,7 +8607,6 @@ naglic
 naglos
 nagly
 nagnac
-nagnic
 nagosc
 nagrac
 nagus
@@ -9146,7 +8652,6 @@ namiar
 naming
 namiot
 namlec
-namol
 namowa
 namul
 namuly
@@ -9155,7 +8660,6 @@ namyc
 namysl
 namyw
 nandu
-nanit
 nanizm
 nankin
 nanob
@@ -9202,11 +8706,9 @@ narost
 narow
 naroze
 narta
-nartka
 narty
 narwac
 narwal
-naryc
 narys
 narzad
 narzaz
@@ -9218,7 +8720,6 @@ nashi
 nasiac
 nasiad
 nasiec
-nasiew
 naskok
 naslac
 nasnuc
@@ -9265,7 +8766,6 @@ nawias
 nawic
 nawiew
 nawis
-nawka
 nawlec
 nawloc
 nawoj
@@ -9304,7 +8804,6 @@ nenia
 neodym
 neogen
 neokom
-neolib
 neolit
 neonek
 neonik
@@ -9357,7 +8856,6 @@ niecka
 niecny
 nieco
 niecos
-niedas
 nielad
 nielaz
 niello
@@ -9380,7 +8878,6 @@ niezle
 niezyt
 nigdy
 nigiri
-nigryt
 nihon
 nijak
 nijaki
@@ -9398,10 +8895,8 @@ nilgau
 nilowy
 nimbus
 nimby
-nimes
 nimfa
 nindza
-ninie
 ninja
 niobe
 niobit
@@ -9424,7 +8919,6 @@ niuans
 niuch
 niunia
 niunka
-niusia
 niuton
 nizac
 nizam
@@ -9434,7 +8928,6 @@ nizej
 nizeli
 nizina
 nizli
-niznik
 nizny
 nizowy
 nizszy
@@ -9455,14 +8948,10 @@ nodus
 noemat
 noeza
 nogal
-nogiec
 noise
 nokaut
-nolife
 nolina
-nomad
 nomada
-nomen
 nomos
 nonan
 nonen
@@ -9494,21 +8983,17 @@ nosean
 nosek
 nosema
 nosic
-nosio
 nosiwo
 nosnia
 nosnik
 nosny
 nosowy
 nosze
-noszki
 notabl
 notes
 notis
 notka
 noumen
-novial
-novum
 nowela
 nowik
 nowina
@@ -9528,7 +9013,6 @@ nozyna
 nubuk
 nucic
 nucza
-nudes
 nudny
 nudyzm
 nudzic
@@ -9540,7 +9024,6 @@ nulka
 numen
 numer
 numeri
-nuoxi
 nurag
 nurek
 nurka
@@ -9566,8 +9049,6 @@ nyanja
 nygus
 nylon
 nylony
-nynac
-nynie
 nypel
 nyski
 nyssa
@@ -9577,7 +9058,6 @@ oazowa
 oazowy
 obabic
 obadac
-obadwa
 obalac
 obalic
 obawa
@@ -9598,7 +9078,6 @@ obejsc
 obelga
 oberek
 oberza
-obfito
 obfity
 obgiac
 obiad
@@ -9726,7 +9205,6 @@ ocean
 ocelot
 ocena
 ocenic
-ocenka
 ocenny
 ochlac
 ochlaj
@@ -9741,11 +9219,9 @@ ociek
 ocios
 ocknac
 oclic
-ocmic
 ocpac
 ocpany
 octan
-octavo
 octowy
 ocucac
 ocucic
@@ -9826,7 +9302,6 @@ odmyk
 odnoga
 odnowa
 odnoze
-odorac
 odorek
 odpad
 odpal
@@ -9860,7 +9335,6 @@ odsiew
 odskok
 odsort
 odstac
-odstaj
 odstep
 odsuw
 odsyp
@@ -9911,7 +9385,6 @@ ofukac
 ogacac
 ogacic
 ogadac
-oganka
 ogarek
 ogien
 ogier
@@ -9941,7 +9414,6 @@ ogryzc
 ogrzac
 ogrzy
 ogumic
-ohoho
 ohyda
 ohydny
 oidium
@@ -10021,7 +9493,6 @@ oktyn
 okucie
 okular
 okulec
-okume
 okupic
 okurek
 okutac
@@ -10065,7 +9536,6 @@ oliwka
 oliwny
 olowek
 olowin
-olsnac
 olsnic
 olsowy
 olstra
@@ -10079,7 +9549,6 @@ omalze
 omamic
 omanic
 omasta
-ombre
 omdlec
 omega
 omerta
@@ -10088,7 +9557,6 @@ omieg
 omiek
 omiesc
 omijac
-omika
 ominac
 omkly
 omlet
@@ -10133,7 +9601,6 @@ oolog
 oolong
 ooskop
 ooteka
-ootyp
 opacki
 opadac
 opadly
@@ -10225,7 +9692,6 @@ opytac
 oracja
 oracz
 oralny
-oramic
 oranka
 orant
 oranz
@@ -10253,7 +9719,6 @@ orient
 origan
 orija
 oring
-orion
 orisza
 orkan
 orkisz
@@ -10266,7 +9731,6 @@ orlica
 orlik
 orlog
 orlon
-orlop
 ornat
 orogen
 oromo
@@ -10316,11 +9780,9 @@ osina
 osiol
 osiowe
 osiowy
-osiwic
 oskard
 oskola
 oskoma
-oskor
 oslada
 oslica
 oslik
@@ -10372,14 +9834,12 @@ ostry
 ostryz
 ostrze
 ostuda
-ostwa
 osucha
 osunac
 osutka
 osuwac
 oswoic
 osyfic
-osykac
 osypac
 osypka
 oszast
@@ -10401,7 +9861,6 @@ otosek
 otozby
 otreby
 otret
-otrok
 otruc
 otruty
 otrzec
@@ -10421,12 +9880,10 @@ ouija
 outfit
 outing
 outlet
-outre
 outro
 ouzon
 owacja
 owacje
-owadek
 owady
 owadzi
 owaki
@@ -10446,7 +9903,6 @@ owijac
 owijak
 owijka
 owinac
-owisac
 owista
 owlec
 owoce
@@ -10459,11 +9915,8 @@ owsica
 owsik
 owsiki
 owszem
-owulka
-oxford
 ozalid
 ozanka
-ozarty
 ozdoba
 ozebna
 ozedka
@@ -10485,7 +9938,6 @@ ozrec
 ozuwac
 ozwac
 ozwany
-ozydle
 ozygla
 ozyna
 ozynki
@@ -10497,7 +9949,6 @@ pacato
 pacha
 pachol
 pacht
-pachta
 pacia
 paciac
 packa
@@ -10505,7 +9956,6 @@ packac
 pacnac
 pacta
 pacyfa
-pacyka
 pacyna
 paczek
 paczka
@@ -10549,7 +9999,6 @@ pakajs
 pakarz
 pakcik
 paker
-pakier
 pakiet
 pakiew
 pakla
@@ -10564,7 +10013,6 @@ palacy
 palacz
 palak
 palant
-palarz
 palasz
 palau
 palba
@@ -10576,7 +10024,6 @@ paleta
 palget
 palia
 palic
-palica
 palik
 palio
 palium
@@ -10598,7 +10045,6 @@ palto
 paltot
 paluba
 paluch
-pamela
 pamfil
 pamiec
 pampa
@@ -10636,7 +10082,6 @@ pantum
 pantun
 panty
 panwia
-panzer
 papaja
 papcie
 papcio
@@ -10689,7 +10134,6 @@ parowa
 parowy
 parsek
 parser
-parsk
 parter
 partes
 partia
@@ -10766,7 +10210,6 @@ pawica
 pawice
 pawie
 pawik
-payola
 pazdur
 paziak
 pazik
@@ -10808,7 +10251,6 @@ pegazi
 pegeer
 pejcz
 pejotl
-pejsik
 pejsy
 pejzaz
 pekac
@@ -10842,10 +10284,8 @@ pelzac
 pelzak
 penang
 penaty
-pendul
 pener
 penfil
-pengo
 peniac
 penis
 penne
@@ -10857,7 +10297,6 @@ pensum
 pentan
 penten
 pentra
-pentyl
 pentyn
 peonaz
 peonia
@@ -10919,9 +10358,7 @@ petlak
 petlic
 petrel
 petrol
-pewex
 pewien
-pewka
 pewnik
 pewno
 pewny
@@ -10930,7 +10367,6 @@ phonk
 piach
 piacha
 piachy
-piada
 piaff
 piana
 pianka
@@ -10947,7 +10383,6 @@ piatek
 piatka
 piatro
 piaty
-piazza
 picaro
 picer
 picie
@@ -10979,7 +10414,6 @@ pienka
 pienny
 pieprz
 pieris
-pierny
 pierog
 pieron
 piers
@@ -10990,7 +10424,6 @@ pierze
 piesak
 piesc
 piesek
-piesel
 piesio
 pieski
 piesn
@@ -11026,7 +10459,6 @@ piknik
 pikolo
 pikot
 pikowy
-pikrat
 pikryt
 piksel
 pikus
@@ -11048,12 +10480,10 @@ pilny
 pilon
 pilot
 pilowy
-pilsik
 pilski
 pilsn
 pilum
 piment
-pimpus
 pinang
 pinasa
 pinda
@@ -11070,7 +10500,6 @@ pinski
 pinta
 pinto
 pinus
-pinxit
 pinyin
 piolun
 piona
@@ -11089,7 +10518,6 @@ pipka
 piraja
 piran
 pirat
-pireks
 piren
 pirog
 piroga
@@ -11104,7 +10532,6 @@ pisarz
 pisco
 pisia
 pisior
-pisizm
 piskac
 piski
 piskle
@@ -11121,13 +10548,11 @@ pitbul
 pitch
 piter
 pitia
-pitka
 pitnik
 pitny
 pitol
 pitos
 pitta
-piukac
 piure
 piuska
 piwko
@@ -11179,7 +10604,6 @@ plankt
 plano
 plant
 planty
-plaque
 plasac
 plaser
 plask
@@ -11231,10 +10655,8 @@ pleura
 plewa
 plewic
 plewka
-plexi
 pliant
 plica
-plija
 plika
 plinta
 plisa
@@ -11266,7 +10688,6 @@ plozic
 plozik
 plozja
 plozyc
-plozyk
 plucha
 plucka
 plucko
@@ -11382,7 +10803,6 @@ podwal
 podwis
 podwoj
 podwoz
-podzec
 podziw
 poemat
 poena
@@ -11429,7 +10849,6 @@ poklat
 poklek
 poklon
 pokluc
-poknuc
 pokoik
 pokoj
 pokora
@@ -11460,7 +10879,6 @@ polbor
 polbut
 polder
 polec
-polelf
 polepa
 poler
 polew
@@ -11481,7 +10899,6 @@ polkac
 polko
 polkon
 pollan
-pollok
 pollot
 polluk
 polmat
@@ -11498,7 +10915,6 @@ polow
 polowa
 polowy
 poloz
-polpan
 polsen
 polski
 polton
@@ -11523,7 +10939,6 @@ pomocy
 pomor
 pomort
 pomost
-pomowa
 pompa
 pompka
 pompki
@@ -11546,12 +10961,10 @@ ponczo
 pondus
 ponec
 poneta
-ponge
 ponik
 ponoc
 ponor
 ponowa
-ponsza
 pontal
 pontok
 ponton
@@ -11583,7 +10996,6 @@ popreg
 popruc
 popsuc
 popsuj
-popup
 popych
 popyt
 porab
@@ -11638,8 +11050,6 @@ poslad
 posmak
 posnac
 posnuc
-posny
-posoch
 posoka
 pospac
 posrac
@@ -11685,9 +11095,7 @@ potwal
 potwor
 poufny
 pound
-pousse
 powab
-powaba
 powaga
 powal
 powala
@@ -11725,7 +11133,6 @@ pozuc
 pozwac
 pozyc
 pozysk
-ppulk
 prabyt
 praca
 prace
@@ -11748,7 +11155,6 @@ praser
 prask
 praska
 praski
-prasol
 prast
 pratek
 prawa
@@ -11761,7 +11167,6 @@ prawny
 prawo
 prawus
 prawy
-praxis
 prazak
 prazek
 prazem
@@ -11792,7 +11197,6 @@ prezyc
 prikaz
 prima
 prime
-primer
 primo
 prinia
 prion
@@ -11819,11 +11223,9 @@ prolek
 prolet
 prolog
 promet
-promik
 promil
 promka
 promo
-promos
 prompt
 promyk
 pronto
@@ -11849,7 +11251,6 @@ protel
 protip
 proton
 prowok
-proxy
 proza
 prozek
 prozne
@@ -11878,7 +11279,6 @@ pryza
 pryzma
 przasc
 przec
-przeca
 przecz
 przed
 przeor
@@ -11889,7 +11289,6 @@ przod
 prztyk
 przyra
 psalm
-psamit
 psefit
 pseudo
 psiak
@@ -11903,7 +11302,6 @@ psina
 psinka
 psipsi
 psisko
-psiur
 psizab
 psocic
 psorek
@@ -11922,7 +11320,6 @@ psycha
 psyche
 psydia
 psykac
-psylle
 pszono
 ptaki
 ptasi
@@ -11941,7 +11338,6 @@ pucki
 pucowa
 pudel
 puder
-pudlak
 pudli
 pudlo
 pudowy
@@ -11962,7 +11358,6 @@ pulman
 pulpa
 pulpet
 pulpit
-pulque
 pulsar
 pultac
 pumeks
@@ -11978,7 +11373,6 @@ pupina
 pupka
 pupsko
 purana
-puree
 purga
 puryc
 puryna
@@ -12020,8 +11414,6 @@ pylnik
 pylny
 pylon
 pylowy
-pynio
-pynius
 pypec
 pyrda
 pyreks
@@ -12033,8 +11425,6 @@ pyrkac
 pyrlik
 pyrol
 pyros
-pysiak
-pysiek
 pysio
 pyszny
 pytac
@@ -12042,23 +11432,8 @@ pytel
 pytia
 pytka
 pyton
-pytong
 pyuria
 pyzaty
-quadro
-quant
-quark
-quarto
-quasar
-quasi
-queer
-quest
-quiche
-quieto
-quinoa
-quipo
-quipu
-quorum
 rabab
 rabac
 raban
@@ -12069,14 +11444,12 @@ rabaty
 rabbi
 rabdit
 rabek
-rabiec
 rabiez
 rabin
 rabnac
 rabona
 rabski
 rabus
-raciag
 racica
 racja
 racuch
@@ -12091,7 +11464,6 @@ radar
 radca
 radian
 radio
-radium
 radix
 radler
 radlic
@@ -12119,14 +11491,12 @@ rajer
 rajfur
 rajka
 rajok
-rajowy
 rajski
 rajtar
 rajtki
 rajty
 rajza
 rajzer
-rakama
 rakarz
 rakiel
 rakiem
@@ -12181,7 +11551,6 @@ rapowy
 rapper
 rapsod
 raptem
-raptor
 raptus
 rarog
 rasia
@@ -12208,7 +11577,6 @@ ratyna
 raucik
 rauda
 rausz
-rawier
 rawka
 rawski
 rayon
@@ -12246,9 +11614,7 @@ recto
 reczny
 reczyc
 redan
-reden
 redia
-redis
 redler
 redlic
 redlo
@@ -12319,35 +11685,29 @@ remiza
 remont
 remora
 remory
-render
 rener
 reneta
 renga
 renina
-renio
 renju
 renoma
 renons
 renowy
 renski
 renta
-rentka
 reofil
 reolog
 reper
 repeta
 replay
 report
-repra
 reset
 reski
 resor
 resort
-resume
 resurs
 reszka
 reszta
-retail
 retard
 retman
 retor
@@ -12356,13 +11716,11 @@ retro
 return
 retusz
 retyk
-revue
 rewanz
 rewers
 rewia
 rewir
 rewis
-rewka
 rewkom
 rewski
 rezeda
@@ -12373,20 +11731,16 @@ rezun
 rezus
 rezym
 rheum
-rhovyl
 riasa
 ribat
 ridbok
-rigcz
 rigips
-rigolo
 riksza
 rilsan
 ringo
 rioja
 riolit
 risso
-riszi
 riszta
 riusza
 rizoid
@@ -12412,7 +11766,6 @@ rodeo
 rodnia
 rodnik
 rodny
-rodoid
 rodowy
 rodzaj
 rodzic
@@ -12438,10 +11791,7 @@ rokosz
 rokpol
 rolada
 rolba
-rolbar
-roler
 roleta
-rolgaz
 rolka
 rolki
 roller
@@ -12454,10 +11804,8 @@ rolowy
 romaji
 romani
 romans
-romcom
 romeit
 romeo
-romer
 romski
 rondel
 rondko
@@ -12480,12 +11828,10 @@ rosnac
 rosnik
 rosny
 rosol
-rosowy
 rostra
 rostry
 rotang
 rotel
-rotfl
 rotor
 rotowy
 rotula
@@ -12502,7 +11848,6 @@ rownia
 rownik
 rowny
 rowowy
-royals
 rozany
 rozbic
 rozboj
@@ -12558,10 +11903,8 @@ rozwod
 rozwoj
 rozwor
 rozwoz
-rozwyc
 rozyca
 rozzuc
-rrrum
 ruada
 ruanda
 rubai
@@ -12594,7 +11937,6 @@ rugby
 rugnac
 rugowy
 ruina
-ruinka
 ruiny
 rujka
 rujny
@@ -12662,13 +12004,10 @@ rybik
 rybitw
 rybka
 rybko
-rybnik
 rybny
 ryboza
-rybsko
 rycerz
 rychly
-rycht
 rycina
 rycki
 rycyk
@@ -12679,7 +12018,6 @@ rydel
 rydwan
 rydzyk
 ryfej
-ryfka
 ryfla
 rygiel
 rygor
@@ -12697,7 +12035,6 @@ rymesa
 rymnac
 rymoid
 rymowy
-rynar
 rynek
 rynia
 rynka
@@ -12706,7 +12043,6 @@ rynski
 ryokan
 ryolit
 rypac
-rypacz
 rypala
 rypnac
 rysak
@@ -12717,7 +12053,6 @@ rysien
 rysik
 ryska
 ryski
-ryszi
 rytel
 rytmik
 rytmy
@@ -12736,11 +12071,9 @@ rzadek
 rzadki
 rzadny
 rzady
-rzanka
 rzany
 rzapie
 rzapik
-rzazka
 rzech
 rzecz
 rzeczy
@@ -12750,18 +12083,15 @@ rzedu
 rzegot
 rzeka
 rzekac
-rzekot
 rzemyk
 rzepa
 rzepak
 rzepik
 rzepka
 rzesa
-rzesc
 rzeska
 rzeski
 rzesl
-rzesny
 rzest
 rzesza
 rzesze
@@ -12784,7 +12114,6 @@ rzutny
 rzygac
 rzygi
 rzysko
-saami
 sabal
 sabat
 sabil
@@ -12824,7 +12153,6 @@ sagaj
 sagan
 sagowy
 sagum
-sagwa
 sahib
 sainit
 sajan
@@ -12866,8 +12194,6 @@ salsa
 salto
 saluki
 salut
-salve
-salvia
 salwa
 samar
 samara
@@ -12940,7 +12266,6 @@ satyna
 satyr
 satyra
 sauna
-saute
 sawant
 sawina
 sazan
@@ -13049,12 +12374,10 @@ seler
 selery
 selfie
 selfik
-selfka
 selkie
 selsyn
 selwa
 selwas
-semba
 semem
 semen
 semita
@@ -13080,12 +12403,10 @@ sepic
 sepica
 sepnik
 sepota
-sepowy
 sepsa
 sepsis
 septet
 sepuku
-sequel
 seraf
 seraj
 serak
@@ -13131,7 +12452,6 @@ sezon
 sfera
 sfinks
 sfora
-sforny
 sfukac
 shagya
 shake
@@ -13146,11 +12466,9 @@ shido
 shift
 shimmy
 shimpa
-shindo
 shinto
 shire
 shirt
-shisha
 shite
 shoah
 shogi
@@ -13158,7 +12476,6 @@ shogun
 shoji
 shona
 short
-shorts
 shoyu
 siadac
 siakac
@@ -13202,7 +12519,6 @@ siepac
 sierp
 sierra
 siersc
-siewac
 siewca
 siewka
 siewki
@@ -13233,7 +12549,6 @@ silnik
 silny
 silos
 silowy
-silvae
 silwit
 simens
 simile
@@ -13266,7 +12581,6 @@ sirat
 sirdab
 sirota
 sisal
-siska
 sitak
 sitar
 sitarz
@@ -13292,7 +12606,6 @@ siwica
 siwiec
 siwiej
 siwka
-siwosc
 siwosz
 siwuch
 sizal
@@ -13300,7 +12613,6 @@ sjena
 sjenit
 sjesta
 skaber
-skades
 skads
 skadsi
 skadze
@@ -13320,9 +12632,7 @@ skand
 skaner
 skapa
 skapac
-skapek
 skapic
-skapka
 skapy
 skarac
 skarb
@@ -13333,7 +12643,6 @@ skarp
 skarpa
 skarus
 skate
-skaten
 skater
 skatol
 skaut
@@ -13355,7 +12664,6 @@ skill
 skimia
 skinac
 skinka
-skinny
 skinol
 skiper
 skisic
@@ -13392,11 +12700,9 @@ skorka
 skorki
 skorny
 skoro
-skoros
 skory
 skosem
 skosic
-skosik
 skosny
 skowa
 skowyt
@@ -13406,7 +12712,6 @@ skraw
 skrecz
 skrep
 skret
-skrin
 skrocz
 skroic
 skrom
@@ -13421,7 +12726,6 @@ skrypt
 skryty
 skrzat
 skrzek
-skrzel
 skrzep
 skrzyc
 skrzyp
@@ -13493,17 +12797,14 @@ slipki
 slipko
 slipy
 sliski
-slitka
 sliwa
 sliwka
 slizg
-slizik
 slizyk
 slocz
 slocza
 slodki
 slogan
-sloica
 sloik
 slojd
 sloma
@@ -13616,13 +12917,10 @@ smycz
 smykac
 smyki
 smyrac
-snacki
 snadny
 snadz
-snaki
 snello
 sniady
-sniat
 snica
 sniec
 sniedz
@@ -13631,12 +12929,10 @@ sniegi
 sniety
 snigga
 sniot
-snitka
 snobka
 snopek
 snowek
 snutka
-soave
 sobaka
 sobek
 sobol
@@ -13658,7 +12954,6 @@ sodowy
 sofizm
 sofka
 sofora
-soiree
 sojczy
 sojka
 sojowy
@@ -13683,7 +12978,6 @@ solic
 solid
 solion
 sollux
-solnik
 solny
 solowa
 solowy
@@ -13694,7 +12988,6 @@ solut
 solwat
 somali
 soman
-sombre
 somit
 somoni
 sonant
@@ -13712,7 +13005,6 @@ sopran
 sorbat
 sorbet
 sorbit
-sordes
 sorek
 sorgo
 soria
@@ -13738,7 +13030,6 @@ sotada
 sotern
 sotho
 sotnia
-sotnik
 sottie
 soulas
 sound
@@ -13755,7 +13046,6 @@ spadac
 spadek
 spadly
 spadz
-spaga
 spahis
 spajac
 spajak
@@ -13796,7 +13086,6 @@ spiety
 spiew
 spiewy
 spijac
-spikac
 spiker
 spilit
 spina
@@ -13807,7 +13096,6 @@ spinor
 spioch
 spiran
 spirea
-spiro
 spirol
 spirt
 spiryt
@@ -13822,7 +13110,6 @@ splata
 splaw
 splawa
 spleen
-spleja
 splesc
 splin
 splis
@@ -13851,7 +13138,6 @@ spopod
 spora
 sporek
 sporny
-sporos
 sport
 sporty
 spory
@@ -13872,7 +13158,6 @@ spruc
 sprue
 spryt
 sprzac
-sprzec
 sprzed
 sprzeg
 sprzet
@@ -13880,17 +13165,12 @@ spsiec
 spurt
 spust
 spych
-spyder
 spylac
 spylic
 spyrka
 spytac
 spytki
 spyza
-squash
-squat
-squaw
-squot
 sracz
 srajda
 sraka
@@ -13972,7 +13252,6 @@ stawka
 stawny
 staza
 steak
-stejk
 stekac
 stela
 stelaz
@@ -13993,7 +13272,6 @@ sterol
 sterta
 steryd
 stety
-stevia
 stewa
 stewia
 stezac
@@ -14010,7 +13288,6 @@ stlec
 stlic
 stlony
 stluc
-stock
 stoik
 stojak
 stojan
@@ -14029,7 +13306,6 @@ stomia
 stomik
 stomp
 stone
-stoner
 stonit
 stonka
 stopa
@@ -14049,7 +13325,6 @@ stozek
 stozyc
 straca
 strach
-strad
 straga
 strajk
 strak
@@ -14125,7 +13400,6 @@ stupor
 stwor
 stwora
 stykac
-styks
 stylik
 stylo
 stylon
@@ -14135,11 +13409,9 @@ stypa
 styrac
 styrak
 styren
-suave
 suazi
 subito
 subkod
-subnac
 subway
 suchar
 suche
@@ -14169,8 +13441,6 @@ sukno
 sukub
 sukuri
 sukurs
-sulfan
-sulfat
 sulfid
 sulfon
 sulica
@@ -14214,7 +13484,6 @@ susnac
 sussex
 susza
 suszak
-suszec
 suszej
 suszi
 suszka
@@ -14229,11 +13498,7 @@ suwac
 suwak
 suwny
 suwowy
-svelto
-swacba
-swacha
 swada
-swara
 swarny
 swary
 swatac
@@ -14262,7 +13527,6 @@ swinic
 swinka
 swirek
 swiren
-swiron
 swirus
 swist
 swita
@@ -14271,7 +13535,6 @@ switch
 switka
 swojak
 swoje
-swojo
 sybir
 sycacy
 sycera
@@ -14306,13 +13569,11 @@ sylwin
 sylwit
 symara
 symbol
-synal
 syncio
 syndet
 syndyk
 synek
 syngel
-synio
 synod
 synowa
 syntan
@@ -14325,7 +13586,6 @@ sypnac
 syrena
 syreni
 syreny
-syrinx
 syrop
 syrton
 sysak
@@ -14383,8 +13643,6 @@ szames
 szamet
 szamka
 szamot
-szanek
-szanon
 szansa
 szanse
 szanta
@@ -14421,13 +13679,11 @@ szczi
 szczuc
 szczun
 szczur
-szczyk
 szczyl
 szczyr
 szczyt
 szedyt
 szeik
-szejch
 szejk
 szekel
 szekla
@@ -14486,7 +13742,6 @@ szlich
 szlif
 szlifa
 szlify
-szlips
 szlir
 szlira
 szloch
@@ -14502,7 +13757,6 @@ szmaty
 szmelc
 szmer
 szmery
-szmina
 szmira
 sznaps
 szneka
@@ -14534,7 +13788,6 @@ szosta
 szosty
 szott
 szpada
-szpaga
 szpak
 szpaki
 szpan
@@ -14650,7 +13903,6 @@ szyja
 szyjka
 szyjny
 szyki
-szykny
 szykon
 szyksa
 szyld
@@ -14666,8 +13918,6 @@ szyper
 szypot
 szypr
 szytka
-szyzma
-taaak
 tabaka
 tabard
 tabata
@@ -14681,7 +13931,6 @@ tabula
 tabun
 tacet
 tachac
-tacho
 tachta
 tacka
 tacowy
@@ -14708,7 +13957,6 @@ tajac
 tajeza
 tajfun
 tajga
-tajin
 tajkun
 tajmen
 tajnia
@@ -14719,7 +13967,6 @@ tajony
 tajpan
 tajski
 takahe
-taker
 takiel
 takin
 takir
@@ -14745,7 +13992,6 @@ tales
 talia
 talib
 talion
-talit
 talka
 talmi
 talmud
@@ -14769,7 +14015,6 @@ tamze
 tanbur
 tance
 tandem
-tandyr
 tanga
 tango
 taniak
@@ -14842,7 +14087,6 @@ tatka
 tatko
 tatla
 tatowy
-tatry
 tatryt
 tatuaz
 tatul
@@ -14852,13 +14096,11 @@ tatun
 tatus
 tauzen
 tawula
-taxus
 tayuc
 tazin
 tchnac
 tchorz
 teaser
-teatox
 teatr
 teatyn
 techno
@@ -14934,7 +14176,6 @@ tepiec
 tepiej
 tepol
 teposc
-teposz
 tepota
 tepszy
 terac
@@ -14945,8 +14186,6 @@ tercja
 terem
 teren
 tereny
-terere
-terfka
 tergal
 tergit
 tergum
@@ -14964,7 +14203,6 @@ ternar
 ternew
 terno
 terowy
-terpac
 terpen
 terror
 tertio
@@ -14985,8 +14223,6 @@ tetryk
 tetryl
 tetum
 teurg
-texas
-texel
 tezec
 tezej
 teznia
@@ -15003,7 +14239,6 @@ tiara
 tiazol
 tiazyd
 tibia
-ticker
 tiento
 tiffin
 tifoso
@@ -15025,7 +14260,6 @@ tinol
 tinta
 tiofen
 tiokol
-tionyl
 tiosol
 tiret
 tirli
@@ -15037,7 +14271,6 @@ tiulka
 tiuram
 tiurbe
 tiurma
-tiwik
 tjandi
 tkacki
 tkacz
@@ -15085,12 +14318,10 @@ toffik
 toina
 tojad
 tojesc
-tojka
 tokaj
 tokarz
 token
 tokowy
-toksyk
 tolar
 toledo
 toleit
@@ -15167,7 +14398,6 @@ toscik
 toster
 tosto
 total
-totals
 totek
 totem
 totez
@@ -15199,7 +14429,6 @@ trafo
 tragac
 tragi
 tragik
-tragus
 trajka
 traken
 trakt
@@ -15221,7 +14450,6 @@ traska
 trata
 tratwa
 trauma
-travel
 trawa
 trawic
 trawka
@@ -15273,8 +14501,6 @@ trick
 trier
 triera
 trifle
-trikke
-trilog
 trilon
 trinia
 trioda
@@ -15305,7 +14531,6 @@ tropic
 tropik
 troppo
 troska
-troty
 trotyl
 trucht
 truck
@@ -15334,7 +14559,6 @@ trwala
 trwaly
 trwoga
 tryba
-trybek
 trybic
 trybik
 trybun
@@ -15359,7 +14583,6 @@ trypel
 tryper
 trypla
 trysk
-trytan
 trytka
 tryton
 tryumf
@@ -15376,7 +14599,6 @@ trzes
 trzewa
 trzoda
 trzon
-trzop
 trzos
 tsonga
 tsuba
@@ -15386,7 +14608,6 @@ tubing
 tubka
 tubowy
 tubus
-tuczka
 tuczny
 tuczyc
 tufit
@@ -15396,7 +14617,6 @@ tugaj
 tugra
 tugrik
 tugun
-tujnik
 tujon
 tujowy
 tujoza
@@ -15548,7 +14768,6 @@ tyton
 tytul
 tytyna
 tyzana
-tyzes
 uakari
 ubawic
 ubecja
@@ -15577,7 +14796,6 @@ ucapic
 uchaty
 uchlac
 uchol
-uchwat
 uchwyt
 uchyb
 uchyl
@@ -15616,16 +14834,12 @@ udziac
 udzial
 udziec
 udzwig
-ufiak
 ufita
 ufnal
 ufniej
 ufnosc
 ufolog
 ugadac
-ugaic
-ugajac
-ugasac
 ugasic
 ugasly
 ugiac
@@ -15635,8 +14849,6 @@ ugija
 uginac
 ugnoic
 ugoda
-ugodny
-ugonic
 ugorek
 ugrac
 ugrowy
@@ -15679,13 +14891,10 @@ ukopac
 ukosem
 ukosic
 ukosny
-ukowac
-ukrak
 ukrasc
 ukres
 ukroic
 ukrop
-ukrowy
 ukrwic
 ukryc
 ukryty
@@ -15715,10 +14924,8 @@ ulewac
 ulewny
 ulezc
 ulezec
-ulgnac
 ulgowy
 ulica
-ulinic
 ulizac
 ulmina
 ulmski
@@ -15750,7 +14957,6 @@ umarla
 umarly
 umazac
 umbra
-umcyk
 umiak
 umiar
 umiec
@@ -15768,7 +14974,6 @@ umrzec
 umrzyk
 umykac
 umysl
-umysny
 umywac
 unakit
 uncja
@@ -15791,10 +14996,8 @@ unita
 unitka
 unizac
 unizm
-unizny
 unizyc
 unosic
-unsub
 upadac
 upadek
 upadly
@@ -15824,7 +15027,6 @@ upocic
 upoic
 upojny
 uporac
-uporek
 uprac
 uprawa
 uprzaz
@@ -15832,14 +15034,11 @@ uprzec
 uprzez
 upupic
 upust
-upvote
 urabac
 urabek
 urabon
 uracyl
 uragac
-uraic
-urajac
 uralit
 urania
 uranyl
@@ -15869,10 +15068,8 @@ uroczy
 uroda
 urodny
 uroic
-urolit
 urolog
 uronic
-uropod
 urosc
 urosly
 ursol
@@ -15907,7 +15104,6 @@ usilny
 uskok
 uslac
 uslizg
-uslon
 usluga
 uslugi
 usmiac
@@ -15941,7 +15137,6 @@ uszaty
 uszko
 uszny
 uszyc
-uszyca
 utaic
 utajac
 utarg
@@ -15952,7 +15147,6 @@ utknac
 utkwic
 utluc
 utonac
-utopek
 utopia
 utopic
 utrata
@@ -15979,7 +15173,6 @@ uwiezc
 uwijac
 uwiklo
 uwinac
-uwisac
 uwozic
 uwroc
 uwula
@@ -15988,8 +15181,6 @@ uzalac
 uzalic
 uzans
 uzatek
-uzdowe
-uzdowy
 uzerac
 uziom
 uznac
@@ -16006,55 +15197,6 @@ uzywac
 uzywca
 uzywic
 uzywka
-vacat
-vacui
-vacuum
-vagina
-vapam
-vaping
-varia
-vates
-vegeta
-velato
-veldt
-veloce
-velum
-vendor
-venta
-verbum
-verge
-verlan
-verse
-verset
-verso
-versus
-verte
-vertex
-video
-vidzej
-vilski
-viola
-viral
-virga
-virgo
-virtu
-viscum
-vivace
-vivat
-vixit
-vizsla
-vlepka
-vloger
-voila
-volley
-volta
-volume
-voodoo
-vortal
-votum
-voudou
-voyeur
-vulgo
 wabic
 wabik
 wacek
@@ -16117,7 +15259,6 @@ walowy
 waluta
 wampir
 wampum
-wamze
 wanad
 wanda
 wandal
@@ -16138,7 +15279,6 @@ wapory
 waran
 warana
 warcki
-warez
 warga
 wariak
 wariat
@@ -16160,13 +15300,10 @@ wasacz
 wasag
 wasal
 wasaty
-wascka
-washi
 wasik
 waski
 wasnic
 wasowy
-waspan
 wasze
 waszec
 wataha
@@ -16229,7 +15366,6 @@ wdowka
 wdupic
 wdusic
 wdziac
-wdziar
 wdziek
 weber
 webfon
@@ -16271,7 +15407,6 @@ wenus
 wepski
 werbel
 werbus
-wereda
 wermut
 wersal
 werset
@@ -16288,8 +15423,6 @@ wespol
 wessac
 wessi
 westa
-westie
-westik
 westka
 weszka
 weszyc
@@ -16410,7 +15543,6 @@ wimana
 wimpel
 winda
 winder
-wineta
 winiak
 winian
 winic
@@ -16419,7 +15551,6 @@ winien
 winion
 winko
 winna
-winner
 winnik
 winny
 winowy
@@ -16449,7 +15580,6 @@ wiroza
 wirus
 wisiec
 wisior
-wiskac
 wiski
 wislak
 wisnia
@@ -16475,12 +15605,10 @@ wizja
 wizjer
 wizon
 wizowy
-wizual
 wizura
 wizyr
 wizyta
 wjazd
-wkasac
 wklad
 wkleic
 wkluc
@@ -16522,7 +15650,6 @@ wlosek
 wlosie
 wloski
 wlosy
-wlotka
 wlozyc
 wlupic
 wmarsz
@@ -16539,11 +15666,9 @@ wneter
 wniesc
 wnijsc
 wnikac
-wnizac
 wnorka
 wnosic
 wnucze
-wnuczy
 wnuka
 wnuki
 wnusia
@@ -16580,7 +15705,6 @@ wokal
 wokizm
 wokol
 wokolo
-wokowy
 woksel
 wolac
 wolacz
@@ -16604,7 +15728,6 @@ wolowy
 wolski
 wolta
 woltaz
-wolter
 woltol
 woltyz
 woluta
@@ -16634,7 +15757,6 @@ wozik
 wozina
 wozna
 wozny
-wozowo
 wozowy
 wpadac
 wpadka
@@ -16653,7 +15775,6 @@ wplaw
 wplesc
 wplyw
 wplywy
-wpodle
 wpoic
 wporzo
 wprawa
@@ -16777,14 +15898,11 @@ wujciu
 wujek
 wujko
 wujowy
-wukaem
 wulkan
 wulwa
 wurcyt
-wurszt
 wushu
 wustyt
-wuszt
 wuwej
 wwalac
 wwalic
@@ -16820,7 +15938,6 @@ wycier
 wycior
 wycisk
 wyclic
-wycof
 wycug
 wyczes
 wyczha
@@ -16890,7 +16007,6 @@ wyloic
 wylom
 wylot
 wylow
-wylut
 wymach
 wymaic
 wymaz
@@ -16901,7 +16017,6 @@ wymiar
 wymie
 wymion
 wymlec
-wymlot
 wymoc
 wymog
 wymogi
@@ -16968,10 +16083,8 @@ wyrys
 wyryw
 wyrzec
 wyrzut
-wyrzyg
 wysad
 wysada
-wyscie
 wyscig
 wysiac
 wysiec
@@ -17026,14 +16139,12 @@ wyzel
 wyzera
 wyzgac
 wyziew
-wyzior
 wyzka
 wyzlak
 wyzli
 wyzlin
 wyznac
 wyzni
-wyznik
 wyzowy
 wyzpin
 wyzrec
@@ -17077,16 +16188,12 @@ wzwyz
 wzynac
 wzyty
 wzywac
-xenia
-xeres
 yacht
 yakuza
 yatren
-yayoi
 yeoman
 yerba
 yucca
-yuccie
 yumpie
 yunnan
 yuppi
@@ -17111,7 +16218,6 @@ zabosc
 zabot
 zabowy
 zabrac
-zabruk
 zabsko
 zabuti
 zachac
@@ -17164,7 +16270,6 @@ zagiac
 zagiel
 zagiew
 zagle
-zaglik
 zaglon
 zagnac
 zagnic
@@ -17192,7 +16297,6 @@ zakare
 zakat
 zakaz
 zakiet
-zakini
 zaklac
 zaklad
 zakluc
@@ -17208,7 +16312,6 @@ zakryc
 zakuc
 zakup
 zakupy
-zakus
 zakusy
 zakwas
 zakwit
@@ -17223,7 +16326,6 @@ zalezc
 zalgac
 zaliby
 zalic
-zalik
 zaliz
 zalka
 zalkac
@@ -17231,7 +16333,6 @@ zalnik
 zalny
 zaloba
 zaloga
-zaloic
 zalom
 zalosc
 zalot
@@ -17278,7 +16379,6 @@ zapona
 zapora
 zapper
 zaprac
-zapro
 zapruc
 zapust
 zaraz
@@ -17301,13 +16401,11 @@ zarodz
 zaroic
 zarosc
 zarost
-zarota
 zarowa
 zarowy
 zarski
 zartem
 zartki
-zartko
 zarty
 zarwac
 zaryc
@@ -17384,7 +16482,6 @@ zawsze
 zawyc
 zawzdy
 zazaki
-zazdro
 zazec
 zazen
 zazgac
@@ -17428,11 +16525,9 @@ zbytny
 zbyty
 zbywac
 zbywca
-zdalka
 zdalny
 zdanie
 zdanko
-zdarny
 zdatny
 zdawac
 zdazac
@@ -17445,9 +16540,7 @@ zdoic
 zdolac
 zdolny
 zdrada
-zdroik
 zdroj
-zdron
 zdrowa
 zdrowy
 zdunka
@@ -17464,7 +16557,6 @@ zebiak
 zebiec
 zebina
 zebny
-zebol
 zebowy
 zebra
 zebrac
@@ -17492,7 +16584,6 @@ zelka
 zelkot
 zelota
 zelowy
-zelwa
 zelzec
 zelzyc
 zemlec
@@ -17522,7 +16613,6 @@ zerowy
 zertwa
 zerwa
 zerwac
-zerzec
 zesiec
 zeskok
 zeslac
@@ -17530,7 +16620,6 @@ zesnuc
 zespol
 zesrac
 zestaw
-zester
 zestyk
 zeszly
 zeszyc
@@ -17599,16 +16688,13 @@ zgubic
 zgubny
 zgurb
 zhasac
-zhuang
 zhulac
 ziajac
-ziarko
 ziarno
 zieba
 ziebi
 ziebic
 ziebla
-ziejka
 ziele
 zielen
 zielny
@@ -17641,7 +16727,6 @@ ziram
 ziscic
 ziutek
 zjadac
-zjadki
 zjarac
 zjawa
 zjawic
@@ -17652,7 +16737,6 @@ zjezyc
 zlacze
 zlaja
 zlajac
-zlakwa
 zlamac
 zlamas
 zlamek
@@ -17687,7 +16771,6 @@ zlogi
 zloic
 zlolka
 zlomek
-zlomny
 zlopac
 zlosc
 zlotak
@@ -17698,18 +16781,15 @@ zloty
 zlowic
 zloza
 zloze
-zlozka
 zlozyc
 zluda
 zludny
-zlupac
 zlupic
 zmacac
 zmacic
 zmagac
 zmalec
 zmamic
-zmanic
 zmarla
 zmarly
 zmaza
@@ -17785,7 +16865,6 @@ zolna
 zoltak
 zoltek
 zoltko
-zoltwa
 zolty
 zolwi
 zolwie
@@ -17794,7 +16873,6 @@ zolza
 zolzy
 zombi
 zombie
-zombik
 zonaty
 zoncia
 zonda
@@ -17865,7 +16943,6 @@ zrzyna
 zsiasc
 zsiec
 zsikac
-zsiwic
 zsunac
 zsuwac
 zsyfic
@@ -17880,7 +16957,6 @@ zubrze
 zubrzy
 zuchwa
 zuchy
-zuczac
 zuczek
 zulawa
 zulawy
@@ -17900,7 +16976,6 @@ zurawi
 zurek
 zurna
 zurnal
-zuwin
 zuwka
 zuwna
 zuwny
@@ -17910,7 +16985,6 @@ zuzyty
 zwabic
 zwacz
 zwada
-zwakac
 zwala
 zwalac
 zwalic
@@ -17948,7 +17022,6 @@ zwloka
 zwloki
 zwodny
 zwoic
-zwoik
 zwojak
 zwojka
 zwojki
@@ -17962,7 +17035,6 @@ zwykle
 zwykly
 zwyrol
 zwyzka
-zybura
 zycica
 zycie
 zycko
@@ -17976,7 +17048,6 @@ zydzic
 zyfia
 zygac
 zygota
-zygoza
 zygzak
 zyjaca
 zyjacy
@@ -18002,7 +17073,6 @@ zytko
 zytni
 zytnia
 zytny
-zytwin
 zywcem
 zywiak
 zywic
