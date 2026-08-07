@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import os
 import sys
 import tempfile
 import unittest
@@ -47,6 +48,27 @@ class DictionaryTests(unittest.TestCase):
         blob = build_dictionary.encode(words)
         build_dictionary.verify(blob, words)
         self.assertLess(len(blob), sum(map(len, words)))
+
+    def test_generated_assembly_keeps_relative_binary_paths(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            temp_path = Path(temp)
+            previous = Path.cwd()
+            try:
+                os.chdir(temp_path)
+                build_dictionary.write_assembly(
+                    Path("build/pl/generated/dictionary_blob.asm"),
+                    Path("build/pl/generated/dictionary_banks.asm"),
+                    Path("build/pl"),
+                )
+            finally:
+                os.chdir(previous)
+
+            generated = temp_path / "build" / "pl" / "generated"
+            assembly48 = (generated / "dictionary_blob.asm").read_text()
+            assembly128 = (generated / "dictionary_banks.asm").read_text()
+            self.assertIn('BINARY "build/pl/dict48.bin"', assembly48)
+            self.assertIn('BINARY "build/pl/dict128-bank0.bin"', assembly128)
+            self.assertNotIn(temp_path.as_posix(), assembly48 + assembly128)
 
     def test_release_dictionary_build(self) -> None:
         with tempfile.TemporaryDirectory() as temp:

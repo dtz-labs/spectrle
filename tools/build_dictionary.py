@@ -171,7 +171,10 @@ def write_header(
 
 
 def write_assembly(asm48: Path, asm128: Path, build_dir: Path) -> None:
-    dictionary48 = (build_dir / "dict48.bin").resolve().as_posix()
+    # Actions prepares these files on the host and compiles them in a Docker
+    # checkout mounted at /src. Preserve relative paths so the generated
+    # assembly remains valid on both sides of that mount boundary.
+    dictionary48 = (build_dir / "dict48.bin").as_posix()
     asm48.parent.mkdir(parents=True, exist_ok=True)
     asm48.write_text(
         "SECTION RODATA\n\n"
@@ -183,7 +186,7 @@ def write_assembly(asm48: Path, asm128: Path, build_dir: Path) -> None:
 
     bank_lines: list[str] = []
     for physical in PHYSICAL_BANKS:
-        dictionary = (build_dir / f"dict128-bank{physical}.bin").resolve().as_posix()
+        dictionary = (build_dir / f"dict128-bank{physical}.bin").as_posix()
         bank_lines.extend(
             (
                 f"SECTION RODATA_{physical}",
