@@ -77,9 +77,10 @@ make RUN_LANGUAGE=en run-zx128
 make RUN_LANGUAGE=es smoke
 ```
 
-Local builds write tapes under the ignored `build/<code>/` directory. For example, English produces
-`build/en/spectrle-en-48.tap` and `build/en/spectrle-en-128.tap`; Polish produces
-`build/pl/spectrle-pl-48.tap` and `build/pl/spectrle-pl-128.tap`.
+Local builds write tapes under the ignored `build/<code>/` directory. Every tape
+name carries the version from [VERSION](VERSION), so a downloaded file names its
+own build. With `VERSION` at `1.2.0`, English produces
+`build/en/spectrle-en-48-v1.2.0.tap` and `build/en/spectrle-en-128-v1.2.0.tap`.
 
 ## GitHub releases and web player
 
@@ -91,7 +92,10 @@ creates a GitHub Release and attaches every `.tap` file directly, together with
 After a successful release, `.github/workflows/pages.yml` downloads those TAP
 assets and the pinned JSSpeccy 3 distribution, then deploys the player from
 `site/` to GitHub Pages. The player’s language and machine selectors map to
-release files named `spectrle-<language>-<48|128>.tap`.
+release files named `spectrle-<language>-<48|128>-v<version>.tap`, and the
+player reads the tag from `release.json` to build that name. The release
+workflow refuses to publish a tag that does not match `VERSION`, so bump that
+file in the same commit you tag.
 
 The host tests cover duplicate-letter scoring, per-release mode restrictions,
 dictionary validation, gettext catalogs, word-list normalization, and build

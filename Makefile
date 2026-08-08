@@ -1,5 +1,10 @@
 .DEFAULT_GOAL := all
 
+# Single source of truth for the release version. `release.yml` refuses to
+# publish a tag that does not match it, so tapes cannot claim the wrong build.
+VERSION := $(strip $(shell cat VERSION))
+VERSION_TAG := v$(VERSION)
+
 include languages/catalog.mk
 
 # With no LANGUAGE selected this Makefile orchestrates every enabled edition.
@@ -171,12 +176,19 @@ OBJS48 := $(patsubst src/%.c,$(BUILD)/48/%.o,$(COMMON_SOURCES)) \
 OBJS128 := $(patsubst src/%.c,$(BUILD)/128/%.o,$(COMMON_SOURCES)) \
 	$(BUILD)/128/dictionary_banks.o
 
-BIN48 := $(BUILD)/$(PROGRAM_NAME)-48.bin
-BIN128 := $(BUILD)/$(PROGRAM_NAME)-128.bin
-TAP48 := $(BUILD)/$(PROGRAM_NAME)-48.tap
-TAP128 := $(BUILD)/$(PROGRAM_NAME)-128.tap
-MAP48 := $(BUILD)/$(PROGRAM_NAME)-48.map
-MAP128 := $(BUILD)/$(PROGRAM_NAME)-128.map
+# z88dk-appmake derives the 128K bank block names from the binary name and
+# mishandles dots in it, silently dropping the dictionary banks from the tape.
+# So compile to a dot-free stem and only the finished tape carries the version.
+STEM48 := $(BUILD)/$(PROGRAM_NAME)-48
+STEM128 := $(BUILD)/$(PROGRAM_NAME)-128
+BIN48 := $(STEM48).bin
+BIN128 := $(STEM128).bin
+MAP48 := $(STEM48).map
+MAP128 := $(STEM128).map
+BUILT_TAP48 := $(STEM48).tap
+BUILT_TAP128 := $(STEM128).tap
+TAP48 := $(STEM48)-$(VERSION_TAG).tap
+TAP128 := $(STEM128)-$(VERSION_TAG).tap
 
 .PHONY: language-all language-prepare language-tapes language-test language-layout \
 	language-dictionaries language-locale check-zesarux \
@@ -232,7 +244,8 @@ $(TAP48): $(OBJS48)
 		-pragma-define:CRT_ORG_CODE=0x8000 \
 		-pragma-define:REGISTER_SP=0xffff \
 		-m -create-app -o $(BIN48) $(OBJS48)
-	@test -f $@ || { echo "z88dk did not create $@" >&2; exit 1; }
+	@test -f $(BUILT_TAP48) || { echo "z88dk did not create $(BUILT_TAP48)" >&2; exit 1; }
+	mv $(BUILT_TAP48) $@
 
 $(TAP128): $(OBJS128)
 	$(ZCC_ENV) $(ZCC) $(COMMON_FLAGS) -DZX128 \
@@ -240,7 +253,8 @@ $(TAP128): $(OBJS128)
 		-pragma-define:REGISTER_SP=0xbfff \
 		-pragma-define:CRT_STACK_SIZE=1024 \
 		-lndos -m -create-app -o $(BIN128) $(OBJS128)
-	@test -f $@ || { echo "z88dk did not create $@" >&2; exit 1; }
+	@test -f $(BUILT_TAP128) || { echo "z88dk did not create $(BUILT_TAP128)" >&2; exit 1; }
+	mv $(BUILT_TAP128) $@
 
 language-test: $(DICT_STAMP) $(LOCALE_STAMP)
 	python3 tools/check_dictionary_fit.py \
@@ -254,7 +268,8 @@ language-layout: $(TAP48) $(TAP128)
 	python3 tools/check_layout.py \
 		--map48 $(MAP48) --bin48 $(BIN48) \
 		--map128 $(MAP128) --bin128 $(BIN128) \
-		--bank-glob '$(BUILD)/$(PROGRAM_NAME)-128_BANK_*.bin'
+		--bank-glob '$(STEM128)_BANK_*.bin' \
+		--tap128 $(TAP128)
 
 check-zesarux:
 	@test -x /Applications/ZEsarUX.app/Contents/MacOS/zesarux || \

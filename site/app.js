@@ -8,7 +8,6 @@
   var requestedMachine = params.get("machine");
   var language = LANGUAGES.indexOf(requestedLanguage) >= 0 ? requestedLanguage : "pl";
   var machine = MACHINES.indexOf(requestedMachine) >= 0 ? requestedMachine : "128";
-  var tapePath = "taps/spectrle-" + language + "-" + machine + ".tap";
 
   var form = document.getElementById("edition-form");
   var languageSelect = document.getElementById("language");
@@ -34,14 +33,45 @@
 
   languageSelect.value = language;
   machineInput.checked = true;
-  tapeName.textContent = tapePath.split("/").pop();
-  downloadTape.href = tapePath;
 
   form.addEventListener("submit", function () {
     setButtonState("loading", "Loading tape");
     setEmulatorState("loading", "switching edition…");
   });
 
+  function start(tapePath) {
+    tapeName.textContent = tapePath.split("/").pop();
+    downloadTape.href = tapePath;
+
+    if (typeof window.JSSpeccy !== "function") {
+      setEmulatorState("error", "emulator failed to load");
+      setButtonState("error", "Retry load");
+      return;
+    }
+
+    setButtonState("loading", "Loading tape");
+    setEmulatorState("loading", "loading " + machine + "K tape…");
+
+    try {
+      var emulator = window.JSSpeccy(document.getElementById("jsspeccy"), {
+        machine: Number(machine),
+        openUrl: tapePath,
+        autoLoadTapes: true,
+        zoom: window.matchMedia("(min-width: 60rem)").matches ? 2 : 1
+      });
+
+      emulator.onReady(function () {
+        setEmulatorState("success", "ready — press Play");
+        setButtonState("success", "Tape ready — reload");
+      });
+    } catch (error) {
+      setEmulatorState("error", "emulator failed to start");
+      setButtonState("error", "Retry load");
+    }
+  }
+
+  // Tape files carry the release tag, so the tag has to be known before one
+  // can be named. release.json is deployed next to this script.
   fetch("release.json", { cache: "no-store" })
     .then(function (response) {
       if (!response.ok) {
@@ -54,34 +84,15 @@
       if (release.url) {
         releaseLink.href = release.url;
       }
+      if (!release.tagName) {
+        throw new Error("release metadata has no tag");
+      }
+      start("taps/spectrle-" + language + "-" + machine + "-" + release.tagName + ".tap");
     })
     .catch(function () {
       releaseName.textContent = "latest";
+      tapeName.textContent = "unavailable";
+      setEmulatorState("error", "release metadata unavailable");
+      setButtonState("error", "Retry load");
     });
-
-  if (typeof window.JSSpeccy !== "function") {
-    setEmulatorState("error", "emulator failed to load");
-    setButtonState("error", "Retry load");
-    return;
-  }
-
-  setButtonState("loading", "Loading tape");
-  setEmulatorState("loading", "loading " + machine + "K tape…");
-
-  try {
-    var emulator = window.JSSpeccy(document.getElementById("jsspeccy"), {
-      machine: Number(machine),
-      openUrl: tapePath,
-      autoLoadTapes: true,
-      zoom: window.matchMedia("(min-width: 60rem)").matches ? 2 : 1
-    });
-
-    emulator.onReady(function () {
-      setEmulatorState("success", "ready — press Play");
-      setButtonState("success", "Tape ready — reload");
-    });
-  } catch (error) {
-    setEmulatorState("error", "emulator failed to start");
-    setButtonState("error", "Retry load");
-  }
 })();
