@@ -24,8 +24,8 @@ msgstr "SPECTRLE CA 128K"
 
 #: locales/messages.def:10
 msgctxt "ascii_notice"
-msgid "NO ACCENTS - A-Z ONLY"
-msgstr "SENSE ACCENTS - NOMES A-Z"
+msgid "A-Z REVEALS ACCENTS TOO"
+msgstr "A-Z TAMBÉ MOSTRA ACCENTS"
 
 #: locales/messages.def:11
 msgctxt "dictionary_prefix"
@@ -70,7 +70,7 @@ msgstr "INTENT "
 #: locales/messages.def:19
 msgctxt "wins_label"
 msgid "WINS "
-msgstr "VICTORIES "
+msgstr "VICTÒRIES "
 
 #: locales/messages.def:20
 msgctxt "type_word"
@@ -85,7 +85,7 @@ msgstr "FALTEN LLETRES"
 #: locales/messages.def:22
 msgctxt "not_in_dictionary"
 msgid "NOT IN DICTIONARY"
-msgstr "NO ES AL DICCIONARI"
+msgstr "NO ÉS AL DICCIONARI"
 
 #: locales/messages.def:23
 msgctxt "next_guess"
@@ -105,12 +105,12 @@ msgstr "UN ALTRE LLOC"
 #: locales/messages.def:26
 msgctxt "absent"
 msgid "NOT IN WORD"
-msgstr "NO HI ES"
+msgstr "NO HI ÉS"
 
 #: locales/messages.def:27
 msgctxt "won"
 msgid "WELL DONE! SOLVED."
-msgstr "MOLT BE! ENCERTADA."
+msgstr "MOLT BÉ! ENCERTADA."
 
 #: locales/messages.def:28
 msgctxt "word_prefix"
@@ -125,7 +125,7 @@ msgstr "ENTER-SEGUEIX M-MENU Q-SURT"
 #: locales/messages.def:30
 msgctxt "thanks"
 msgid "THANKS FOR PLAYING"
-msgstr "GRACIES PER JUGAR"
+msgstr "GRÀCIES PER JUGAR"
 
 #: locales/messages.def:31
 msgctxt "any_key"

@@ -9,6 +9,15 @@
 #define BLOCK_SHIFT 4u
 #define BLOCK_MASK 15u
 
+static const uint8_t dictionary_folds[DICTIONARY_ALPHABET_SIZE + 1u] =
+    DICTIONARY_FOLD_SYMBOLS;
+static const uint8_t dictionary_direct[DICTIONARY_DIRECT_COUNT] =
+    DICTIONARY_DIRECT_SYMBOLS;
+#if DICTIONARY_ESCAPED_COUNT > 0
+static const uint8_t dictionary_escaped[DICTIONARY_ESCAPED_COUNT] =
+    DICTIONARY_ESCAPED_SYMBOLS;
+#endif
+
 #ifdef ZX48
 extern const uint8_t dictionary_blob[];
 #else
@@ -65,7 +74,25 @@ static uint16_t read_u16(const uint8_t *p)
     return (uint16_t)p[0] | ((uint16_t)p[1] << 8);
 }
 
-static void decode_word(const uint8_t *blob, uint16_t index, char *word)
+static uint8_t read_bits(const uint8_t **record, uint16_t *accumulator,
+                         uint8_t *bits, uint8_t width)
+{
+    uint8_t value;
+
+    while (*bits < width) {
+        *accumulator = (uint16_t)((*accumulator << 8) | *(*record)++);
+        *bits = (uint8_t)(*bits + 8u);
+    }
+    *bits = (uint8_t)(*bits - width);
+    value = (uint8_t)((*accumulator >> *bits) & ((1u << width) - 1u));
+    if (*bits == 0u)
+        *accumulator = 0u;
+    else
+        *accumulator &= (uint16_t)((1u << *bits) - 1u);
+    return value;
+}
+
+static void decode_word(const uint8_t *blob, uint16_t index, uint8_t *word)
 {
     uint16_t block = index >> BLOCK_SHIFT;
     uint8_t within = (uint8_t)(index & BLOCK_MASK);
@@ -73,7 +100,7 @@ static void decode_word(const uint8_t *blob, uint16_t index, char *word)
     const uint8_t *record = blob + offset;
     uint8_t entry;
 
-    word[0] = '\0';
+    word[0] = 0u;
 
     for (entry = 0u; entry <= within; ++entry) {
         uint8_t header = *record++;
@@ -84,21 +111,22 @@ static void decode_word(const uint8_t *blob, uint16_t index, char *word)
         uint8_t i;
 
         for (i = 0u; i < suffix; ++i) {
+            uint8_t code = read_bits(&record, &accumulator, &bits, 5u);
             uint8_t value;
 
-            while (bits < 5u) {
-                accumulator = (uint16_t)((accumulator << 8) | *record++);
-                bits = (uint8_t)(bits + 8u);
+#if DICTIONARY_ESCAPE_BITS > 0
+            if (code == 31u) {
+                uint8_t escaped = read_bits(&record, &accumulator, &bits,
+                                            DICTIONARY_ESCAPE_BITS);
+                value = dictionary_escaped[escaped];
+            } else
+#endif
+            {
+                value = dictionary_direct[code];
             }
-            bits = (uint8_t)(bits - 5u);
-            value = (uint8_t)((accumulator >> bits) & 31u);
-            if (bits == 0u)
-                accumulator = 0u;
-            else
-                accumulator &= (uint16_t)((1u << bits) - 1u);
-            word[prefix + i] = (char)('a' + value - 1u);
+            word[prefix + i] = value;
         }
-        word[prefix + suffix] = '\0';
+        word[prefix + suffix] = 0u;
     }
 }
 
@@ -111,7 +139,7 @@ uint16_t dictionary_count(void)
 #endif
 }
 
-void dictionary_get(uint16_t index, char *word)
+void dictionary_get(uint16_t index, uint8_t *word)
 {
 #ifdef ZX48
     decode_word(dictionary_blob, index, word);
@@ -130,35 +158,69 @@ void dictionary_get(uint16_t index, char *word)
 #endif
 }
 
-static int8_t compare_words(const char *left, const char *right)
+uint8_t dictionary_fold_letter(uint8_t letter)
 {
-    while (*left && *left == *right) {
-        ++left;
-        ++right;
-    }
-    if (*left == *right)
-        return 0;
-    return (uint8_t)*left < (uint8_t)*right ? -1 : 1;
+    if (letter > DICTIONARY_ALPHABET_SIZE)
+        return 0u;
+    return dictionary_folds[letter];
 }
 
-uint8_t dictionary_contains(const char *word)
+static int8_t compare_words(const uint8_t *left, const uint8_t *right)
+{
+    uint8_t left_letter = dictionary_fold_letter(*left);
+    uint8_t right_letter = dictionary_fold_letter(*right);
+
+    while (*left && left_letter == right_letter) {
+        ++left;
+        ++right;
+        left_letter = dictionary_fold_letter(*left);
+        right_letter = dictionary_fold_letter(*right);
+    }
+    if (left_letter == right_letter)
+        return 0;
+    return left_letter < right_letter ? -1 : 1;
+}
+
+static uint8_t dictionary_lookup(const uint8_t *word, uint8_t *resolved)
 {
     uint16_t low = 0u;
     uint16_t high = dictionary_count();
-    char candidate[MAX_WORD_LENGTH + 1u];
+    uint8_t candidate[MAX_WORD_LENGTH + 1u];
 
+    /* Lower bound selects the most frequent native spelling in a folded-key
+       group because the builder orders equal keys by source-frequency rank. */
     while (low < high) {
         uint16_t middle = (uint16_t)(low + ((high - low) >> 1));
         int8_t order;
 
         dictionary_get(middle, candidate);
         order = compare_words(candidate, word);
-        if (order == 0)
-            return 1u;
         if (order < 0)
             low = (uint16_t)(middle + 1u);
         else
             high = middle;
     }
-    return 0u;
+    if (low >= dictionary_count())
+        return 0u;
+    dictionary_get(low, candidate);
+    if (compare_words(candidate, word) != 0)
+        return 0u;
+    if (resolved != 0) {
+        uint8_t index = 0u;
+
+        do {
+            resolved[index] = candidate[index];
+        } while (candidate[index++] != 0u);
+    }
+    return 1u;
+}
+
+uint8_t dictionary_contains(const uint8_t *word)
+{
+    return dictionary_lookup(word, 0);
+}
+
+uint8_t dictionary_resolve(uint8_t *word)
+{
+    return dictionary_lookup(word, word);
 }

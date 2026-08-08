@@ -7,7 +7,7 @@
  */
 LOCALE_TEXT("title_48", "SPECTRLE EN 48K")
 LOCALE_TEXT("title_128", "SPECTRLE EN 128K")
-LOCALE_TEXT("ascii_notice", "NO ACCENTS - A-Z ONLY")
+LOCALE_TEXT("ascii_notice", "A-Z REVEALS ACCENTS TOO")
 LOCALE_TEXT("dictionary_prefix", "WORDS: ")
 LOCALE_TEXT("dictionary_suffix", " WORDS")
 LOCALE_TEXT("mode_5_line", "1  5 LETTERS / 5 TRIES")

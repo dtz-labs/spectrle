@@ -24,13 +24,13 @@ msgstr "SPECTRLE PT 128K"
 
 #: locales/messages.def:10
 msgctxt "ascii_notice"
-msgid "NO ACCENTS - A-Z ONLY"
-msgstr "SEM ACENTOS - SO A-Z"
+msgid "A-Z REVEALS ACCENTS TOO"
+msgstr "A-Z TAMBÉM REVELA ACENTOS"
 
 #: locales/messages.def:11
 msgctxt "dictionary_prefix"
 msgid "WORDS: "
-msgstr "DICIONARIO: "
+msgstr "DICIONÁRIO: "
 
 #: locales/messages.def:12
 msgctxt "dictionary_suffix"
@@ -40,12 +40,12 @@ msgstr " PAL."
 #: locales/messages.def:13
 msgctxt "mode_5_line"
 msgid "1  5 LETTERS / 5 TRIES"
-msgstr "1  5 LETRAS / 5 TENTATIVAS"
+msgstr "1  5 LETRAS / 5 TENT."
 
 #: locales/messages.def:14
 msgctxt "mode_6_line"
 msgid "2  6 LETTERS / 6 TRIES"
-msgstr "2  6 LETRAS / 6 TENTATIVAS"
+msgstr "2  6 LETRAS / 6 TENT."
 
 #: locales/messages.def:15
 msgctxt "choose_5"
@@ -70,7 +70,7 @@ msgstr "TENT. "
 #: locales/messages.def:19
 msgctxt "wins_label"
 msgid "WINS "
-msgstr "VITORIAS "
+msgstr "VITÓRIAS "
 
 #: locales/messages.def:20
 msgctxt "type_word"
@@ -85,7 +85,7 @@ msgstr "FALTAM LETRAS"
 #: locales/messages.def:22
 msgctxt "not_in_dictionary"
 msgid "NOT IN DICTIONARY"
-msgstr "NAO ESTA NO DICIONARIO"
+msgstr "NÃO ESTÁ NO DICIONÁRIO"
 
 #: locales/messages.def:23
 msgctxt "next_guess"
@@ -105,7 +105,7 @@ msgstr "OUTRO LUGAR"
 #: locales/messages.def:26
 msgctxt "absent"
 msgid "NOT IN WORD"
-msgstr "NAO ESTA"
+msgstr "NÃO ESTÁ"
 
 #: locales/messages.def:27
 msgctxt "won"
@@ -120,7 +120,7 @@ msgstr "PALAVRA: "
 #: locales/messages.def:29
 msgctxt "next_prompt"
 msgid "ENTER-NEXT M-MENU Q-QUIT"
-msgstr "ENTER-PROXIMA M-MENU Q-SAIR"
+msgstr "ENTER-PRÓXIMA M-MENU Q-SAIR"
 
 #: locales/messages.def:30
 msgctxt "thanks"

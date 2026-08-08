@@ -24,28 +24,28 @@ msgstr "SPECTRLE LT 128K"
 
 #: locales/messages.def:10
 msgctxt "ascii_notice"
-msgid "NO ACCENTS - A-Z ONLY"
-msgstr "BE DIAKRITIKOS - TIK A-Z"
+msgid "A-Z REVEALS ACCENTS TOO"
+msgstr "A-Z RODO IR DIAKRITIKA"
 
 #: locales/messages.def:11
 msgctxt "dictionary_prefix"
 msgid "WORDS: "
-msgstr "ZODYNAS: "
+msgstr "ŽODYNAS: "
 
 #: locales/messages.def:12
 msgctxt "dictionary_suffix"
 msgid " WORDS"
-msgstr " ZODZIU"
+msgstr " ŽODŽIŲ"
 
 #: locales/messages.def:13
 msgctxt "mode_5_line"
 msgid "1  5 LETTERS / 5 TRIES"
-msgstr "1  5 RAIDES / 5 BANDYMAI"
+msgstr "1  5 RAIDĖS / 5 BANDYMAI"
 
 #: locales/messages.def:14
 msgctxt "mode_6_line"
 msgid "2  6 LETTERS / 6 TRIES"
-msgstr "2  6 RAIDES / 6 BANDYMAI"
+msgstr "2  6 RAIDĖS / 6 BANDYMAI"
 
 #: locales/messages.def:15
 msgctxt "choose_5"
@@ -55,7 +55,7 @@ msgstr "SPAUSK 1 - TINKLELIS 5X5"
 #: locales/messages.def:16
 msgctxt "choose_5_6"
 msgid "CHOOSE GRID 1-2"
-msgstr "RINKIS TINKLELI 1-2"
+msgstr "RINKIS TINKLELĮ 1-2"
 
 #: locales/messages.def:17
 msgctxt "keyboard"
@@ -70,27 +70,27 @@ msgstr "BAND. "
 #: locales/messages.def:19
 msgctxt "wins_label"
 msgid "WINS "
-msgstr "LAIMETA "
+msgstr "LAIMĖTA "
 
 #: locales/messages.def:20
 msgctxt "type_word"
 msgid "TYPE A WORD"
-msgstr "IVESK ZODI"
+msgstr "ĮVESK ŽODĮ"
 
 #: locales/messages.def:21
 msgctxt "not_enough"
 msgid "NOT ENOUGH LETTERS"
-msgstr "TRUKSTA RAIDZIU"
+msgstr "TRŪKSTA RAIDŽIŲ"
 
 #: locales/messages.def:22
 msgctxt "not_in_dictionary"
 msgid "NOT IN DICTIONARY"
-msgstr "NERA ZODYNE"
+msgstr "NĖRA ŽODYNE"
 
 #: locales/messages.def:23
 msgctxt "next_guess"
 msgid "TRY ANOTHER WORD"
-msgstr "BANDYK KITA ZODI"
+msgstr "BANDYK KITĄ ŽODĮ"
 
 #: locales/messages.def:24
 msgctxt "correct"
@@ -105,17 +105,17 @@ msgstr "KITA VIETA"
 #: locales/messages.def:26
 msgctxt "absent"
 msgid "NOT IN WORD"
-msgstr "NERA ZODYJE"
+msgstr "NĖRA ŽODYJE"
 
 #: locales/messages.def:27
 msgctxt "won"
 msgid "WELL DONE! SOLVED."
-msgstr "PUIKU! ATSPETA."
+msgstr "PUIKU! ATSPĖTA."
 
 #: locales/messages.def:28
 msgctxt "word_prefix"
 msgid "WORD: "
-msgstr "ZODIS: "
+msgstr "ŽODIS: "
 
 #: locales/messages.def:29
 msgctxt "next_prompt"
@@ -125,12 +125,12 @@ msgstr "ENTER-KITAS M-MENIU Q-BAIGTI"
 #: locales/messages.def:30
 msgctxt "thanks"
 msgid "THANKS FOR PLAYING"
-msgstr "ACIU UZ ZAIDIMA"
+msgstr "AČIŪ UŽ ŽAIDIMĄ"
 
 #: locales/messages.def:31
 msgctxt "any_key"
 msgid "PRESS ANY KEY"
-msgstr "SPAUSK BET KURI KLAVISA"
+msgstr "SPAUSK BET KURĮ KLAVIŠĄ"
 
 #~ msgctxt "mode_7_line"
 #~ msgid "3  7 LETTERS / 7 TRIES"

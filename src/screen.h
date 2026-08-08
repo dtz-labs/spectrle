@@ -19,5 +19,6 @@ void screen_clear_text_row(uint8_t row, uint8_t attr);
 void screen_text(uint8_t column, uint8_t row, const char *text, uint8_t attr);
 void screen_text_center(uint8_t row, const char *text, uint8_t attr);
 void screen_char(uint8_t column, uint8_t row, char ch, uint8_t attr);
+void screen_letter(uint8_t column, uint8_t row, uint8_t letter, uint8_t attr);
 
 #endif

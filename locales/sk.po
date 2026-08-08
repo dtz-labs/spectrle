@@ -24,13 +24,13 @@ msgstr "SPECTRLE SK 128K"
 
 #: locales/messages.def:10
 msgctxt "ascii_notice"
-msgid "NO ACCENTS - A-Z ONLY"
-msgstr "BEZ DIAKRITIKY - IBA A-Z"
+msgid "A-Z REVEALS ACCENTS TOO"
+msgstr "A-Z ODKRYJE AJ DIAKRITIKU"
 
 #: locales/messages.def:11
 msgctxt "dictionary_prefix"
 msgid "WORDS: "
-msgstr "SLOVNIK: "
+msgstr "SLOVNÍK: "
 
 #: locales/messages.def:12
 msgctxt "dictionary_suffix"
@@ -40,27 +40,27 @@ msgstr " SLOV"
 #: locales/messages.def:13
 msgctxt "mode_5_line"
 msgid "1  5 LETTERS / 5 TRIES"
-msgstr "1  5 PISMEN / 5 POKUSOV"
+msgstr "1  5 PÍSMEN / 5 POKUSOV"
 
 #: locales/messages.def:14
 msgctxt "mode_6_line"
 msgid "2  6 LETTERS / 6 TRIES"
-msgstr "2  6 PISMEN / 6 POKUSOV"
+msgstr "2  6 PÍSMEN / 6 POKUSOV"
 
 #: locales/messages.def:15
 msgctxt "choose_5"
 msgid "PRESS 1 FOR 5X5"
-msgstr "STLAC 1 - MRIEZKA 5X5"
+msgstr "STLAČ 1 - MRIEŽKA 5X5"
 
 #: locales/messages.def:16
 msgctxt "choose_5_6"
 msgid "CHOOSE GRID 1-2"
-msgstr "VYBER MRIEZKU 1-2"
+msgstr "VYBER MRIEŽKU 1-2"
 
 #: locales/messages.def:17
 msgctxt "keyboard"
 msgid "A-Z ENTER=CHECK CS+0=DELETE"
-msgstr "A-Z ENTER=SKUS CS+0=ZMAZ"
+msgstr "A-Z ENTER=SKÚS CS+0=ZMAZ"
 
 #: locales/messages.def:18
 msgctxt "try_label"
@@ -70,7 +70,7 @@ msgstr "POKUS "
 #: locales/messages.def:19
 msgctxt "wins_label"
 msgid "WINS "
-msgstr "VYHRY "
+msgstr "VÝHRY "
 
 #: locales/messages.def:20
 msgctxt "type_word"
@@ -80,27 +80,27 @@ msgstr "ZADAJ SLOVO"
 #: locales/messages.def:21
 msgctxt "not_enough"
 msgid "NOT ENOUGH LETTERS"
-msgstr "MALO PISMEN"
+msgstr "MÁLO PÍSMEN"
 
 #: locales/messages.def:22
 msgctxt "not_in_dictionary"
 msgid "NOT IN DICTIONARY"
-msgstr "NIE JE V SLOVNIKU"
+msgstr "NIE JE V SLOVNÍKU"
 
 #: locales/messages.def:23
 msgctxt "next_guess"
 msgid "TRY ANOTHER WORD"
-msgstr "SKUS INE SLOVO"
+msgstr "SKÚS INÉ SLOVO"
 
 #: locales/messages.def:24
 msgctxt "correct"
 msgid "RIGHT PLACE"
-msgstr "SPRAVNE MIESTO"
+msgstr "SPRÁVNE MIESTO"
 
 #: locales/messages.def:25
 msgctxt "present"
 msgid "WRONG PLACE"
-msgstr "INE MIESTO"
+msgstr "INÉ MIESTO"
 
 #: locales/messages.def:26
 msgctxt "absent"
@@ -110,7 +110,7 @@ msgstr "NIE JE V SLOVE"
 #: locales/messages.def:27
 msgctxt "won"
 msgid "WELL DONE! SOLVED."
-msgstr "VYBORNE! UHADNUTE."
+msgstr "VÝBORNE! UHÁDNUTÉ."
 
 #: locales/messages.def:28
 msgctxt "word_prefix"
@@ -120,17 +120,17 @@ msgstr "SLOVO: "
 #: locales/messages.def:29
 msgctxt "next_prompt"
 msgid "ENTER-NEXT M-MENU Q-QUIT"
-msgstr "ENTER-DALSIE M-MENU Q-KONIEC"
+msgstr "ENTER-ĎALŠIE M-MENU Q-KONIEC"
 
 #: locales/messages.def:30
 msgctxt "thanks"
 msgid "THANKS FOR PLAYING"
-msgstr "DAKUJEM ZA HRU"
+msgstr "ĎAKUJEM ZA HRU"
 
 #: locales/messages.def:31
 msgctxt "any_key"
 msgid "PRESS ANY KEY"
-msgstr "STLAC LUBOVOLNY KLAVES"
+msgstr "STLAČ ĽUBOVOĽNÝ KLÁVES"
 
 #~ msgctxt "mode_7_line"
 #~ msgid "3  7 LETTERS / 7 TRIES"

@@ -11,7 +11,7 @@ from pathlib import Path
 def source_count(path: Path) -> int:
     return sum(
         1
-        for line in path.read_text(encoding="ascii").splitlines()
+        for line in path.read_text(encoding="utf-8").splitlines()
         if line.strip() and not line.lstrip().startswith("#")
     )
 
@@ -46,12 +46,21 @@ def check(
         raise SystemExit(
             f"manifest source count {manifest.get('source_count')} != {available}"
         )
-    if zx48["words"] != expected_48:
+    if expected_48 and zx48["words"] != expected_48:
         raise SystemExit(f"48K contains {zx48['words']} words, expected {expected_48}")
-    if zx128["words"] != expected_128:
+    if expected_128 and zx128["words"] != expected_128:
         raise SystemExit(
             f"128K contains {zx128['words']} words, expected {expected_128}"
         )
+    eligible = manifest.get("eligible_words", {})
+    for release, data in (("zx48", zx48), ("zx128", zx128)):
+        available_release = int(eligible.get(release, -1))
+        if available_release < int(data["words"]):
+            raise SystemExit(f"{release}: selected more words than are eligible")
+        if int(data.get("dropped_words", -1)) != available_release - int(
+            data["words"]
+        ):
+            raise SystemExit(f"{release}: incorrect dropped-word count")
     if zx48["bytes"] > max_48_bytes or not zx48.get("fits"):
         raise SystemExit(
             f"48K dictionary uses {zx48['bytes']} / {max_48_bytes} bytes"
@@ -65,7 +74,7 @@ def check(
             raise SystemExit(
                 f"128K bank {bank['physical_bank']} uses {bank['bytes']} / 16384 bytes"
             )
-    if sum(int(bank["words"]) for bank in banks) != expected_128:
+    if sum(int(bank["words"]) for bank in banks) != int(zx128["words"]):
         raise SystemExit("128K bank word counts do not add up")
     if not zx128.get("fits"):
         raise SystemExit("128K dictionary manifest reports an overflow")

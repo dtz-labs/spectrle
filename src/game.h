@@ -30,8 +30,8 @@
 #define SUBMIT_LOST 4u
 
 typedef struct GameState {
-    char word[MAX_WORD_LENGTH + 1u];
-    char guesses[SPECTRLE_MAX_ATTEMPTS][SPECTRLE_MAX_LENGTH + 1u];
+    uint8_t word[MAX_WORD_LENGTH + 1u];
+    uint8_t guesses[SPECTRLE_MAX_ATTEMPTS][SPECTRLE_MAX_LENGTH + 1u];
     uint8_t tiles[SPECTRLE_MAX_ATTEMPTS][SPECTRLE_MAX_LENGTH];
     uint8_t keyboard[26u];
     uint8_t input_length;
@@ -47,8 +47,9 @@ void game_new_round(GameState *game, uint8_t length);
 uint8_t game_add_letter(GameState *game, char letter);
 uint8_t game_delete_letter(GameState *game);
 uint8_t game_submit(GameState *game);
-void game_score_word(const char *answer, const char *guess, uint8_t length,
+void game_score_word(const uint8_t *answer, const uint8_t *guess, uint8_t length,
                      uint8_t *tiles);
+uint8_t game_keyboard_symbol_state(const GameState *game, uint8_t symbol);
 uint8_t game_won(const GameState *game);
 uint8_t game_lost(const GameState *game);
 

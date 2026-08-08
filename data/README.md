@@ -1,24 +1,92 @@
 # Dictionary provenance
 
-All committed game lists contain unique lowercase ASCII words of 3-15 letters.
-The 48K build keeps every five-letter entry and no other length. The 128K build
-keeps every enabled five- and six-letter entry and divides the sorted result
-into five independently compressed banks.
+All release game lists (`words-*-utf8.txt`) contain frequency-ranked, NFC
+native spellings with five- or six-letter accentless lookup keys. The 48K build
+keeps five-letter entries and no other length. The 128K build keeps five- and
+six-letter entries and divides the sorted result into five independently
+compressed banks. If a memory limit is reached, only the least frequent tail
+is omitted.
 
-| code | committed | 48K | 128K | lexical source |
-| --- | ---: | ---: | ---: | --- |
-| `pl` | 17,092 | 6,374 | 17,092 | SJP.PL `odmiany` + `growy` |
-| `en` | 20,000 | 2,249 | 5,176 | Open English WordNet 2025 |
-| `es` | 20,000 | 1,612 | 3,939 | MCR 3.0 via OMW 1.4 |
-| `ca` | 20,000 | 2,076 | 4,844 | MCR 3.0 via OMW 1.4 |
-| `lt` | 8,500 | 484 | 1,316 | Lithuanian WordNet via OMW 1.4 |
-| `sk` | 16,000 | 1,578 | 3,604 | Slovak WordNet via OMW 1.4 |
-| `cs` | 20,000 | 3,139 | 6,893 | wordfreq 3.1.1 fallback |
-| `pt` | 20,000 | 2,102 | 4,751 | OpenWN-PT via OMW 1.4 |
+| code | committed | 48K | 128K | custom glyphs | lexical source |
+| --- | ---: | ---: | ---: | ---: | --- |
+| `pl` | 17,276 | 6,448 | 17,276 | 9 | SJP.PL `odmiany` + `growy` |
+| `en` | 5,176 | 2,249 | 5,176 | 0 | Open English WordNet 2025 |
+| `es` | 3,968 | 1,624 | 3,968 | 7 | MCR 3.0 via OMW 1.4 |
+| `ca` | 4,920 | 2,117 | 4,920 | 12 | MCR 3.0 via OMW 1.4 |
+| `lt` | 1,320 | 485 | 1,320 | 9 | Lithuanian WordNet via OMW 1.4 |
+| `sk` | 3,638 | 1,602 | 3,638 | 17 | Slovak WordNet via OMW 1.4 |
+| `cs` | 7,291 | 3,360 | 7,291 | 17 | wordfreq 3.1.1 fallback |
+| `pt` | 5,048 | 2,225 | 5,048 | 21 | OpenWN-PT via OMW 1.4 |
+
+## Native spelling and fonts
+
+`words-<code>-utf8.txt` are the release lists. They restore the original NFC
+Unicode spelling from the same lexical sources. Every spelling retains an
+accentless five- or six-letter lookup key, so one Spectrum key matches both the
+plain and accented variants.
+For example, `canon` and `cañón` are separate Spanish answers but share the
+input key `CANON`. Catalan `l·l` retains its middle dot and counts as two `l`
+letters, not three characters.
+
+The restoration keeps the existing frequency/WordNet selection, but it no
+longer merges distinct source spellings that fold to one ASCII key. Polish is
+intersected with SJP.PL's game list using exact Unicode spelling. This removes
+31 false matches in the old folded intersection, such as the headword `gądek`
+being admitted merely because the unrelated form `gadek` was playable.
+When several native spellings share one folded key, their source-frequency
+order is retained. Submitting the folded key resolves it to the highest-ranked
+native spelling, so an accentless `BEZEN` is displayed as `BEZEŃ`.
+
+The generated dictionary header contains a folding map and only the 8x8
+bitmaps needed by that edition. Base `A-Z` comes from the Spectrum ROM; accented
+letters are derived from those shapes with acute, caron, ogonek, stroke, and
+the other required marks. This costs eight bytes per custom glyph rather than
+a complete font per language.
+
+The production `FC5E/16` footprints below include all selected dictionary
+records. No current edition required frequency trimming (`dropped = 0` for
+both machines):
+
+| code | 48K words | 48K dictionary | 128K words | 128K dictionary | largest 128K bank | glyph bitmaps |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| `pl` | 6,448 | 21,018 B | 17,276 | 57,115 B | 11,637 B | 72 B |
+| `en` | 2,249 | 7,260 B | 5,176 | 16,853 B | 3,474 B | 0 B |
+| `es` | 1,624 | 5,531 B | 3,968 | 14,015 B | 2,843 B | 56 B |
+| `ca` | 2,117 | 7,233 B | 4,920 | 17,199 B | 3,495 B | 96 B |
+| `lt` | 485 | 1,805 B | 1,320 | 5,045 B | 1,032 B | 72 B |
+| `sk` | 1,602 | 5,825 B | 3,638 | 13,745 B | 2,822 B | 136 B |
+| `cs` | 3,360 | 10,880 B | 7,291 | 23,288 B | 4,812 B | 136 B |
+| `pt` | 2,225 | 7,665 B | 5,048 | 17,925 B | 3,614 B | 168 B |
+
+The baseline five-letter size report in `accented-5letter-sizes.json` compares
+two native-symbol versions of the front coding. Fixed width is
+the simplest upper bound. The selected estimate leaves the 31 most frequent
+symbols at five bits and uses an escape plus 2-4 extra bits for uncommon
+symbols in alphabets larger than 32.
+
+| code | native spellings | lookup keys | current ASCII | fixed width | selected | font/map estimate |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| `pl` | 6,448 | 6,355 | 19,904 B | 22,819 B | 21,007 B | 140 B |
+| `en` | 2,249 | 2,249 | 7,260 B | 7,260 B | 7,260 B | 0 B |
+| `es` | 1,624 | 1,612 | 5,333 B | 5,526 B | 5,526 B | 112 B |
+| `ca` | 2,117 | 2,076 | 6,689 B | 7,827 B | 7,228 B | 162 B |
+| `lt` | 485 | 484 | 1,709 B | 1,805 B | 1,805 B | 136 B |
+| `sk` | 1,602 | 1,578 | 5,211 B | 6,299 B | 5,835 B | 222 B |
+| `cs` | 3,360 | 3,139 | 9,443 B | 11,626 B | 10,869 B | 212 B |
+| `pt` | 2,225 | 2,102 | 6,786 B | 8,299 B | 7,648 B | 232 B |
+
+The final column is a conservative data-only estimate of one decode byte and
+one folding byte per alphabet symbol plus one 8-byte bitmap per non-ASCII
+glyph. The UTF-8 text file sizes are disk/source sizes, not Spectrum RAM.
+
+`tools/build_accented_wordlist.py` regenerates one native list from its original
+WordNet, wordfreq, or SJP.PL input. `tools/measure_accented_dictionaries.py`
+round-trips both candidate encodings and writes the JSON report.
 
 ## Polish
 
-`words-pl-ascii.txt` was generated on 2026-08-08 from:
+`words-pl-utf8.txt` was generated on 2026-08-08 from the native forms selected
+by the ranked `words-pl-ascii.txt` keys and these sources:
 
 - SJP.PL `odmiany`, release `sjp-odm-20260803.zip`, as the authority for
   accepted Polish headwords. This project selects its Apache License 2.0
@@ -74,9 +142,10 @@ than claiming WordNet provenance. This choice is recorded in
 ## Reproduction rules
 
 `tools/normalize_words.py` applies Unicode decomposition plus explicit rules
-for Latin letters and ligatures, then keeps only lowercase `a-z`. Source forms
-that collapse to the same accentless spelling are merged. The release build
-needs only the committed ASCII lists; large upstream archives are not copied
+for Latin letters and ligatures to construct the lowercase `a-z` input key.
+`tools/build_accented_wordlist.py` retains distinct native spellings that share
+that key and ranks them for deterministic memory trimming. The release build
+needs only the committed UTF-8 lists; large upstream archives are not copied
 into the project.
 
 `tools/import_wordnet.py` imports OMW tabs, plain lists, and WordNet-LMF XML.

@@ -17,7 +17,7 @@ from normalize_words import unaccent_ascii  # noqa: E402
 
 
 class LocaleAndNormalizationTests(unittest.TestCase):
-    def test_every_locale_generates_ascii_spectrle_header(self) -> None:
+    def test_every_locale_generates_encoded_spectrle_header(self) -> None:
         messages = ROOT / "locales" / "messages.def"
         for locale_path in sorted((ROOT / "locales").glob("*.po")):
             with self.subTest(locale=locale_path.stem), tempfile.TemporaryDirectory() as temp:
@@ -29,6 +29,7 @@ class LocaleAndNormalizationTests(unittest.TestCase):
                     locale_path,
                     locale_path.stem,
                     locale_path.stem,
+                    ROOT / "data" / f"words-{locale_path.stem}-utf8.txt",
                     header,
                     manifest,
                 )
@@ -41,6 +42,11 @@ class LocaleAndNormalizationTests(unittest.TestCase):
                 self.assertIn('#define TXT_NOT_IN_DICTIONARY ', header_text)
                 loaded = json.loads(manifest.read_text(encoding="ascii"))
                 self.assertIn("A-Z", loaded["strings"]["ascii_notice"])
+                if locale_path.stem == "pl":
+                    self.assertEqual(
+                        loaded["strings"]["dictionary_prefix"], "SŁOWNIK: "
+                    )
+                    self.assertIn('S\\204OWNIK: ', header_text)
 
     def test_unaccent_folds_european_latin_text_to_ascii(self) -> None:
         examples = {

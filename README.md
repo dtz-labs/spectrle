@@ -1,8 +1,9 @@
 # Spectrle for ZX Spectrum
 
-An unofficial, ASCII-only word-guessing game for the ZX Spectrum, released as
-independent 48K and 128K tapes in eight languages. The 48K tape is strictly a
-5x5 game. The 128K tape offers two board sizes when the language data fits:
+An unofficial word-guessing game for the ZX Spectrum, released as independent
+48K and 128K tapes in eight languages. Answers retain their native accents,
+while the unmodified Spectrum keyboard still uses `A-Z`. The 48K tape is
+strictly a 5x5 game. The 128K tape offers two board sizes:
 
 - `5x5`: five-letter word, five guesses;
 - `6x6`: six-letter word, six guesses.
@@ -13,30 +14,35 @@ from [GitHub Releases](https://github.com/dtz-labs/spectrle/releases).
 
 | code | edition | 48K: 5 letters | 128K: 5-6 letters |
 | --- | --- | ---: | ---: |
-| `pl` | Polish | 6,374 | 17,092 |
+| `pl` | Polish | 6,448 | 17,276 |
 | `en` | English | 2,249 | 5,176 |
-| `es` | Spanish | 1,612 | 3,939 |
-| `ca` | Catalan | 2,076 | 4,844 |
-| `lt` | Lithuanian | 484 | 1,316 |
-| `sk` | Slovak | 1,578 | 3,604 |
-| `cs` | Czech | 3,139 | 6,893 |
-| `pt` | Portuguese | 2,102 | 4,751 |
+| `es` | Spanish | 1,624 | 3,968 |
+| `ca` | Catalan | 2,117 | 4,920 |
+| `lt` | Lithuanian | 485 | 1,320 |
+| `sk` | Slovak | 1,602 | 3,638 |
+| `cs` | Czech | 3,360 | 7,291 |
+| `pt` | Portuguese | 2,225 | 5,048 |
 
 The Polish edition is generated from every five- and six-letter SJP.PL headword
-that SJP.PL also admits in word games: 6,374 five-letter and 10,718 six-letter
+that SJP.PL also admits in word games: 6,448 five-letter and 10,828 six-letter
 entries. Headwords flagged `niedopuszczalne w grach` — abbreviations, brand
-names and the like — are excluded. The common entries `banal`, `larwa`, and
+names and the like — are excluded. The common entries `banał`, `larwa`, and
 `sitwa` are covered by regression tests and are present in the 48K dictionary.
 
-Every edition explicitly says that it has no accents and accepts only `A-Z`.
-Diacritics and Latin ligatures are folded while dictionaries are imported, so
-every accepted word can be entered on an unmodified Spectrum keyboard.
+Each edition embeds only the accented glyphs used by its own dictionary. They
+are generated in the original ZX Spectrum 8x8 style; plain `A-Z` continue to
+come directly from the ROM. Input is accent-insensitive: pressing `A` matches
+both `A` and `Ą` in Polish, `S` matches `S`, `Ś`, or Czech `Š`, and the same
+rule applies to each language. A correct tile reveals the answer's native
+glyph. See [data/README.md](data/README.md#native-spelling-and-fonts).
 
 ## Playing
 
 On 48K, press `1` for the only 5x5 board. On 128K, choose `1` or `2` for the
-5x5 or 6x6 board. Type a word with `A-Z`, erase with `CAPS SHIFT+0`, and press
-`ENTER` to submit it. A guess must
+5x5 or 6x6 board. Type a word with `A-Z` (without entering accents), erase with
+`CAPS SHIFT+0`, and press `ENTER` to submit it. An accepted guess is then
+rewritten in its most frequent native spelling, for example `BEZEN` becomes
+`BEZEŃ`. A guess must
 have the selected length and exist in the edition's dictionary; rejected
 guesses do not consume an attempt.
 
@@ -49,8 +55,14 @@ remain in the answer.
 - ` A ` on blue: absent from the word.
 
 The bracket shapes repeat every colour signal, so the board remains readable
-without relying on colour alone. The on-screen alphabet keeps the strongest
-known state for each letter. Accepted guesses, rejected guesses, wins, and
+without relying on colour alone. The on-screen alphabet includes every national
+glyph beside its base family (`A Ą`, `N Ń`, `S Ś/Š`). Once a family is tried,
+each glyph separately reports whether that exact form occurs in the answer.
+Thus `ORKAN` against `GĄSKA` marks both `A` and `Ą` as present; against the
+fictional `GĄSKĄ`, it marks `Ą` as present and `A` as absent. If an accentless
+key matches an accented answer glyph in the correct position, the accented
+glyph receives the correct-position state.
+Accepted guesses, rejected guesses, wins, and
 losses have distinct 1-bit beeper cues; every cue restores a black border.
 
 After a round, `ENTER` keeps the selected board, `M` returns to the board menu,
@@ -79,8 +91,8 @@ make RUN_LANGUAGE=es smoke
 
 Local builds write tapes under the ignored `build/<code>/` directory. Every tape
 name carries the version from [VERSION](VERSION), so a downloaded file names its
-own build. With `VERSION` at `1.2.0`, English produces
-`build/en/spectrle-en-48-v1.2.0.tap` and `build/en/spectrle-en-128-v1.2.0.tap`.
+own build. With `VERSION` at `1.3.0`, English produces
+`build/en/spectrle-en-48-v1.3.0.tap` and `build/en/spectrle-en-128-v1.3.0.tap`.
 
 ## GitHub releases and web player
 
@@ -120,18 +132,19 @@ make check-translations  # validate the catalogs
 ```
 
 During each language build, Python compiles its `.po` into a small `locale.h`
-containing only that edition's strings. The generator rejects missing entries,
-non-ASCII output, lines wider than 32 characters, and stat labels that leave no
+containing only that edition's strings. National characters are encoded with
+the same generated 8x8 glyphs as dictionary answers. The generator rejects
+missing glyphs, lines wider than 32 characters, and stat labels that leave no
 room for numbers. See
 [languages/README.md](languages/README.md) for the complete language recipe.
 
 ## Dictionaries and memory layout
 
 OMW tabs, plain UTF-8 word lists, and GWA WordNet-LMF XML can be normalized
-with `tools/import_wordnet.py`. `tools/normalize_words.py` follows the same
-rule-based idea as PostgreSQL `unaccent`, applies Unicode decomposition and
-explicit Latin-letter expansions, and emits unique lowercase ASCII words.
-`tools/build_dictionary.py` compiles them to the byte-packed `FC5/16` format.
+with `tools/import_wordnet.py`. `tools/build_accented_wordlist.py` restores and
+ranks the native spellings used by the release. `tools/normalize_words.py`
+provides the accentless input keys. `tools/build_dictionary.py` compiles the
+result to the byte-packed `FC5E/16` format.
 
 ```sh
 make import-wordnet \
@@ -139,11 +152,13 @@ make import-wordnet \
   WORDNET_FILES="/path/to/wordnet.xml.gz"
 ```
 
-`FC5/16` sorts words into blocks of 16. The first word in each block is stored
+`FC5E/16` sorts words into blocks of 16. The first word in each block is stored
 in full; following words store four-bit common-prefix and suffix lengths.
-Suffix letters use five bits each (`a=1` through `z=26`). The 128K dictionary
-is split over physical banks 0, 1, 3, 4, and 6; game code and the decompressor
-stay in fixed RAM. The builder selects all five-letter entries for 48K and all
-enabled five- and six-letter entries for 128K. Every build proves that the 48K
-image and all five 16K banks fit. See [data/README.md](data/README.md) for
-provenance and separate word-data licences.
+The 31 most frequent symbols use five bits; rarer national letters use an
+escape code. The 128K dictionary is split over physical banks 0, 1, 3, 4, and
+6; game code and the decompressor stay in fixed RAM. The builder selects all
+five-letter entries for 48K and all enabled five- and six-letter entries for
+128K. If a future list exceeds a memory limit, its frequency-ranked tail is
+trimmed automatically. Every build proves that the 48K image and all five 16K
+banks fit. See [data/README.md](data/README.md) for provenance and separate
+word-data licences.

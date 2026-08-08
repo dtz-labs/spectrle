@@ -2,7 +2,7 @@
 
 static uint16_t random_state = 0x6d2bu;
 
-static uint8_t text_length(const char *text)
+static uint8_t text_length(const uint8_t *text)
 {
     uint8_t length = 0u;
 
@@ -35,10 +35,10 @@ void game_init(GameState *game)
     uint8_t column;
 
     for (column = 0u; column <= MAX_WORD_LENGTH; ++column)
-        game->word[column] = '\0';
+        game->word[column] = 0u;
     for (row = 0u; row < SPECTRLE_MAX_ATTEMPTS; ++row) {
         for (column = 0u; column <= SPECTRLE_MAX_LENGTH; ++column)
-            game->guesses[row][column] = '\0';
+            game->guesses[row][column] = 0u;
         for (column = 0u; column < SPECTRLE_MAX_LENGTH; ++column)
             game->tiles[row][column] = TILE_EMPTY;
     }
@@ -66,7 +66,7 @@ void game_new_round(GameState *game, uint8_t length)
     game->won = 0u;
     for (row = 0u; row < SPECTRLE_MAX_ATTEMPTS; ++row) {
         for (column = 0u; column <= SPECTRLE_MAX_LENGTH; ++column)
-            game->guesses[row][column] = '\0';
+            game->guesses[row][column] = 0u;
         for (column = 0u; column < SPECTRLE_MAX_LENGTH; ++column)
             game->tiles[row][column] = TILE_EMPTY;
     }
@@ -80,7 +80,7 @@ void game_new_round(GameState *game, uint8_t length)
 
 uint8_t game_add_letter(GameState *game, char letter)
 {
-    char *guess;
+    uint8_t *guess;
 
     if (game_won(game) || game_lost(game) || game->input_length >= game->length)
         return 0u;
@@ -90,24 +90,24 @@ uint8_t game_add_letter(GameState *game, char letter)
         return 0u;
 
     guess = game->guesses[game->attempt];
-    guess[game->input_length++] = letter;
-    guess[game->input_length] = '\0';
+    guess[game->input_length++] = (uint8_t)(letter - 'a' + 1);
+    guess[game->input_length] = 0u;
     return 1u;
 }
 
 uint8_t game_delete_letter(GameState *game)
 {
-    char *guess;
+    uint8_t *guess;
 
     if (game_won(game) || game_lost(game) || game->input_length == 0u)
         return 0u;
     guess = game->guesses[game->attempt];
     --game->input_length;
-    guess[game->input_length] = '\0';
+    guess[game->input_length] = 0u;
     return 1u;
 }
 
-void game_score_word(const char *answer, const char *guess, uint8_t length,
+void game_score_word(const uint8_t *answer, const uint8_t *guess, uint8_t length,
                      uint8_t *tiles)
 {
     uint8_t remaining[26u];
@@ -117,11 +117,14 @@ void game_score_word(const char *answer, const char *guess, uint8_t length,
         remaining[i] = 0u;
 
     for (i = 0u; i < length; ++i) {
-        if (guess[i] == answer[i]) {
+        uint8_t answer_letter = dictionary_fold_letter(answer[i]);
+        uint8_t guess_letter = dictionary_fold_letter(guess[i]);
+
+        if (guess_letter == answer_letter) {
             tiles[i] = TILE_CORRECT;
         } else {
             tiles[i] = TILE_EMPTY;
-            ++remaining[(uint8_t)(answer[i] - 'a')];
+            ++remaining[answer_letter - 1u];
         }
     }
 
@@ -130,7 +133,7 @@ void game_score_word(const char *answer, const char *guess, uint8_t length,
 
         if (tiles[i] == TILE_CORRECT)
             continue;
-        index = (uint8_t)(guess[i] - 'a');
+        index = (uint8_t)(dictionary_fold_letter(guess[i]) - 1u);
         if (remaining[index] != 0u) {
             tiles[i] = TILE_PRESENT;
             --remaining[index];
@@ -140,9 +143,36 @@ void game_score_word(const char *answer, const char *guess, uint8_t length,
     }
 }
 
+uint8_t game_keyboard_symbol_state(const GameState *game, uint8_t symbol)
+{
+    uint8_t family = dictionary_fold_letter(symbol);
+    uint8_t answer_has_symbol = 0u;
+    uint8_t family_was_tried = 0u;
+    uint8_t row;
+    uint8_t column;
+
+    for (column = 0u; column < game->length; ++column) {
+        if (game->word[column] == symbol)
+            answer_has_symbol = 1u;
+    }
+    for (row = 0u; row < game->attempt; ++row) {
+        for (column = 0u; column < game->length; ++column) {
+            if (dictionary_fold_letter(game->guesses[row][column]) != family)
+                continue;
+            family_was_tried = 1u;
+            if (game->tiles[row][column] == TILE_CORRECT &&
+                game->word[column] == symbol)
+                return TILE_CORRECT;
+        }
+    }
+    if (!family_was_tried)
+        return TILE_EMPTY;
+    return answer_has_symbol ? TILE_PRESENT : TILE_ABSENT;
+}
+
 uint8_t game_submit(GameState *game)
 {
-    char *guess;
+    uint8_t *guess;
     uint8_t *tiles;
     uint8_t i;
     uint8_t solved = 1u;
@@ -150,13 +180,13 @@ uint8_t game_submit(GameState *game)
     if (game->input_length != game->length)
         return SUBMIT_INCOMPLETE;
     guess = game->guesses[game->attempt];
-    if (!dictionary_contains(guess))
+    if (!dictionary_resolve(guess))
         return SUBMIT_UNKNOWN;
 
     tiles = game->tiles[game->attempt];
     game_score_word(game->word, guess, game->length, tiles);
     for (i = 0u; i < game->length; ++i) {
-        uint8_t letter = (uint8_t)(guess[i] - 'a');
+        uint8_t letter = (uint8_t)(dictionary_fold_letter(guess[i]) - 1u);
 
         if (tiles[i] != TILE_CORRECT)
             solved = 0u;

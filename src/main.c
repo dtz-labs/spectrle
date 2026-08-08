@@ -106,19 +106,20 @@ static void tile_brackets(uint8_t state, char *left, char *right)
 static void render_tile(const GameState *game, uint8_t row, uint8_t column)
 {
     uint8_t state = row < game->attempt ? game->tiles[row][column] : TILE_EMPTY;
-    char letter = game->guesses[row][column];
+    uint8_t letter = game->guesses[row][column];
     char left;
     char right;
     uint8_t x = (uint8_t)(grid_left(game->length) + (column << 2));
     uint8_t y = (uint8_t)(3u + (row << 1));
 
     tile_brackets(state, &left, &right);
-    if (letter != '\0')
-        letter = (char)(letter - 'a' + 'A');
-    else
-        letter = ' ';
+    if (state == TILE_CORRECT)
+        letter = game->word[column];
     screen_char(x, y, left, tile_attr(state));
-    screen_char((uint8_t)(x + 1u), y, letter, tile_attr(state));
+    if (letter != 0u)
+        screen_letter((uint8_t)(x + 1u), y, letter, tile_attr(state));
+    else
+        screen_char((uint8_t)(x + 1u), y, ' ', tile_attr(state));
     screen_char((uint8_t)(x + 2u), y, right, tile_attr(state));
 }
 
@@ -168,17 +169,30 @@ static void render_message(const char *message, uint8_t attr)
 
 static void render_alphabet(const GameState *game)
 {
-    uint8_t i;
+    uint8_t family;
+    uint8_t position = 0u;
 
-    for (i = 0u; i < 26u; ++i) {
-        char letter = (char)('A' + i);
-        uint8_t row = i < 13u ? 19u : 20u;
-        uint8_t column = (uint8_t)(3u + ((i % 13u) << 1));
-        uint8_t attr = game->keyboard[i] == TILE_EMPTY
-                           ? UI_ACCENT
-                           : tile_attr(game->keyboard[i]);
+    for (family = 1u; family <= 26u; ++family) {
+        uint8_t symbol;
 
-        screen_char(column, row, letter, attr);
+        for (symbol = family; symbol <= DICTIONARY_ALPHABET_SIZE;
+             ++symbol) {
+            uint8_t state;
+            uint8_t row;
+            uint8_t column;
+            uint8_t attr;
+
+            if (symbol != family && symbol <= 26u)
+                continue;
+            if (dictionary_fold_letter(symbol) != family)
+                continue;
+            state = game_keyboard_symbol_state(game, symbol);
+            row = (uint8_t)(19u + (position >> 4));
+            column = (uint8_t)(1u + ((position & 15u) << 1));
+            attr = state == TILE_EMPTY ? UI_ACCENT : tile_attr(state);
+            screen_letter(column, row, symbol, attr);
+            ++position;
+        }
     }
 }
 
@@ -193,7 +207,7 @@ static void render_game_full(const GameState *game, const char *message)
     render_header(game);
     render_grid(game);
     render_alphabet(game);
-    screen_text_center(22u, TXT_KEYBOARD, UI_NORMAL);
+    screen_text_center(23u, TXT_KEYBOARD, UI_NORMAL);
     render_message(message, UI_NORMAL);
     zx_last_redraw_rows = 24u;
     ++zx_full_render_count;
@@ -316,14 +330,20 @@ static uint8_t finish_round(GameState *game, uint8_t won)
     if (won) {
         render_message(TXT_WON, UI_GOOD);
     } else {
+        uint8_t prefix_length;
+        uint8_t left;
+
         position = append_text(message, 0u, TXT_WORD_PREFIX);
+        prefix_length = position;
+        left = (uint8_t)((32u - prefix_length - game->length) >> 1);
+        screen_clear_text_row(17u, UI_NORMAL);
+        screen_text(left, 17u, message, UI_BAD);
         source = 0u;
-        while (game->word[source] && position < 31u) {
-            char letter = game->word[source++];
-            message[position++] = (char)(letter - 'a' + 'A');
+        while (game->word[source] && source < game->length) {
+            screen_letter((uint8_t)(left + prefix_length + source), 17u,
+                          game->word[source], UI_BAD);
+            ++source;
         }
-        message[position] = '\0';
-        render_message(message, UI_BAD);
     }
 
     screen_clear_text_row(22u, UI_NORMAL);
@@ -360,8 +380,10 @@ int main(void)
             mode = choose_mode();
         game_new_round(&game, mode);
         zx_selected_word_length = game.length;
-        for (i = 0u; i <= game.length; ++i)
-            zx_solution[i] = game.word[i];
+        for (i = 0u; i < game.length; ++i)
+            zx_solution[i] = (char)('a' +
+                dictionary_fold_letter(game.word[i]) - 1u);
+        zx_solution[game.length] = '\0';
         zx_last_submit_result = SUBMIT_INCOMPLETE;
         zx_boot_stage = 0x47u;
         render_game_full(&game, TXT_TYPE_WORD);

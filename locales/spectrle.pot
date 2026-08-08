@@ -29,7 +29,7 @@ msgstr ""
 
 #: locales/messages.def:10
 msgctxt "ascii_notice"
-msgid "NO ACCENTS - A-Z ONLY"
+msgid "A-Z REVEALS ACCENTS TOO"
 msgstr ""
 
 #: locales/messages.def:11

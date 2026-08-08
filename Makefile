@@ -164,6 +164,7 @@ COMMON_FLAGS := +zx -compiler=sdcc --reserve-regs-iy $(OPT) $(WARNFLAGS) -vn \
 	-Isrc -I$(GEN) -DSPECTRLE_128_MAX_LENGTH=$(SPECTRLE_128_MAX_LENGTH)
 
 DICT_TOOL := tools/build_dictionary.py
+DICT_HELPERS := tools/build_accented_wordlist.py tools/normalize_words.py
 LOCALE_TOOL := tools/build_locale.py
 LOCALE_MESSAGES := locales/messages.def
 DICT_STAMP := $(GEN)/dictionary.stamp
@@ -204,7 +205,7 @@ language-dictionaries: $(DICT_STAMP)
 
 language-locale: $(LOCALE_STAMP)
 
-$(DICT_STAMP): $(DICTIONARY_WORDS) $(DICT_TOOL) $(LANGUAGE_CONFIG)
+$(DICT_STAMP): $(DICTIONARY_WORDS) $(DICT_TOOL) $(DICT_HELPERS) $(LANGUAGE_CONFIG)
 	@mkdir -p $(BUILD) $(GEN)
 	python3 $(DICT_TOOL) --words $(DICTIONARY_WORDS) --build-dir $(BUILD) \
 		--header $(GEN)/dictionary_meta.h --language $(LANGUAGE) \
@@ -214,10 +215,12 @@ $(DICT_STAMP): $(DICTIONARY_WORDS) $(DICT_TOOL) $(LANGUAGE_CONFIG)
 		--asm48 $(DICT_ASM48) --asm128 $(DICT_ASM128)
 	@touch $@
 
-$(LOCALE_STAMP): $(LOCALE_PO) $(LOCALE_MESSAGES) $(LOCALE_TOOL) $(LANGUAGE_CONFIG)
+$(LOCALE_STAMP): $(LOCALE_PO) $(LOCALE_MESSAGES) $(LOCALE_TOOL) $(DICT_TOOL) \
+		$(DICT_HELPERS) $(DICTIONARY_WORDS) $(LANGUAGE_CONFIG)
 	@mkdir -p $(BUILD) $(GEN)
 	python3 $(LOCALE_TOOL) --messages $(LOCALE_MESSAGES) --po $(LOCALE_PO) \
 		--code $(LANGUAGE) --name $(LANGUAGE_NAME) \
+		--words $(DICTIONARY_WORDS) \
 		--header $(GEN)/locale.h --manifest $(BUILD)/locale-manifest.json
 	@touch $@
 

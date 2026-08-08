@@ -18,6 +18,11 @@ ZESARUX_KEY_ENTER = 129
 ZX_FRAMES = 23672
 
 
+def ocr_text(text: str) -> str:
+    """Represent custom national glyphs as ZEsarUX OCR sees them."""
+    return "".join(character if character.isascii() else " " for character in text)
+
+
 def receive_prompt(sock: socket.socket, timeout: float = 3.0) -> str:
     deadline = time.monotonic() + timeout
     response = bytearray()
@@ -306,13 +311,13 @@ def main() -> int:
         sock = connect(proc, port, min(args.timeout, 10.0))
         wait_byte(sock, stage, 0x4D, args.timeout)
         wait_ocr(sock, title, 5.0)
-        wait_ocr(sock, locale["ascii_notice"], 5.0)
-        print(f"PASS {args.machine}: menu and no-accents notice rendered")
+        wait_ocr(sock, ocr_text(locale["ascii_notice"]), 5.0)
+        print(f"PASS {args.machine}: menu and accent-input notice rendered")
 
-        menu_ocr = wait_ocr(sock, locale["mode_5_line"], 5.0)
+        menu_ocr = wait_ocr(sock, ocr_text(locale["mode_5_line"]), 5.0)
         if args.max_length == 6:
-            wait_ocr(sock, locale["mode_6_line"], 5.0)
-        elif locale["mode_6_line"] in menu_ocr:
+            wait_ocr(sock, ocr_text(locale["mode_6_line"]), 5.0)
+        elif ocr_text(locale["mode_6_line"]) in menu_ocr:
             raise RuntimeError("5x5-only release exposed the 6x6 menu entry")
         send_physical_key(sock, ord("3"))
         if wait_byte_stable(sock, stage, 0.4, 2.0) != 0x4D:
@@ -331,7 +336,7 @@ def main() -> int:
                 f"{expected_length}x{expected_length} mode selected length "
                 f"{selected_length}"
             )
-        wait_ocr(sock, locale["type_word"], 5.0)
+        wait_ocr(sock, ocr_text(locale["type_word"]), 5.0)
         assert_no_grid_tail(sock, selected_length, f"{args.machine} initial grid")
         print(f"PASS {args.machine}: selected {expected_length}x{expected_length}")
 
@@ -346,7 +351,7 @@ def main() -> int:
             sock, ZESARUX_KEY_ENTER, renders, previous_render, args.timeout
         )
         wait_byte_stable(sock, renders, 0.4, args.timeout)
-        wait_ocr(sock, locale["not_enough"], 5.0)
+        wait_ocr(sock, ocr_text(locale["not_enough"]), 5.0)
         if read_byte(sock, redraw_rows) != 1:
             raise RuntimeError("incomplete word updated more than its message row")
         if read_byte(sock, full_renders) != previous_full_renders:
@@ -380,7 +385,7 @@ def main() -> int:
         )
         wait_byte(sock, stage, 0x46, args.timeout)
         wait_byte_stable(sock, renders, 0.4, args.timeout)
-        wait_ocr(sock, locale["won"], 5.0)
+        wait_ocr(sock, ocr_text(locale["won"]), 5.0)
         if read_byte(sock, last_submit) != 3:
             raise RuntimeError("exact solution was not marked as a win")
         if read_byte(sock, last_sound) != 3:
